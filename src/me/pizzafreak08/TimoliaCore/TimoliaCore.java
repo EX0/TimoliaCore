@@ -28,7 +28,6 @@ public class TimoliaCore extends JavaPlugin {
 		if (check)
 			UpdateChecker.start(this);
 
-		// jz auf master
 		// new File(dataFolder + File.separator + "books").mkdir();
 		new File(dataFolder + File.separator + "locations").mkdir();
 	}
