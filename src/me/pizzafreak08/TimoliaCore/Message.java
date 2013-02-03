@@ -25,11 +25,13 @@ public class Message {
 
 	public static void certain(String message, String permission) {
 		for (Player p : Bukkit.getOnlinePlayers())
-			if (p.hasPermission(permission)) p.sendMessage(message);
+			if (p.hasPermission(permission))
+				p.sendMessage(message);
 	}
 
 	public static String _(String... key) {
-		if (key.length == 0) return null;
+		if (key.length == 0)
+			return null;
 		String msg = TimoliaCore.PREFIX + values.get(key[0]);
 		for (int i = 1; i < key.length; i++)
 			msg = msg.replaceAll("%a" + i, key[i]);
@@ -37,7 +39,8 @@ public class Message {
 	}
 
 	public static String __(String... key) {
-		if (key.length == 0) return null;
+		if (key.length == 0)
+			return null;
 		String msg = values.get(key[0]);
 		for (int i = 1; i < key.length; i++)
 			msg = msg.replaceAll("%a" + i, key[i]);
@@ -51,7 +54,8 @@ public class Message {
 			String line;
 			values.clear();
 			while ((line = input.readLine()) != null) {
-				if (line.equalsIgnoreCase("")) continue;
+				if (line.equalsIgnoreCase(""))
+					continue;
 
 				line = line.replaceFirst(": ", "%%%");
 				String[] data = line.split("%%%");
