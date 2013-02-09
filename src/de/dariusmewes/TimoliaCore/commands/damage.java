@@ -6,8 +6,8 @@ import org.bukkit.entity.Player;
 
 public class damage extends TCommand {
 
-	public damage() {
-		setPermission("timolia.damage");
+	public damage(String name) {
+		super(name);
 		setMinArgs(2);
 		setMaxArgs(2);
 		setUsage("/damage <Player> <amount>");
@@ -31,4 +31,5 @@ public class damage extends TCommand {
 		target.damage(amount);
 		sender.sendMessage(_("playerDamaged"));
 	}
+
 }

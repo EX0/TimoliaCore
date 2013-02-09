@@ -3,7 +3,6 @@ package de.dariusmewes.TimoliaCore.commands;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
@@ -14,8 +13,8 @@ import de.dariusmewes.TimoliaCore.TimoliaCore;
 
 public class itemlore extends TCommand {
 
-	public itemlore() {
-		setPermission("timolia.itemlore");
+	public itemlore(String name) {
+		super(name);
 		setIngame();
 		setMinArgs(2);
 		setUsage("/itemlore <add/remove> <name>");
@@ -69,4 +68,5 @@ public class itemlore extends TCommand {
 		meta.setLore(list);
 		p.getItemInHand().setItemMeta(meta);
 	}
+
 }

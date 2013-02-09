@@ -1,6 +1,5 @@
 package de.dariusmewes.TimoliaCore.commands;
 
-
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
@@ -8,8 +7,8 @@ import de.dariusmewes.TimoliaCore.Message;
 
 public class raw extends TCommand {
 
-	public raw() {
-		setPermission("timolia.raw");
+	public raw(String name) {
+		super(name);
 		setMinArgs(1);
 		setUsage("/raw [-s] <msg>");
 	}
@@ -39,4 +38,5 @@ public class raw extends TCommand {
 		Message.online(msg);
 		Message.console("[FAKEMESSAGE] " + msg);
 	}
+
 }

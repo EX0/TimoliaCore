@@ -7,8 +7,8 @@ import org.bukkit.entity.Player;
 
 public class colors extends TCommand {
 
-	public colors() {
-		setPermission("timolia.farben");
+	public colors(String name) {
+		super(name);
 		setMinArgs(0);
 		setMaxArgs(1);
 		setUsage("/colors [Player]");
@@ -57,4 +57,5 @@ public class colors extends TCommand {
 		p.sendMessage("N - " + ChatColor.UNDERLINE + __("underline"));
 		p.sendMessage("O - " + ChatColor.ITALIC + __("italic"));
 	}
+
 }

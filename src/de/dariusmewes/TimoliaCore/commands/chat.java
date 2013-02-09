@@ -6,8 +6,8 @@ import org.bukkit.entity.Player;
 
 public class chat extends TCommand {
 
-	public chat() {
-		setPermission("timolia.chat");
+	public chat(String name) {
+		super(name);
 		setMinArgs(2);
 		setUsage("/chat <Player> <msg>");
 	}

@@ -7,8 +7,8 @@ import org.bukkit.potion.PotionEffectType;
 
 public class visible extends TCommand {
 
-	public visible() {
-		setPermission("timolia.visible");
+	public visible(String name) {
+		super(name);
 		setMaxArgs(1);
 		setUsage("/visible [player/all]");
 	}
@@ -17,7 +17,8 @@ public class visible extends TCommand {
 		if (args.length == 0) {
 			String names = "";
 			for (Player p : Bukkit.getOnlinePlayers()) {
-				if (!p.hasPotionEffect(PotionEffectType.INVISIBILITY)) continue;
+				if (!p.hasPotionEffect(PotionEffectType.INVISIBILITY))
+					continue;
 
 				names += p.getName() + " ";
 			}
@@ -42,14 +43,15 @@ public class visible extends TCommand {
 			sender.sendMessage(_("madevisible", p.getName()));
 
 		} else if (args[0].equalsIgnoreCase("all")) {
-			if (!sender.hasPermission("timolia.sichtbar.all")) {
+			if (!sender.hasPermission("tcore.sichtbar.all")) {
 				sender.sendMessage(_("noperm"));
 				return;
 			}
 
 			String names = "";
 			for (Player p : Bukkit.getOnlinePlayers()) {
-				if (!p.hasPotionEffect(PotionEffectType.INVISIBILITY)) continue;
+				if (!p.hasPotionEffect(PotionEffectType.INVISIBILITY))
+					continue;
 
 				p.removePotionEffect(PotionEffectType.INVISIBILITY);
 				names += p.getName() + " ";
@@ -58,4 +60,5 @@ public class visible extends TCommand {
 			sender.sendMessage(_("madeVisibleList", names));
 		}
 	}
+
 }

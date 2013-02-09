@@ -2,15 +2,14 @@ package de.dariusmewes.TimoliaCore.commands;
 
 import java.io.File;
 
-
 import org.bukkit.command.CommandSender;
 
 import de.dariusmewes.TimoliaCore.TimoliaCore;
 
 public class loclist extends TCommand {
 
-	public loclist() {
-		setPermission("timolia.loclist");
+	public loclist(String name) {
+		super(name);
 		setMaxArgs(0);
 		setUsage("/loclist");
 	}
@@ -41,4 +40,5 @@ public class loclist extends TCommand {
 
 		sender.sendMessage(_("locs", output));
 	}
+
 }

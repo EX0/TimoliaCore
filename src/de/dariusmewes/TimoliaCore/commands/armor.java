@@ -8,8 +8,8 @@ import org.bukkit.inventory.ItemStack;
 
 public class armor extends TCommand {
 
-	public armor() {
-		setPermission("timolia.armor");
+	public armor(String name) {
+		super(name);
 		setMinArgs(2);
 		setMaxArgs(3);
 		setUsage("/armor [Player] <slot> <item-id>");
@@ -78,4 +78,5 @@ public class armor extends TCommand {
 			return false;
 		}
 	}
+
 }

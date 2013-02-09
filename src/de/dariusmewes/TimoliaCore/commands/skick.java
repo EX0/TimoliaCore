@@ -7,8 +7,8 @@ import org.bukkit.entity.Player;
 
 public class skick extends TCommand {
 
-	public skick() {
-		setPermission("timolia.skick");
+	public skick(String name) {
+		super(name);
 		setMinArgs(1);
 		setUsage("/skick <Spieler> <msg>");
 	}
@@ -31,4 +31,5 @@ public class skick extends TCommand {
 
 		target.kickPlayer(ChatColor.translateAlternateColorCodes('&', msg));
 	}
+
 }

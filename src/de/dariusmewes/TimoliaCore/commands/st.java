@@ -1,6 +1,5 @@
 package de.dariusmewes.TimoliaCore.commands;
 
-
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -9,8 +8,8 @@ import de.dariusmewes.TimoliaCore.Message;
 
 public class st extends TCommand {
 
-	public st() {
-		setPermission("timolia.st");
+	public st(String name) {
+		super(name);
 		setIngame();
 		setMinArgs(1);
 		setUsage("/st <msg>");
@@ -24,4 +23,5 @@ public class st extends TCommand {
 
 		Message.certain(ChatColor.GOLD + "St - " + ChatColor.GRAY + p.getDisplayName() + ": " + ChatColor.WHITE + ChatColor.translateAlternateColorCodes('&', msg), "timolia.st");
 	}
+
 }

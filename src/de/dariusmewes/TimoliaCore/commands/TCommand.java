@@ -1,6 +1,5 @@
 package de.dariusmewes.TimoliaCore.commands;
 
-
 import org.bukkit.command.CommandSender;
 
 import de.dariusmewes.TimoliaCore.Message;
@@ -17,11 +16,12 @@ public abstract class TCommand {
 	protected String prefix = TimoliaCore.PREFIX;
 	protected static TimoliaCore instance;
 
-	public abstract void perform(CommandSender sender, String[] args);
-
-	public void setName(String name) {
+	public TCommand(String name) {
 		this.name = name;
+		this.permission = name;
 	}
+
+	public abstract void perform(CommandSender sender, String[] args);
 
 	void setPermission(String permission) {
 		this.permission = permission;

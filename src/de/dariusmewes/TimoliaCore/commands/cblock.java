@@ -8,8 +8,8 @@ import org.bukkit.inventory.ItemStack;
 
 public class cblock extends TCommand {
 
-	public cblock() {
-		setPermission("timolia.cblock");
+	public cblock(String name) {
+		super(name);
 		setMaxArgs(1);
 		setUsage("/cblock");
 	}
@@ -35,4 +35,5 @@ public class cblock extends TCommand {
 		target.getInventory().addItem(new ItemStack(Material.COMMAND, 1));
 		sender.sendMessage(_("cblock"));
 	}
+
 }

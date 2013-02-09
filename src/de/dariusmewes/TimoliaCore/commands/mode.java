@@ -6,8 +6,8 @@ import org.bukkit.entity.Player;
 
 public class mode extends TCommand {
 
-	public mode() {
-		setPermission("timolia.mode");
+	public mode(String name) {
+		super(name);
 		setIngame();
 		setMaxArgs(0);
 		setUsage("/mode");
@@ -24,4 +24,5 @@ public class mode extends TCommand {
 			p.sendMessage(_("gamemodeChanged"));
 		}
 	}
+
 }

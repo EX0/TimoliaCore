@@ -1,6 +1,5 @@
 package de.dariusmewes.TimoliaCore.commands;
 
-
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
@@ -8,8 +7,8 @@ import de.dariusmewes.TimoliaCore.TimoliaCore;
 
 public class timolia extends TCommand {
 
-	public timolia() {
-		setPermission("timolia.admin");
+	public timolia(String name) {
+		super(name);
 		setMinArgs(1);
 		setUsage("/timolia reload v motd <msg> v wartung <on/off> [msg]");
 	}
@@ -74,4 +73,5 @@ public class timolia extends TCommand {
 		} else
 			sender.sendMessage(usage);
 	}
+
 }

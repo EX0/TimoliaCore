@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 
-
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
@@ -18,8 +17,8 @@ import de.dariusmewes.TimoliaCore.TimoliaCore;
 
 public class book extends TCommand {
 
-	public book() {
-		setPermission("timolia.book");
+	public book(String name) {
+		super(name);
 		setIngame();
 		setMinArgs(2);
 		setUsage("/book <load/save/author/title> [args]");

@@ -7,8 +7,8 @@ import org.bukkit.command.CommandSender;
 
 public class clock extends TCommand {
 
-	public clock() {
-		setPermission("timolia.clock");
+	public clock(String name) {
+		super(name);
 		setMaxArgs(0);
 		setUsage("/clock");
 	}
@@ -20,4 +20,5 @@ public class clock extends TCommand {
 		String date = uhr.format(datum);
 		sender.sendMessage(_("dateTime", date));
 	}
+	
 }

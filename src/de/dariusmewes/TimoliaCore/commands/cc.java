@@ -6,8 +6,8 @@ import org.bukkit.entity.Player;
 
 public class cc extends TCommand {
 
-	public cc() {
-		setPermission("timolia.cc");
+	public cc(String name) {
+		super(name);
 		setIngame();
 		setMaxArgs(1);
 		setUsage("/cc [all/-a]");
@@ -24,7 +24,7 @@ public class cc extends TCommand {
 			}
 
 		} else if (args.length == 1 && args[0].equalsIgnoreCase("all")) {
-			if (!p.hasPermission("timolia.cc.all")) {
+			if (!p.hasPermission("tcore.cc.all")) {
 				p.sendMessage(_("noperm"));
 				return;
 			}

@@ -1,6 +1,5 @@
 package de.dariusmewes.TimoliaCore.commands;
 
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -9,8 +8,8 @@ import de.dariusmewes.TimoliaCore.Message;
 
 public class exe extends TCommand {
 
-	public exe() {
-		setPermission("timolia.exe");
+	public exe(String name) {
+		super(name);
 		setMinArgs(2);
 		setUsage("/exe <Spieler> <Befehl>");
 	}
@@ -22,7 +21,7 @@ public class exe extends TCommand {
 			return;
 		}
 
-		if (target.hasPermission("timolia.admin") || target.isOp()) {
+		if (target.hasPermission("tcore.admin") || target.isOp()) {
 			sender.sendMessage(_("exeOP"));
 			return;
 		}

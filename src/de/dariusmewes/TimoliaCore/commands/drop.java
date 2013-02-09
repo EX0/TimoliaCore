@@ -9,8 +9,8 @@ import org.bukkit.util.Vector;
 
 public class drop extends TCommand {
 
-	public drop() {
-		setPermission("timolia.drop");
+	public drop(String name) {
+		super(name);
 		setIngame();
 		setMaxArgs(1);
 		setUsage("/drop [all/item-id]");

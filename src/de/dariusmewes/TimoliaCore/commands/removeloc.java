@@ -2,15 +2,14 @@ package de.dariusmewes.TimoliaCore.commands;
 
 import java.io.File;
 
-
 import org.bukkit.command.CommandSender;
 
 import de.dariusmewes.TimoliaCore.TimoliaCore;
 
 public class removeloc extends TCommand {
 
-	public removeloc() {
-		setPermission("timolia.removeloc");
+	public removeloc(String name) {
+		super(name);
 		setMinArgs(1);
 		setMaxArgs(1);
 		setUsage("/removeloc <Location>");
@@ -28,4 +27,5 @@ public class removeloc extends TCommand {
 		file.delete();
 		sender.sendMessage(_("locRemoved"));
 	}
+
 }

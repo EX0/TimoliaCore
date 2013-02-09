@@ -7,8 +7,8 @@ import org.bukkit.inventory.ItemStack;
 
 public class dump extends TCommand {
 
-	public dump() {
-		setPermission("timolia.dump");
+	public dump(String name) {
+		super(name);
 		setIngame();
 		setMaxArgs(0);
 		setUsage("/dump");
@@ -25,4 +25,5 @@ public class dump extends TCommand {
 		p.sendMessage(_("dumped", p.getItemInHand().getType().toString()));
 		p.setItemInHand(new ItemStack(Material.AIR));
 	}
+
 }

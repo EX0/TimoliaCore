@@ -8,8 +8,8 @@ import org.bukkit.potion.PotionEffectType;
 
 public class effect extends TCommand {
 
-	public effect() {
-		setPermission("timolia.effect");
+	public effect(String name) {
+		super(name);
 		setMinArgs(2);
 		setMaxArgs(5);
 		setUsage("/effect <add/remove> <effect> <power> <duration> [player]");
@@ -51,7 +51,8 @@ public class effect extends TCommand {
 				}
 			}
 
-			if (target.hasPotionEffect(type)) target.removePotionEffect(type);
+			if (target.hasPotionEffect(type))
+				target.removePotionEffect(type);
 
 			target.addPotionEffect(new PotionEffect(type, (Integer.valueOf(args[3]) * 20), Integer.valueOf(args[2])));
 			sender.sendMessage(_("gotEffect", target.getName(), type.getName()));

@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -14,8 +13,8 @@ import de.dariusmewes.TimoliaCore.TimoliaCore;
 
 public class setloc extends TCommand {
 
-	public setloc() {
-		setPermission("timolia.setloc");
+	public setloc(String name) {
+		super(name);
 		setIngame();
 		setMinArgs(1);
 		setMaxArgs(1);
@@ -46,4 +45,5 @@ public class setloc extends TCommand {
 			p.sendMessage(_("errorsaveloc"));
 		}
 	}
+
 }

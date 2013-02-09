@@ -8,8 +8,8 @@ import org.bukkit.entity.Player;
 
 public class ctp extends TCommand {
 
-	public ctp() {
-		setPermission("timolia.ctp");
+	public ctp(String name) {
+		super(name);
 		setMinArgs(3);
 		setMaxArgs(4);
 		setUsage("/ctp <x> <y> <z> [Player]");
@@ -47,9 +47,11 @@ public class ctp extends TCommand {
 
 		Location loc = new Location(p.getWorld(), x, y, z);
 
-		if (loc.getBlock().getType() != Material.AIR && loc.getBlock().getType() != Material.WATER) loc.setY(p.getWorld().getHighestBlockYAt(loc));
+		if (loc.getBlock().getType() != Material.AIR && loc.getBlock().getType() != Material.WATER)
+			loc.setY(p.getWorld().getHighestBlockYAt(loc));
 
 		p.teleport(loc);
 		sender.sendMessage(_("teleport", p.getName()));
 	}
+
 }

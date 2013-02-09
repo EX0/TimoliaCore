@@ -6,8 +6,8 @@ import org.bukkit.entity.Player;
 
 public class ca extends TCommand {
 
-	public ca() {
-		setPermission("timolia.ca");
+	public ca(String name) {
+		super(name);
 		setMaxArgs(1);
 		setIngame();
 		setUsage("/ca [Player]");
@@ -17,7 +17,7 @@ public class ca extends TCommand {
 		Player p = (Player) sender;
 
 		if (args.length == 0) {
-			if (!p.hasPermission("timolia.ca")) {
+			if (!p.hasPermission("tcore.ca")) {
 				sender.sendMessage(_("noperm"));
 				return;
 			}
@@ -25,7 +25,7 @@ public class ca extends TCommand {
 			p.getInventory().setArmorContents(null);
 			p.sendMessage(_("caDel"));
 		} else if (args.length == 1) {
-			if (!p.hasPermission("timolia.ca.other")) {
+			if (!p.hasPermission("tcore.ca.other")) {
 				p.sendMessage(_("noperm"));
 				return;
 			}

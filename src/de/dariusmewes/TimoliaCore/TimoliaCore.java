@@ -10,7 +10,6 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.dariusmewes.TimoliaCore.commands.CommandHandler;
-import de.dariusmewes.TimoliaCore.commands.TCommand;
 import de.dariusmewes.TimoliaCore.commands.deaths;
 import de.dariusmewes.TimoliaCore.events.PlayerListener;
 import de.dariusmewes.TimoliaCore.events.ServerListener;
@@ -23,7 +22,7 @@ public class TimoliaCore extends JavaPlugin {
 	public static File dataFolder;
 
 	public void onEnable() {
-		initCommands();
+		CommandHandler.init();
 		initEventHandlers();
 		initConfig();
 		dataFolder = getDataFolder();
@@ -36,18 +35,6 @@ public class TimoliaCore extends JavaPlugin {
 
 	public void onDisable() {
 
-	}
-
-	private void initCommands() {
-		CommandHandler.setPluginInstance(this);
-		String[] commands = "armor,ca,cblock,cc,chat,clock,colors,console,ctp,damage,deaths,drop,dump,effect,exe,itemlore,itemname,listname,loc,loclist,mode,raw,removeloc,setloc,skick,st,timolia,visible".split(",");
-		String pack = this.getClass().getPackage().getName() + ".commands.";
-		for (int i = 0; i < commands.length; i++)
-			try {
-				CommandHandler.addCommand((TCommand) Class.forName(pack + commands[i]).newInstance());
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 	}
 
 	private void initEventHandlers() {
@@ -75,7 +62,7 @@ public class TimoliaCore extends JavaPlugin {
 		PlayerListener.joinMsg = ChatColor.translateAlternateColorCodes('&', getConfig().getString("joinmsg"));
 		PlayerListener.quitMsg = ChatColor.translateAlternateColorCodes('&', getConfig().getString("quitmsg"));
 		check = getConfig().getBoolean("checkForUpdates");
-		
+
 		deaths.hidingEnabled = getConfig().getBoolean("deathHiding");
 
 		String language = getConfig().getString("language");

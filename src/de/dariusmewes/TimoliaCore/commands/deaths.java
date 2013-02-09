@@ -10,9 +10,9 @@ public class deaths extends TCommand {
 
 	public static List<String> shuttedOff = new ArrayList<String>();
 	public static boolean hidingEnabled = false;
-	
-	public deaths() {
-		setPermission("deaths");
+
+	public deaths(String name) {
+		super(name);
 		setIngame();
 		setMaxArgs(1);
 		setUsage("/deaths <on/off>");

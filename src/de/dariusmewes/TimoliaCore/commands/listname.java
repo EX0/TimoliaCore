@@ -6,8 +6,8 @@ import org.bukkit.entity.Player;
 
 public class listname extends TCommand {
 
-	public listname() {
-		setPermission("timolia.listname");
+	public listname(String name) {
+		super(name);
 		setMinArgs(1);
 		setMaxArgs(2);
 		setUsage("/listname [Player] <Name>");
@@ -15,7 +15,7 @@ public class listname extends TCommand {
 
 	public void perform(CommandSender sender, String[] args) {
 		if (args[0].equalsIgnoreCase("reset")) {
-			if (!sender.hasPermission("timolia.listname.reset")) {
+			if (!sender.hasPermission("tcore.listname.reset")) {
 				sender.sendMessage(_("noperm"));
 				return;
 			}
@@ -46,4 +46,5 @@ public class listname extends TCommand {
 		target.setPlayerListName(args.length == 1 ? args[0] : args[1]);
 		sender.sendMessage(_("listNameSet"));
 	}
+
 }

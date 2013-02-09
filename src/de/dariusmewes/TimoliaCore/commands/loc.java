@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
@@ -14,8 +13,8 @@ import de.dariusmewes.TimoliaCore.TimoliaCore;
 
 public class loc extends TCommand {
 
-	public loc() {
-		setPermission("timolia.loc");
+	public loc(String name) {
+		super(name);
 		setMinArgs(1);
 		setMaxArgs(2);
 		setUsage("/loc <Location> [Player]");
@@ -75,4 +74,5 @@ public class loc extends TCommand {
 		p.teleport(loc);
 		sender.sendMessage(_("tpMsg", p.getName(), args[0]));
 	}
+
 }

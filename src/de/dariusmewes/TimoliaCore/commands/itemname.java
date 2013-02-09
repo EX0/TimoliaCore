@@ -8,8 +8,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class itemname extends TCommand {
 
-	public itemname() {
-		setPermission("timolia.itemname");
+	public itemname(String name) {
+		super(name);
 		setIngame();
 		setMinArgs(0);
 		setUsage("/itemname <name>");
@@ -32,4 +32,5 @@ public class itemname extends TCommand {
 		p.getItemInHand().setItemMeta(meta);
 		p.sendMessage(_("renamedItem"));
 	}
+	
 }
