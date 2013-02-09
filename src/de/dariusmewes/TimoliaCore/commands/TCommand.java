@@ -12,7 +12,7 @@ public abstract class TCommand {
 	private boolean onlyIngame = false;
 	private int minArgs = 0;
 	private int maxArgs = -1;
-	protected String usage;
+	protected String usage = "";
 	protected String prefix = TimoliaCore.PREFIX;
 	protected static TimoliaCore instance;
 

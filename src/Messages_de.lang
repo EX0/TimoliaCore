@@ -111,6 +111,6 @@ motdSet: Die MOTD wurde gesetzt
 
 accessOn: Wartungsmodus aktiviert
 accessOff: Wartungsmodus deaktiviert
-msgSet: Kick-Nachricht festgelegt
+msgSet: Nachricht festgelegt
 
 dateTime: Datum und Uhrzeit: %a1

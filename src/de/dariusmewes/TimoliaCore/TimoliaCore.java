@@ -22,7 +22,7 @@ public class TimoliaCore extends JavaPlugin {
 	public static File dataFolder;
 
 	public void onEnable() {
-		CommandHandler.init();
+		CommandHandler.init(this);
 		initEventHandlers();
 		initConfig();
 		dataFolder = getDataFolder();
@@ -50,6 +50,7 @@ public class TimoliaCore extends JavaPlugin {
 		conf.addDefault("deathHiding", false);
 		conf.addDefault("maintenance", false);
 		conf.addDefault("maintenancemsg", "");
+		conf.addDefault("servername", "&4[Server]");
 		conf.addDefault("language", "en");
 		conf.addDefault("checkForUpdates", true);
 		conf.options().copyDefaults(true);

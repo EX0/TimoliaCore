@@ -13,7 +13,8 @@ public class CommandHandler {
 
 	private static Vector<TCommand> commands = new Vector<TCommand>();
 
-	public static void init() {
+	public static void init(TimoliaCore instance) {
+		add(new access("access"));
 		add(new armor("armor"));
 		add(new book("book"));
 		add(new ca("ca"));
@@ -44,6 +45,8 @@ public class CommandHandler {
 		add(new st("st"));
 		add(new tcore("tcore"));
 		add(new visible("visible"));
+		
+		TCommand.setPluginInstance(instance);
 	}
 
 	public static void handleCommand(CommandSender sender, Command cmd, String args[]) {
@@ -85,8 +88,5 @@ public class CommandHandler {
 
 		return null;
 	}
-
-	public static void setPluginInstance(TimoliaCore instance) {
-		TCommand.setPluginInstance(instance);
-	}
+	
 }

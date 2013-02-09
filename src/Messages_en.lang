@@ -111,6 +111,6 @@ motdSet: The MOTD has been set
 
 accessOn: Access Restriction has been activated
 accessOff: Access Restriction has been deactivated
-msgSet: Kick-Message set
+msgSet: The Message has been set
 
 dateTime: Date and Time: %a1

@@ -21,20 +21,25 @@ public class access extends TCommand {
 
 	public access(String name) {
 		super(name);
-		setMaxArgs(2);
+		setMinArgs(1);
 		setUsage("/access <allow/deny> [message] OR <add/remove> <name> OR reload");
 	}
 
 	public void perform(CommandSender sender, String[] args) {
-		if (args.length == 1 && !args[0].equalsIgnoreCase("reload")) {
-			sender.sendMessage(usage);
+		if (args[0].equalsIgnoreCase("reload")) {
+			try {
+				load();
+				sender.sendMessage(_("listReloaded"));
+			} catch (IOException e) {
+				sender.sendMessage(_("errorLoadList"));
+			}
 			return;
-		}
 
-		if (args[0].equalsIgnoreCase("allow")) {
+		} else if (args[0].equalsIgnoreCase("allow")) {
 			instance.getConfig().set("maintenance", false);
 			instance.saveConfig();
 			sender.sendMessage(_("accessOff"));
+			return;
 
 		} else if (args[0].equalsIgnoreCase("deny")) {
 			instance.getConfig().set("maintenance", true);
@@ -48,8 +53,15 @@ public class access extends TCommand {
 				instance.getConfig().set("maintenancemsg", ChatColor.translateAlternateColorCodes('&', msg));
 				sender.sendMessage(_("msgSet"));
 			}
+			return;
+		}
 
-		} else if (args[0].equalsIgnoreCase("add")) {
+		if (args.length == 1) {
+			sender.sendMessage(prefix + usage);
+			return;
+		}
+
+		if (args[0].equalsIgnoreCase("add")) {
 			if (players.contains(args[1].toLowerCase())) {
 				sender.sendMessage(_("alreadyOnTheList", args[1]));
 				return;
@@ -72,21 +84,21 @@ public class access extends TCommand {
 			try {
 				players.remove(args[1].toLowerCase());
 				save();
-				sender.sendMessage(_("removedFromList"));
+				sender.sendMessage(_("removedFromList", args[1]));
 			} catch (IOException e) {
 				sender.sendMessage(_("errorSaveList"));
 			}
 
-		} else if (args[0].equalsIgnoreCase("reload")) {
-			try {
-				load();
-				sender.sendMessage(_("listReloaded"));
-			} catch (IOException e) {
-				sender.sendMessage(_("errorLoadList"));
-			}
+		} else if (args[0].equalsIgnoreCase("addmessage")) {
+			String msg = "";
+			for (int i = 1; i < args.length; i++)
+				msg += args[i] + " ";
+
+			instance.getConfig().set("maintenancemsg", msg);
+			// TODO
 
 		} else
-			sender.sendMessage(usage);
+			sender.sendMessage(prefix + usage);
 	}
 
 	private void load() throws IOException {
