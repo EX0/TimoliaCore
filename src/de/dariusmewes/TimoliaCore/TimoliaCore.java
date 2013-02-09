@@ -2,15 +2,16 @@ package de.dariusmewes.TimoliaCore;
 
 import java.io.File;
 
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.dariusmewes.TimoliaCore.commands.CommandHandler;
 import de.dariusmewes.TimoliaCore.commands.TCommand;
+import de.dariusmewes.TimoliaCore.commands.deaths;
 import de.dariusmewes.TimoliaCore.events.PlayerListener;
 import de.dariusmewes.TimoliaCore.events.ServerListener;
 
@@ -55,14 +56,16 @@ public class TimoliaCore extends JavaPlugin {
 	}
 
 	private void initConfig() {
-		getConfig().addDefault("joinmsg", "");
-		getConfig().addDefault("quitmsg", "");
-		getConfig().addDefault("motd", "");
-		getConfig().addDefault("wartungstatus", false);
-		getConfig().addDefault("wartungmsg", "");
-		getConfig().addDefault("language", "en");
-		getConfig().addDefault("checkForUpdates", true);
-		getConfig().options().copyDefaults(true);
+		FileConfiguration conf = getConfig();
+		conf.addDefault("joinmsg", "");
+		conf.addDefault("quitmsg", "");
+		conf.addDefault("motd", "");
+		conf.addDefault("deathHiding", false);
+		conf.addDefault("wartungstatus", false);
+		conf.addDefault("wartungmsg", "");
+		conf.addDefault("language", "en");
+		conf.addDefault("checkForUpdates", true);
+		conf.options().copyDefaults(true);
 		saveConfig();
 
 		loadConfig();
@@ -72,6 +75,8 @@ public class TimoliaCore extends JavaPlugin {
 		PlayerListener.joinMsg = ChatColor.translateAlternateColorCodes('&', getConfig().getString("joinmsg"));
 		PlayerListener.quitMsg = ChatColor.translateAlternateColorCodes('&', getConfig().getString("quitmsg"));
 		check = getConfig().getBoolean("checkForUpdates");
+		
+		deaths.hidingEnabled = getConfig().getBoolean("deathHiding");
 
 		String language = getConfig().getString("language");
 		if (!(language.equalsIgnoreCase("de")))

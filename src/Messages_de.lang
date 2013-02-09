@@ -7,6 +7,8 @@ invalidItemID: Ungültige Item-ID
 usage: Benutzung: 
 noInt: Fehler: Keine Zahl
 
+deathsForAll: Todesmeldungen für alle Spieler aktiviert
+
 playerDamaged: Der Spieler bekam Schaden
 
 listNameSet: Der Listenname wurde geändert

@@ -1,12 +1,12 @@
 package de.dariusmewes.TimoliaCore.events;
 
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerLoginEvent;
@@ -14,6 +14,7 @@ import org.bukkit.event.player.PlayerLoginEvent.Result;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import de.dariusmewes.TimoliaCore.TimoliaCore;
+import de.dariusmewes.TimoliaCore.commands.deaths;
 
 public class PlayerListener implements Listener {
 
@@ -54,7 +55,7 @@ public class PlayerListener implements Listener {
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		if (!joinMsg.equalsIgnoreCase(""))
-			event.setJoinMessage(joinMsg.replaceAll("%p", event.getPlayer().getName()));
+			event.setJoinMessage(joinMsg.replaceAll("@p", event.getPlayer().getName()));
 
 		if (TimoliaCore.updateAvailable && (event.getPlayer().isOp() || event.getPlayer().hasPermission("headdrops.update"))) {
 			event.getPlayer().sendMessage(TimoliaCore.PREFIX + "A new version is available!");
@@ -65,7 +66,7 @@ public class PlayerListener implements Listener {
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent event) {
 		if (!quitMsg.equalsIgnoreCase(""))
-			event.setQuitMessage(quitMsg.replaceAll("%p", event.getPlayer().getName()));
+			event.setQuitMessage(quitMsg.replaceAll("@p", event.getPlayer().getName()));
 	}
 
 	// Wartung
@@ -74,6 +75,23 @@ public class PlayerListener implements Listener {
 		if (plugin.getConfig().getBoolean("wartungstatus") && !(event.getPlayer().hasPermission("timolia.identify.mod") || event.getPlayer().hasPermission("timolia.identify.admin"))) {
 			event.setKickMessage(ChatColor.DARK_RED + "[Timolia]\n\n" + ChatColor.WHITE + plugin.getConfig().getString("wartungmsg"));
 			event.setResult(Result.KICK_OTHER);
+		}
+	}
+
+	@EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
+	public void onPlayerDeath(PlayerDeathEvent event) {
+		if (deaths.hidingEnabled) {
+			String vanillaMsg = event.getDeathMessage();
+			event.setDeathMessage("");
+			for (Player p : Bukkit.getOnlinePlayers()) {
+				if (deaths.shuttedOff.contains(p.getName()))
+					continue;
+
+				if (event.getEntity().getWorld().getName().equalsIgnoreCase("sgames") && plugin.getConfig().getBoolean("sgamesdeathmsg"))
+					p.sendMessage(ChatColor.DARK_RED + vanillaMsg);
+				else
+					p.sendMessage(ChatColor.DARK_GRAY + vanillaMsg);
+			}
 		}
 	}
 }
