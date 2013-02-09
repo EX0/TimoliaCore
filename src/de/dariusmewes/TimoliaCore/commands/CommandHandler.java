@@ -36,12 +36,13 @@ public class CommandHandler {
 		add(new loc("loc"));
 		add(new loclist("loclist"));
 		add(new mode("mode"));
+		add(new pingmsg("pingmsg"));
 		add(new raw("raw"));
 		add(new removeloc("removeloc"));
 		add(new setloc("setloc"));
 		add(new skick("skick"));
 		add(new st("st"));
-		add(new timolia("timolia"));
+		add(new tcore("tcore"));
 		add(new visible("visible"));
 	}
 

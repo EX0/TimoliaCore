@@ -7,6 +7,14 @@ invalidItemID: Invalid Item-ID
 usage: Usage: 
 noInt: Error: Not a number
 
+listReloaded: The List has been reloaded
+alreadyOnTheList: %a1 is already on the List
+notOnTheList: %a1 isn't on the List
+errorSaveList: Error while trying to save the list
+errorLoadList: Error while trying to load the list
+addedToList: %a1 has been added to the list!
+removedFromList: %a1 has been removed from the list!
+
 deathsForAll: You've activated Deathmessages for all Players
 
 playerDamaged: The Player has been damaged

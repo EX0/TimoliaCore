@@ -48,8 +48,8 @@ public class TimoliaCore extends JavaPlugin {
 		conf.addDefault("quitmsg", "");
 		conf.addDefault("motd", "");
 		conf.addDefault("deathHiding", false);
-		conf.addDefault("wartungstatus", false);
-		conf.addDefault("wartungmsg", "");
+		conf.addDefault("maintenance", false);
+		conf.addDefault("maintenancemsg", "");
 		conf.addDefault("language", "en");
 		conf.addDefault("checkForUpdates", true);
 		conf.options().copyDefaults(true);

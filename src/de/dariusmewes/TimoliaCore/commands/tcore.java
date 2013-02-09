@@ -5,12 +5,13 @@ import org.bukkit.command.CommandSender;
 
 import de.dariusmewes.TimoliaCore.TimoliaCore;
 
-public class timolia extends TCommand {
+public class tcore extends TCommand {
 
-	public timolia(String name) {
+	public tcore(String name) {
 		super(name);
 		setMinArgs(1);
-		setUsage("/timolia reload v motd <msg> v wartung <on/off> [msg]");
+		setMaxArgs(1);
+		setUsage("/tcore reload");
 	}
 
 	public void perform(CommandSender sender, String[] args) {
