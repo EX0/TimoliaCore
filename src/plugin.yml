@@ -22,6 +22,7 @@ commands:
         usage: /<command>
     raw:
         usage: /<command>
+    tode:
     setloc:
         usage: /<command>
     removeloc:

@@ -40,7 +40,7 @@ public class TimoliaCore extends JavaPlugin {
 
 	private void initCommands() {
 		CommandHandler.setPluginInstance(this);
-		String[] commands = "armor,ca,cblock,cc,chat,clock,colors,console,ctp,damage,drop,dump,effect,exe,itemlore,itemname,listname,loc,loclist,mode,raw,removeloc,setloc,skick,st,timolia,visible".split(",");
+		String[] commands = "armor,ca,cblock,cc,chat,clock,colors,console,ctp,damage,deaths,drop,dump,effect,exe,itemlore,itemname,listname,loc,loclist,mode,raw,removeloc,setloc,skick,st,timolia,visible".split(",");
 		String pack = this.getClass().getPackage().getName() + ".commands.";
 		for (int i = 0; i < commands.length; i++)
 			try {
