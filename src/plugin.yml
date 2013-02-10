@@ -5,64 +5,95 @@ website: http://www.timolia.de/
 main: de.dariusmewes.TimoliaCore.TimoliaCore
 commands:
     access:
-        usage:/access <allow/deny> [msg] OR <add/remove> <name> OR <reload/list> OR setmsg <msg>
+        usage: /access <allow/deny> [msg] OR <add/remove> <name> OR <reload/list> OR setmsg <msg>
+        description: 
     armor:
-        usage:/armor [Player] <slot> <item-id>
+        usage: /armor [Player] <slot> <item-id>
+        description: 
     book:
-        usage:/book <load/save/author/title> [args]
+        usage: /book <load/save/author/title> [args]
+        description: 
     ca:
-        usage:/ca [Player]
+        usage: /ca [Player]
+        description: 
     cblock:
-        usage:/cblock
+        usage: /cblock
+        description: 
     cc:
-        usage:/cc [all/-a]
+        usage: /cc [all/-a]
+        description: 
     chat:
-        usage:/chat <Player> <msg>
+        usage: /chat <Player> <msg>
+        description: 
     clock:
-        usage:/clock
+        usage: /clock
+        description: 
     colors:
-        usage:/colors [Player]
+        usage: /colors [Player]
+        description: 
     console:
-        usage:/console <cmd>
+        usage: /console <cmd>
+        description: 
     ctp:
-        usage:/ctp <x> <y> <z> [Player]
+        usage: /ctp <x> <y> <z> [Player]
+        description: 
     damage:
-        usage:/damage <Player> <amount>
+        usage: /damage <Player> <amount>
+        description: 
     deaths:
-        usage:/deaths <on/off>
+        usage: /deaths <on/off>
+        description: 
     drop:
-        usage:/drop [all/item-id]
+        usage: /drop [all/item-id]
+        description: 
     dump:
-        usage:/dump
+        usage: /dump
+        description: 
     effect:
-        usage:/effect <add/remove> <effect> <power> <duration> [player]
+        usage: /effect <add/remove> <effect> <power> <duration> [player]
+        description: 
     exe:
-        usage:/exe <Spieler> <Befehl>
+        usage: /exe <Spieler> <Befehl>
+        description: 
     itemlore:
-        usage:/itemlore <add/remove> <name>
+        usage: /itemlore <add/remove> <name>
+        description: 
     itemname:
-        usage:/itemname <name>
+        usage: /itemname <name>
+        description: 
     listname:
-        usage:/listname [Player] <Name>
+        usage: /listname [Player] <Name>
+        description: 
     loc:
-        usage:/loc <Location> [Player]
+        usage: /loc <Location> [Player]
+        description: 
     loclist:
-        usage:/loclist
+        usage: /loclist
+        description: 
     mode:
-        usage:/mode
+        usage: /mode
+        description: 
     pingmsg:
-        usage:/pingmsg <msg>
+        usage: /pingmsg <msg>
+        description: 
     raw:
-        usage:/raw [-s] <msg>
+        usage: /raw [-s] <msg>
+        description: 
     removeloc:
-        usage:/removeloc <Location>
+        usage: /removeloc <Location>
+        description: 
     setloc:
-        usage:/setloc <name>
+        usage: /setloc <name>
+        description: 
     skick:
-        usage:/skick <Spieler> <msg>
+        usage: /skick <Spieler> <msg>
+        description: 
     st:
-        usage:/st <msg>
+        usage: /st <msg>
+        description: 
     tcore:
-        usage:/tcore reload
+        usage: /tcore reload
+        description: 
     visible:
-        usage:/visible [player/all]
+        usage: /visible [player/all]
+        description: 

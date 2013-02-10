@@ -87,9 +87,15 @@ public class CommandHandler {
 		try {
 			File file = new File(System.getProperty("user.home") + File.separator + "commands.txt");
 			BufferedWriter output = new BufferedWriter(new FileWriter(file));
-			for (TCommand cmd : commands)
-				output.append("    " + cmd.getName() + ":\n        usage:" + cmd.getCleanUsage() + "\n");
-
+			for (TCommand cmd : commands) {
+				output.append("    " + cmd.getName() + ":");
+				output.newLine();
+				output.append("        usage: " + cmd.getCleanUsage());
+				output.newLine();
+				output.append("        description: ");
+				output.newLine();
+			}
+			
 			output.close();
 			Message.console("DONE");
 		} catch (Exception e) {
