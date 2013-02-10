@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Logger;
 
 import org.bukkit.Bukkit;
@@ -13,7 +14,7 @@ import org.bukkit.entity.Player;
 
 public class Message {
 
-	private static HashMap<String, String> values = new HashMap<String, String>();
+	private static Map<String, String> values = new HashMap<String, String>();
 
 	public static void console(String message) {
 		Logger.getLogger("Minecraft").info("[Timolia] " + message);
@@ -91,4 +92,5 @@ public class Message {
 			e.printStackTrace();
 		}
 	}
+	
 }

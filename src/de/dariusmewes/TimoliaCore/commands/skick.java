@@ -21,7 +21,7 @@ public class skick extends TCommand {
 			return;
 		}
 
-		String msg = "Internal Server Error";
+		String msg = instance.getConfig().getString("defaultSkick");
 
 		if (args.length > 1) {
 			msg = "";
