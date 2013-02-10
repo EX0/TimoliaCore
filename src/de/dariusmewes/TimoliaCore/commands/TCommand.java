@@ -18,7 +18,7 @@ public abstract class TCommand {
 
 	public TCommand(String name) {
 		this.name = name;
-		this.permission = name;
+		this.permission = "tcore." + name;
 	}
 
 	public abstract void perform(CommandSender sender, String[] args);

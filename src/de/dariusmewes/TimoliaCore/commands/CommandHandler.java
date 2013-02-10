@@ -3,7 +3,8 @@ package de.dariusmewes.TimoliaCore.commands;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -14,7 +15,7 @@ import de.dariusmewes.TimoliaCore.TimoliaCore;
 
 public class CommandHandler {
 
-	private static Vector<TCommand> commands = new Vector<TCommand>();
+	private static List<TCommand> commands = new ArrayList<TCommand>();
 
 	public static void init(TimoliaCore instance) {
 		add(new access("access"));
@@ -95,7 +96,7 @@ public class CommandHandler {
 				output.append("        description: ");
 				output.newLine();
 			}
-			
+
 			output.close();
 			Message.console("DONE");
 		} catch (Exception e) {
