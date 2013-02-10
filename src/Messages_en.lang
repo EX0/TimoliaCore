@@ -6,6 +6,7 @@ emptyHand: Your Hand is empty
 invalidItemID: Invalid Item-ID
 usage: Usage: 
 noInt: Error: Not a number
+listEmpty: The list is empty
 
 deathsForAll: You've activated Deathmessages for all Players
 

@@ -2,6 +2,7 @@ package de.dariusmewes.TimoliaCore;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
@@ -51,13 +52,27 @@ public class Message {
 		return msg;
 	}
 
-	public static void loadLanguageFile(String language) {
+	public static void loadLanguageFile(String language, boolean debug) {
 		try {
-			InputStream stream = Message.class.getResourceAsStream(File.separator + "Messages_" + language + ".lang");
-			InputStreamReader reader = new InputStreamReader(stream);
-			BufferedReader input = new BufferedReader(reader);
+			InputStream stream = null;
+			InputStreamReader reader = null;
+			BufferedReader input;
+			if (debug) {
+				File file = new File(System.getProperty("user.home") + File.separator + "Desktop/code/ws/TimoliaCore/src/Messages_" + language + ".lang");
+				if (!file.exists()) {
+					loadLanguageFile(language, false);
+					return;
+				}
+
+				input = new BufferedReader(new FileReader(file));
+			} else {
+				stream = Message.class.getResourceAsStream(File.separator + "Messages_" + language + ".lang");
+				reader = new InputStreamReader(stream);
+				input = new BufferedReader(reader);
+			}
+
 			values.clear();
-			String line = "";
+			String line;
 			while ((line = input.readLine()) != null) {
 				if (line.equalsIgnoreCase(""))
 					continue;
@@ -67,12 +82,13 @@ public class Message {
 				values.put(data[0], data[1]);
 			}
 
-			stream.close();
-			reader.close();
+			if (!debug) {
+				stream.close();
+				reader.close();
+			}
 			input.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
 }

@@ -20,6 +20,7 @@ public class TimoliaCore extends JavaPlugin {
 	public static boolean updateAvailable = false;
 	public static boolean check = false;
 	public static File dataFolder;
+	private static boolean debug = true;
 
 	public void onEnable() {
 		CommandHandler.init(this);
@@ -70,7 +71,7 @@ public class TimoliaCore extends JavaPlugin {
 		if (!(language.equalsIgnoreCase("de")))
 			language = "en";
 
-		Message.loadLanguageFile(language);
+		Message.loadLanguageFile(language, debug);
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {

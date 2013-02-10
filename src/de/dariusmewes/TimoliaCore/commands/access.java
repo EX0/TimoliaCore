@@ -22,7 +22,7 @@ public class access extends TCommand {
 	public access(String name) {
 		super(name);
 		setMinArgs(1);
-		setUsage("/access <allow/deny> [message] OR <add/remove> <name> OR reload OR setmsg <msg>");
+		setUsage("/access <allow/deny> [msg] OR <add/remove> <name> OR <reload/list> OR setmsg <msg>");
 	}
 
 	public void perform(CommandSender sender, String[] args) {
@@ -35,6 +35,19 @@ public class access extends TCommand {
 			}
 			return;
 
+		} else if (args[0].equalsIgnoreCase("list")) {
+			if (players.size() == 0) {
+				sender.sendMessage(_("listEmpty"));
+			} else if (players.size() == 1) {
+				sender.sendMessage(prefix + players.get(0));
+			} else {
+				String out = "";
+				for (int i = 0; i < players.size() - 1; i++)
+					out += players.get(i) + ", ";
+
+				out += players.get(players.size() - 1);
+				sender.sendMessage(prefix + out);
+			}
 		} else if (args[0].equalsIgnoreCase("allow")) {
 			instance.getConfig().set("maintenance", false);
 			instance.saveConfig();

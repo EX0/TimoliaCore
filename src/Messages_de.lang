@@ -6,6 +6,7 @@ emptyHand: Deine Hand ist leer
 invalidItemID: Ungültige Item-ID
 usage: Benutzung: 
 noInt: Fehler: Keine Zahl
+listEmpty: Die Liste ist leer
 
 deathsForAll: Todesmeldungen für alle Spieler aktiviert
 
