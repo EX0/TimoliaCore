@@ -46,4 +46,5 @@ public class ca extends TCommand {
 			p.sendMessage(usage);
 		}
 	}
+
 }

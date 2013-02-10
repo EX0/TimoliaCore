@@ -82,4 +82,5 @@ public abstract class TCommand {
 	protected String __(String... key) {
 		return Message.__(key);
 	}
+
 }

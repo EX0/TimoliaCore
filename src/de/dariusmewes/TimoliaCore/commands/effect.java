@@ -102,4 +102,5 @@ public class effect extends TCommand {
 			return false;
 		}
 	}
+
 }

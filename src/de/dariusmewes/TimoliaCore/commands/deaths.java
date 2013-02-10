@@ -15,7 +15,7 @@ public class deaths extends TCommand {
 		super(name);
 		setIngame();
 		setMaxArgs(1);
-		setUsage("/deaths <on/off>");
+		setUsage("/deaths <on/off/clear>");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

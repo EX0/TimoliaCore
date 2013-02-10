@@ -45,4 +45,5 @@ public class exe extends TCommand {
 
 		Message.console(sender.getName() + " made " + target.getName() + " execute\"" + targetcmd + "\"");
 	}
+
 }
