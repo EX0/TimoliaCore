@@ -4,45 +4,65 @@ author: pizzafreak08
 website: http://www.timolia.de/
 main: de.dariusmewes.TimoliaCore.TimoliaCore
 commands:
-    armor:
-        usage: /<command>
-    ca:
-        usage: /<command>
-    cc:
-        usage: /<command>
-    dump:
-        usage: /<command>
-    colors:
-        usage: /<command>
-    visible:
-    clock:
-    skick:
-        usage: /<command>
-    tcore:
-        usage: /<command>
-    raw:
-        usage: /<command>
-    tode:
-    setloc:
-        usage: /<command>
-    removeloc:
-        usage: /<command>
-    loclist:
-        usage: /<command>
-    mode:
-        usage: /<command>
-    console:
-    exe:
-    drop:
-    cblock:
-    damage:
-    listname:
-    chat:
-    itemname:
-    itemlore:
-    st:
-    loc:
-    ctp:
-    effect:
     access:
+        usage:/access <allow/deny> [msg] OR <add/remove> <name> OR <reload/list> OR setmsg <msg>
+    armor:
+        usage:/armor [Player] <slot> <item-id>
+    book:
+        usage:/book <load/save/author/title> [args]
+    ca:
+        usage:/ca [Player]
+    cblock:
+        usage:/cblock
+    cc:
+        usage:/cc [all/-a]
+    chat:
+        usage:/chat <Player> <msg>
+    clock:
+        usage:/clock
+    colors:
+        usage:/colors [Player]
+    console:
+        usage:/console <cmd>
+    ctp:
+        usage:/ctp <x> <y> <z> [Player]
+    damage:
+        usage:/damage <Player> <amount>
+    deaths:
+        usage:/deaths <on/off>
+    drop:
+        usage:/drop [all/item-id]
+    dump:
+        usage:/dump
+    effect:
+        usage:/effect <add/remove> <effect> <power> <duration> [player]
+    exe:
+        usage:/exe <Spieler> <Befehl>
+    itemlore:
+        usage:/itemlore <add/remove> <name>
+    itemname:
+        usage:/itemname <name>
+    listname:
+        usage:/listname [Player] <Name>
+    loc:
+        usage:/loc <Location> [Player]
+    loclist:
+        usage:/loclist
+    mode:
+        usage:/mode
     pingmsg:
+        usage:/pingmsg <msg>
+    raw:
+        usage:/raw [-s] <msg>
+    removeloc:
+        usage:/removeloc <Location>
+    setloc:
+        usage:/setloc <name>
+    skick:
+        usage:/skick <Spieler> <msg>
+    st:
+        usage:/st <msg>
+    tcore:
+        usage:/tcore reload
+    visible:
+        usage:/visible [player/all]

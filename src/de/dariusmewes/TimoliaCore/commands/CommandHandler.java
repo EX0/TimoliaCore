@@ -1,5 +1,8 @@
 package de.dariusmewes.TimoliaCore.commands;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.Vector;
 
 import org.bukkit.command.Command;
@@ -45,7 +48,7 @@ public class CommandHandler {
 		add(new st("st"));
 		add(new tcore("tcore"));
 		add(new visible("visible"));
-		
+
 		TCommand.setPluginInstance(instance);
 	}
 
@@ -80,6 +83,20 @@ public class CommandHandler {
 		commands.add(command);
 	}
 
+	public static void list() {
+		try {
+			File file = new File(System.getProperty("user.home") + File.separator + "commands.txt");
+			BufferedWriter output = new BufferedWriter(new FileWriter(file));
+			for (TCommand cmd : commands)
+				output.append("    " + cmd.getName() + ":\n        usage:" + cmd.getCleanUsage() + "\n");
+
+			output.close();
+			Message.console("DONE");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	public static TCommand getCommand(Command cmd) {
 		for (TCommand c : commands) {
 			if (cmd.getName().equalsIgnoreCase(c.getName()))
@@ -88,5 +105,5 @@ public class CommandHandler {
 
 		return null;
 	}
-	
+
 }

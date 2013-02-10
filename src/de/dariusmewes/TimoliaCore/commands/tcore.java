@@ -2,6 +2,8 @@ package de.dariusmewes.TimoliaCore.commands;
 
 import org.bukkit.command.CommandSender;
 
+import de.dariusmewes.TimoliaCore.TimoliaCore;
+
 public class tcore extends TCommand {
 
 	public tcore(String name) {
@@ -16,6 +18,8 @@ public class tcore extends TCommand {
 			instance.reloadConfig();
 			instance.loadConfig();
 			sender.sendMessage(_("configReloaded"));
+		} else if (args[0].equalsIgnoreCase("debug") && TimoliaCore.debug) {
+			CommandHandler.list();
 		} else
 			sender.sendMessage(prefix + usage);
 	}

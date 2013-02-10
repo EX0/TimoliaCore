@@ -48,6 +48,8 @@ public class access extends TCommand {
 				out += players.get(players.size() - 1);
 				sender.sendMessage(prefix + out);
 			}
+			return;
+			
 		} else if (args[0].equalsIgnoreCase("allow")) {
 			instance.getConfig().set("maintenance", false);
 			instance.saveConfig();
