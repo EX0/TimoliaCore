@@ -17,7 +17,7 @@ public class Message {
 	private static Map<String, String> values = new HashMap<String, String>();
 
 	public static void console(String message) {
-		Logger.getLogger("Minecraft").info("[Timolia] " + message);
+		Logger.getLogger("Minecraft").info("[TCore] " + message);
 	}
 
 	public static void online(String message) {
