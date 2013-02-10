@@ -49,7 +49,7 @@ public class TimoliaCore extends JavaPlugin {
 		conf.addDefault("motd", "");
 		conf.addDefault("deathHiding", false);
 		conf.addDefault("maintenance", false);
-		conf.addDefault("maintenancemsg", "");
+		conf.addDefault("maintenancemsg", "This server is currently under maintenance");
 		conf.addDefault("servername", "&4[Server]");
 		conf.addDefault("language", "en");
 		conf.addDefault("checkForUpdates", true);
@@ -70,7 +70,7 @@ public class TimoliaCore extends JavaPlugin {
 		if (!(language.equalsIgnoreCase("de")))
 			language = "en";
 
-		Message.loadLanguageFile(this.getClass().getResourceAsStream(File.separator + "Messages_" + language + ".lang"));
+		Message.loadLanguageFile(language);
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {

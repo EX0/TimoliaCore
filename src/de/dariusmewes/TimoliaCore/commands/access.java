@@ -22,7 +22,7 @@ public class access extends TCommand {
 	public access(String name) {
 		super(name);
 		setMinArgs(1);
-		setUsage("/access <allow/deny> [message] OR <add/remove> <name> OR reload");
+		setUsage("/access <allow/deny> [message] OR <add/remove> <name> OR reload OR setmsg <msg>");
 	}
 
 	public void perform(CommandSender sender, String[] args) {
@@ -43,7 +43,6 @@ public class access extends TCommand {
 
 		} else if (args[0].equalsIgnoreCase("deny")) {
 			instance.getConfig().set("maintenance", true);
-			instance.saveConfig();
 			sender.sendMessage(_("accessOn"));
 			if (args.length > 1) {
 				String msg = "";
@@ -53,6 +52,7 @@ public class access extends TCommand {
 				instance.getConfig().set("maintenancemsg", ChatColor.translateAlternateColorCodes('&', msg));
 				sender.sendMessage(_("msgSet"));
 			}
+			instance.saveConfig();
 			return;
 		}
 
@@ -60,6 +60,8 @@ public class access extends TCommand {
 			sender.sendMessage(prefix + usage);
 			return;
 		}
+
+		// mind. 2 args
 
 		if (args[0].equalsIgnoreCase("add")) {
 			if (players.contains(args[1].toLowerCase())) {
@@ -89,13 +91,14 @@ public class access extends TCommand {
 				sender.sendMessage(_("errorSaveList"));
 			}
 
-		} else if (args[0].equalsIgnoreCase("addmessage")) {
+		} else if (args[0].equalsIgnoreCase("setmsg")) {
 			String msg = "";
 			for (int i = 1; i < args.length; i++)
 				msg += args[i] + " ";
 
-			instance.getConfig().set("maintenancemsg", msg);
-			// TODO
+			instance.getConfig().set("maintenancemsg", ChatColor.translateAlternateColorCodes('&', msg));
+			instance.saveConfig();
+			sender.sendMessage(_("msgSet"));
 
 		} else
 			sender.sendMessage(prefix + usage);

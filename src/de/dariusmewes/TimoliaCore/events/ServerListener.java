@@ -1,6 +1,5 @@
 package de.dariusmewes.TimoliaCore.events;
 
-
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -22,4 +21,5 @@ public class ServerListener implements Listener {
 		if (!motd.equalsIgnoreCase(""))
 			event.setMotd(motd);
 	}
+
 }

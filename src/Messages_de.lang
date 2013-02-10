@@ -7,14 +7,6 @@ invalidItemID: Ungültige Item-ID
 usage: Benutzung: 
 noInt: Fehler: Keine Zahl
 
-listReloaded: Die Liste wurde neu geladen
-alreadyOnTheList: %a1 ist schon auf der Liste
-notOnTheList: %a1 ist nicht auf der Liste
-errorSaveList: Fehler beim Speichern der Liste
-errorLoadList: Fehler beim Laden der Liste
-addedToList: %a1 wurde der Liste hinzugefügt!
-removedFromList: %a1 wurde von der Liste entfernt!
-
 deathsForAll: Todesmeldungen für alle Spieler aktiviert
 
 playerDamaged: Der Spieler bekam Schaden
@@ -112,5 +104,12 @@ motdSet: Die MOTD wurde gesetzt
 accessOn: Wartungsmodus aktiviert
 accessOff: Wartungsmodus deaktiviert
 msgSet: Nachricht festgelegt
+listReloaded: Die Liste wurde neu geladen
+alreadyOnTheList: %a1 ist schon auf der Liste
+notOnTheList: %a1 ist nicht auf der Liste
+errorSaveList: Fehler beim Speichern der Liste
+errorLoadList: Fehler beim Laden der Liste
+addedToList: %a1 wurde der Liste hinzugefügt!
+removedFromList: %a1 wurde von der Liste entfernt!
 
 dateTime: Datum und Uhrzeit: %a1

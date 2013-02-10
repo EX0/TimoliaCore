@@ -18,7 +18,7 @@ commands:
     clock:
     skick:
         usage: /<command>
-    timolia:
+    tcore:
         usage: /<command>
     raw:
         usage: /<command>
@@ -45,3 +45,4 @@ commands:
     ctp:
     effect:
     access:
+    pingmsg:

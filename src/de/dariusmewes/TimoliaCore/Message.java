@@ -1,7 +1,7 @@
 package de.dariusmewes.TimoliaCore;
 
 import java.io.BufferedReader;
-import java.io.IOException;
+import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
@@ -51,12 +51,13 @@ public class Message {
 		return msg;
 	}
 
-	public static void loadLanguageFile(InputStream stream) {
+	public static void loadLanguageFile(String language) {
 		try {
-			InputStreamReader streamReader = new InputStreamReader(stream);
-			BufferedReader input = new BufferedReader(new InputStreamReader(stream));
-			String line;
+			InputStream stream = Message.class.getResourceAsStream(File.separator + "Messages_" + language + ".lang");
+			InputStreamReader reader = new InputStreamReader(stream);
+			BufferedReader input = new BufferedReader(reader);
 			values.clear();
+			String line = "";
 			while ((line = input.readLine()) != null) {
 				if (line.equalsIgnoreCase(""))
 					continue;
@@ -67,10 +68,11 @@ public class Message {
 			}
 
 			stream.close();
-			streamReader.close();
+			reader.close();
 			input.close();
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
 }
