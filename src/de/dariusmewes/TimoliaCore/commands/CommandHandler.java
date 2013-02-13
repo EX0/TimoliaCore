@@ -99,7 +99,7 @@ public class CommandHandler {
 				output.newLine();
 				output.append("        usage: " + cmd.getCleanUsage());
 				output.newLine();
-				output.append("        description: ");
+				output.append("        description: " + cmd.getDescription());
 				output.newLine();
 			}
 
