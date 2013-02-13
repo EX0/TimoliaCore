@@ -17,11 +17,11 @@ import de.dariusmewes.TimoliaCore.events.ServerListener;
 
 public class TimoliaCore extends JavaPlugin {
 
-	public static final String PREFIX = ChatColor.DARK_RED + "[Timolia] " + ChatColor.WHITE;
+	public static final String PREFIX = ChatColor.DARK_RED + "[TCore] " + ChatColor.WHITE;
 	public static boolean updateAvailable = false;
 	public static boolean check = false;
 	public static File dataFolder;
-	public static boolean debug = true;
+	public static boolean coding = true;
 
 	public void onEnable() {
 		CommandHandler.init(this);
@@ -77,7 +77,7 @@ public class TimoliaCore extends JavaPlugin {
 		if (!(language.equalsIgnoreCase("de")))
 			language = "en";
 
-		Message.loadLanguageFile(language, debug);
+		Message.loadLanguageFile(language, coding);
 
 		if (asave.stopAutoSave())
 			Message.console("Autosave stopped!");

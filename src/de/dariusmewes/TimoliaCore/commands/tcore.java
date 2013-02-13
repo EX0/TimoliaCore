@@ -18,7 +18,7 @@ public class tcore extends TCommand {
 			instance.reloadConfig();
 			instance.loadConfig();
 			sender.sendMessage(_("configReloaded"));
-		} else if (args[0].equalsIgnoreCase("debug") && TimoliaCore.debug) {
+		} else if (args[0].equalsIgnoreCase("debug") && TimoliaCore.coding) {
 			CommandHandler.list();
 		} else
 			sender.sendMessage(prefix + usage);

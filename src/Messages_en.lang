@@ -6,8 +6,17 @@ emptyHand: Your Hand is empty
 invalidItemID: Invalid Item-ID
 usage: Usage: 
 noInt: Error: Not a number
+noInt2: Error: Not a number "%a1"
 listEmpty: The list is empty
+
 autosavebcast: All data has been saved!
+saveTimeSet: The Delay has been set!
+enterTime: Please enter a valid Time!
+asaveRestarted: Autosave has been restarted!
+running: is active!
+notRunning: isn't active!
+saveStart: Autosave has been started
+saveStop: Autosave has been stopped
 
 deathsForAll: You've activated Deathmessages for all Players
 

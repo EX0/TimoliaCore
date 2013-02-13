@@ -6,8 +6,17 @@ emptyHand: Deine Hand ist leer
 invalidItemID: Ungültige Item-ID
 usage: Benutzung: 
 noInt: Fehler: Keine Zahl
+noInt2: Fehler: Keine Zahl "%a2"
 listEmpty: Die Liste ist leer
+
 autosavebcast: Daten gespeichert!
+saveTimeSet: Die Zeit wurde eingestellt!
+enterTime: Bitte gib eine Zeit an!
+asaveRestarted: Autosave wurde neu gestartet!
+running: ist aktiv!
+notRunning: ist nicht aktiv!
+saveStart: Autosave wurde gestartet
+saveStop: Autosave wurde gestoppt
 
 deathsForAll: Todesmeldungen für alle Spieler aktiviert
 

@@ -16,28 +16,31 @@ public class asave extends TCommand {
 		super(name);
 		setMinArgs(1);
 		setMaxArgs(2);
+		setUsage("/asave <start/stop/delay/status>");
 	}
 
 	public void perform(CommandSender sender, String[] args) {
 		if (args[0].equalsIgnoreCase("start")) {
 			if (startAutoSave()) {
-				sender.sendMessage("gestartet");
+				sender.sendMessage(_("saveStart"));
+				Message.console("Autosave started!");
 				instance.getConfig().set("autosave", true);
 				instance.saveConfig();
 			} else
-				sender.sendMessage("läuft schon!");
+				sender.sendMessage(prefix + "Autosave " + __("running"));
 
 		} else if (args[0].equalsIgnoreCase("stop")) {
 			if (stopAutoSave()) {
-				sender.sendMessage("gestoppt");
+				sender.sendMessage(_("saveStop"));
+				Message.console("Autosave stopped!");
 				instance.getConfig().set("autosave", false);
 				instance.saveConfig();
 			} else
-				sender.sendMessage("läuft nicht!");
+				sender.sendMessage(prefix + "Autosave " + __("notRunning"));
 
 		} else if (args[0].equalsIgnoreCase("delay")) {
 			if (args.length == 1) {
-				sender.sendMessage("gib eine zeit an!");
+				sender.sendMessage(_("enterTime"));
 				return;
 			}
 
@@ -45,24 +48,25 @@ public class asave extends TCommand {
 			try {
 				delay = Long.valueOf(args[1]);
 			} catch (NumberFormatException e) {
-				sender.sendMessage("keine zahl");
+				sender.sendMessage(_("noInt2", args[1]));
 				return;
 			}
 
 			instance.getConfig().set("autosavedelay", delay);
 			instance.saveConfig();
-			sender.sendMessage("zeit gesetzt!");
+			sender.sendMessage(_("saveTimeSet"));
 			if (running) {
 				stopAutoSave();
 				startAutoSave();
-				sender.sendMessage("neu gestartet");
+				sender.sendMessage(_("asaveRestarted"));
+				Message.console("Restarted Autosave-Timer with a delay of " + delay + " minutes");
 			}
 
 		} else if (args[0].equalsIgnoreCase("status")) {
-			sender.sendMessage(running ? "läuft" : "läuft nicht");
+			sender.sendMessage(prefix + "Autosave " + (running ? __("running") : __("notRunning")));
 
 		} else
-			sender.sendMessage(prefix + usage);
+			sender.sendMessage(usage);
 	}
 
 	public static boolean startAutoSave() {
@@ -84,9 +88,9 @@ public class asave extends TCommand {
 				for (World w : Bukkit.getWorlds())
 					w.save();
 
+				Message.console(__("autosavebcast"));
 				if (instance.getConfig().getBoolean("autosavebcast")) {
-					Message.online(ChatColor.DARK_BLUE + _("autosavebcast"));
-					Message.console(_("autosavebcast"));
+					Message.online(ChatColor.GOLD + __("autosavebcast"));
 				}
 			}
 		}, delay, delay);
