@@ -7,6 +7,7 @@ invalidItemID: Invalid Item-ID
 usage: Usage: 
 noInt: Error: Not a number
 listEmpty: The list is empty
+autosavebcast: All data has been saved!
 
 deathsForAll: You've activated Deathmessages for all Players
 

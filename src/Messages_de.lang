@@ -7,6 +7,7 @@ invalidItemID: Ungültige Item-ID
 usage: Benutzung: 
 noInt: Fehler: Keine Zahl
 listEmpty: Die Liste ist leer
+autosavebcast: Daten gespeichert!
 
 deathsForAll: Todesmeldungen für alle Spieler aktiviert
 

@@ -13,7 +13,7 @@ public abstract class TCommand {
 	private int minArgs = 0;
 	private int maxArgs = -1;
 	protected String usage = "";
-	protected String prefix = TimoliaCore.PREFIX;
+	protected static String prefix = TimoliaCore.PREFIX;
 	protected static TimoliaCore instance;
 
 	public TCommand(String name) {
@@ -75,11 +75,11 @@ public abstract class TCommand {
 		return this.usage;
 	}
 
-	protected String _(String... key) {
+	protected static String _(String... key) {
 		return Message._(key);
 	}
 
-	protected String __(String... key) {
+	protected static String __(String... key) {
 		return Message.__(key);
 	}
 

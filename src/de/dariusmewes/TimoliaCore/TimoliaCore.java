@@ -10,6 +10,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.dariusmewes.TimoliaCore.commands.CommandHandler;
+import de.dariusmewes.TimoliaCore.commands.asave;
 import de.dariusmewes.TimoliaCore.commands.deaths;
 import de.dariusmewes.TimoliaCore.events.PlayerListener;
 import de.dariusmewes.TimoliaCore.events.ServerListener;
@@ -35,7 +36,8 @@ public class TimoliaCore extends JavaPlugin {
 	}
 
 	public void onDisable() {
-
+		if(asave.stopAutoSave())
+			Message.console("Autosave stopped!");
 	}
 
 	private void initEventHandlers() {
@@ -53,6 +55,9 @@ public class TimoliaCore extends JavaPlugin {
 		conf.addDefault("maintenance", false);
 		conf.addDefault("maintenancemsg", "This server is currently under maintenance");
 		conf.addDefault("servername", "&4[Server]");
+		conf.addDefault("autosave", false);
+		conf.addDefault("autosavedelay", 5);
+		conf.addDefault("autosavebcast", true);
 		conf.addDefault("language", "en");
 		conf.addDefault("checkForUpdates", true);
 		conf.options().copyDefaults(true);
@@ -73,6 +78,14 @@ public class TimoliaCore extends JavaPlugin {
 			language = "en";
 
 		Message.loadLanguageFile(language, debug);
+
+		if (asave.stopAutoSave())
+			Message.console("Autosave stopped!");
+
+		if (getConfig().getBoolean("autosave")) {
+			asave.startAutoSave();
+			Message.console("Autosave started!");
+		}
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -87,5 +100,5 @@ public class TimoliaCore extends JavaPlugin {
 
 		return name;
 	}
-	
+
 }

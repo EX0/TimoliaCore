@@ -20,6 +20,7 @@ public class CommandHandler {
 	public static void init(TimoliaCore instance) {
 		add(new access("access"));
 		add(new armor("armor"));
+		add(new asave("asave"));
 		add(new book("book"));
 		add(new ca("ca"));
 		add(new cblock("cblock"));
