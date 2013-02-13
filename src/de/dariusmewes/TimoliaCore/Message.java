@@ -54,7 +54,7 @@ public class Message {
 	}
 
 	public static void loadLanguageFile(String language, boolean debug) {
-		Message.console("Loading Messages for: " + language + "...");
+		Message.console("Loading " + language + "-Messages...");
 		try {
 			InputStream stream = null;
 			InputStreamReader reader = null;

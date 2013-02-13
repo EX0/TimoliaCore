@@ -33,6 +33,8 @@ public class TimoliaCore extends JavaPlugin {
 
 		// new File(dataFolder + File.separator + "books").mkdir();
 		new File(dataFolder + File.separator + "locations").mkdir();
+		if (coding)
+			Message.console("PLUGIN RUNNING IN CODING-MODE!!! BE CAREFUL!!!");
 	}
 
 	public void onDisable() {
