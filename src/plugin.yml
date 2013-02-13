@@ -10,6 +10,9 @@ commands:
     armor:
         usage: /armor [Player] <slot> <item-id>
         description: 
+    asave:
+        usage: /asave <start/stop/delay/status>
+        description: 
     book:
         usage: /book <author/title> [args]
         description: 
@@ -97,4 +100,3 @@ commands:
     visible:
         usage: /visible [player/all]
         description: 
-    asave:

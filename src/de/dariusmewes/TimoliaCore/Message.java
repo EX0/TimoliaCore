@@ -54,6 +54,7 @@ public class Message {
 	}
 
 	public static void loadLanguageFile(String language, boolean debug) {
+		Message.console("Loading Messages for: " + language + "...");
 		try {
 			InputStream stream = null;
 			InputStreamReader reader = null;
@@ -87,9 +88,11 @@ public class Message {
 				stream.close();
 				reader.close();
 			}
+			
 			input.close();
+			Message.console("Succeeded!");
 		} catch (Exception e) {
-			e.printStackTrace();
+			Message.console("Failed: " + e.getMessage());
 		}
 	}
 	
