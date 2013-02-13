@@ -47,9 +47,8 @@ public class UpdateChecker {
 			byte[] buffer = new byte[1024];
 			int i = 0;
 
-			while ((i = input.read(buffer, 0, 1024)) >= 0) {
+			while ((i = input.read(buffer, 0, 1024)) >= 0)
 				output.write(buffer, 0, i);
-			}
 
 			input.close();
 			output.close();
@@ -103,5 +102,5 @@ public class UpdateChecker {
 
 		return nValue.getNodeValue();
 	}
-	
+
 }
