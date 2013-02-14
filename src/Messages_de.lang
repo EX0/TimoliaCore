@@ -19,6 +19,8 @@ saveStart: Autosave wurde gestartet
 saveStop: Autosave wurde gestoppt
 
 deathsForAll: Todesmeldungen für alle Spieler aktiviert
+deathsActivated: Todesmeldungen sind nun sichtbar
+deathsDeactivated: Todesmeldungen sind nicht mehr sichtbar
 
 playerDamaged: Der Spieler bekam Schaden
 

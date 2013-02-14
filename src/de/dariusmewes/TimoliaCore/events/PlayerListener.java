@@ -18,7 +18,6 @@ import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerLoginEvent.Result;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-import de.dariusmewes.TimoliaCore.Message;
 import de.dariusmewes.TimoliaCore.TimoliaCore;
 import de.dariusmewes.TimoliaCore.commands.access;
 import de.dariusmewes.TimoliaCore.commands.deaths;
@@ -79,9 +78,6 @@ public class PlayerListener implements Listener {
 	// Wartung
 	@EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
 	public void onPlayerLogin(PlayerLoginEvent event) {
-		if (plugin.getConfig().getBoolean("maintenance"))
-			Message.console("debug access");
-
 		if (plugin.getConfig().getBoolean("maintenance") && !(access.isAllowed(event.getPlayer()))) {
 			event.setKickMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("servername")) + ChatColor.WHITE + " " + plugin.getConfig().getString("maintenancemsg"));
 			event.setResult(Result.KICK_OTHER);

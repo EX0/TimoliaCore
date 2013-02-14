@@ -19,6 +19,8 @@ saveStart: Autosave has been started
 saveStop: Autosave has been stopped
 
 deathsForAll: You've activated Deathmessages for all Players
+deathsActivated: Deathmessages activated
+deathsDeactivated: Deathmessages deactivated
 
 playerDamaged: The Player has been damaged
 

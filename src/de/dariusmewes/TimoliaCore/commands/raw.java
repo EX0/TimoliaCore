@@ -31,7 +31,7 @@ public class raw extends TCommand {
 			start = 1;
 
 		} else {
-			Message.certain(_("fakemsgNotify"), "timolia.raw.notify");
+			Message.certain(_("fakeMsgNotify"), "tcore.raw.notify");
 			start = 0;
 		}
 

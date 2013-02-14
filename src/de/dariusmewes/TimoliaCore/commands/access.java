@@ -125,7 +125,7 @@ public class access extends TCommand {
 			sender.sendMessage(prefix + usage);
 	}
 
-	private void load() throws IOException {
+	public static void load() throws IOException {
 		File file = new File(TimoliaCore.dataFolder + File.separator + "access.txt");
 		if (!file.exists()) {
 			file.createNewFile();
@@ -140,7 +140,7 @@ public class access extends TCommand {
 		input.close();
 	}
 
-	private void save() throws IOException {
+	public static void save() throws IOException {
 		File file = new File(TimoliaCore.dataFolder + File.separator + "access.txt");
 		if (!file.exists())
 			file.createNewFile();

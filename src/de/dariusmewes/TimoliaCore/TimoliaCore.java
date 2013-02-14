@@ -6,6 +6,7 @@
 package de.dariusmewes.TimoliaCore;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -15,6 +16,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.dariusmewes.TimoliaCore.commands.CommandHandler;
+import de.dariusmewes.TimoliaCore.commands.access;
 import de.dariusmewes.TimoliaCore.commands.asave;
 import de.dariusmewes.TimoliaCore.commands.deaths;
 import de.dariusmewes.TimoliaCore.events.PlayerListener;
@@ -33,17 +35,22 @@ public class TimoliaCore extends JavaPlugin {
 		initEventHandlers();
 		initConfig();
 		dataFolder = getDataFolder();
+		new File(dataFolder + File.separator + "locations").mkdir();
 		if (check)
 			UpdateChecker.start(this);
 
-		// new File(dataFolder + File.separator + "books").mkdir();
-		new File(dataFolder + File.separator + "locations").mkdir();
 		if (coding)
 			Message.console("PLUGIN RUNNING IN CODING-MODE!!! BE CAREFUL!!!");
+
+		try {
+			access.load();
+		} catch (IOException e) {
+			Message.console("Could not load whitelist: " + e.getMessage());
+		}
 	}
 
 	public void onDisable() {
-		if(asave.stopAutoSave())
+		if (asave.stopAutoSave())
 			Message.console("Autosave stopped!");
 	}
 
