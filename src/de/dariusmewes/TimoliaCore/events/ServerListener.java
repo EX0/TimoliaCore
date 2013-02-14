@@ -14,15 +14,15 @@ import de.dariusmewes.TimoliaCore.TimoliaCore;
 
 public class ServerListener implements Listener {
 
-	private TimoliaCore plugin;
+	private TimoliaCore instance;
 
-	public ServerListener(TimoliaCore plugin) {
-		this.plugin = plugin;
+	public ServerListener(TimoliaCore instance) {
+		this.instance = instance;
 	}
 
 	@EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
 	public void onServerListPing(ServerListPingEvent event) {
-		String motd = plugin.getConfig().getString("motd");
+		String motd = instance.getConfig().getString("motd");
 		if (!motd.equalsIgnoreCase(""))
 			event.setMotd(motd);
 	}

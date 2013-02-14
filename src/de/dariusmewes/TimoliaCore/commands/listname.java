@@ -51,9 +51,15 @@ public class listname extends TCommand {
 				sender.sendMessage(_("ingame"));
 				return;
 			}
+
 			target = (Player) sender;
 
 		} else {
+			if (!sender.hasPermission("tcore.listname.other")) {
+				sender.sendMessage(_("noperm"));
+				return;
+			}
+
 			target = Bukkit.getPlayer(args[0]);
 			if (target == null) {
 				sender.sendMessage(_("notonline"));
@@ -62,8 +68,12 @@ public class listname extends TCommand {
 		}
 
 		String out = (args.length == 1) ? args[0] : args[1];
-		target.setPlayerListName(ChatColor.translateAlternateColorCodes('&', out));
-		sender.sendMessage(_("listNameSet"));
+		try {
+			target.setPlayerListName(ChatColor.translateAlternateColorCodes('&', out));
+			sender.sendMessage(_("listNameSet"));
+		} catch (Exception e) {
+			sender.sendMessage(_("nameAlreadyAssigned"));
+		}
 	}
 
 }

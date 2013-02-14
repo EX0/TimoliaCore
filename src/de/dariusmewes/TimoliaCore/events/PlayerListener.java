@@ -26,10 +26,10 @@ public class PlayerListener implements Listener {
 
 	public static String joinMsg;
 	public static String quitMsg;
-	private TimoliaCore plugin;
+	private TimoliaCore instance;
 
-	public PlayerListener(TimoliaCore plugin) {
-		this.plugin = plugin;
+	public PlayerListener(TimoliaCore instance) {
+		this.instance = instance;
 	}
 
 	@EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
@@ -78,13 +78,13 @@ public class PlayerListener implements Listener {
 	// Wartung
 	@EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
 	public void onPlayerLogin(PlayerLoginEvent event) {
-		if (plugin.getConfig().getBoolean("maintenance") && !(access.isAllowed(event.getPlayer()))) {
-			event.setKickMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("servername")) + ChatColor.WHITE + " " + plugin.getConfig().getString("maintenancemsg"));
+		if (instance.getConfig().getBoolean("maintenance") && !(access.isAllowed(event.getPlayer()))) {
+			event.setKickMessage(ChatColor.translateAlternateColorCodes('&', instance.getConfig().getString("servername")) + ChatColor.WHITE + " " + instance.getConfig().getString("maintenancemsg"));
 			event.setResult(Result.KICK_OTHER);
 		}
 	}
 
-	@EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
+	@EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
 	public void onPlayerDeath(PlayerDeathEvent event) {
 		if (deaths.hidingEnabled) {
 			String vanillaMsg = event.getDeathMessage();
@@ -93,10 +93,10 @@ public class PlayerListener implements Listener {
 				if (deaths.shuttedOff.contains(p.getName()))
 					continue;
 
-				if (event.getEntity().getWorld().getName().equalsIgnoreCase("sgames") && plugin.getConfig().getBoolean("sgamesdeathmsg"))
-					p.sendMessage(ChatColor.DARK_RED + vanillaMsg);
-				else
+				if (instance.getConfig().getBoolean("darkerDeathMessages"))
 					p.sendMessage(ChatColor.DARK_GRAY + vanillaMsg);
+				else
+					p.sendMessage(vanillaMsg);
 			}
 		}
 	}

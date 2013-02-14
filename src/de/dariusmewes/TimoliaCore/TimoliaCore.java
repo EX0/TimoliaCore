@@ -65,6 +65,7 @@ public class TimoliaCore extends JavaPlugin {
 		conf.addDefault("quitmsg", "");
 		conf.addDefault("motd", "");
 		conf.addDefault("deathHiding", false);
+		conf.addDefault("darkerDeathMessages", false);
 		conf.addDefault("defaultSkick", "You have been kicked");
 		conf.addDefault("maintenance", false);
 		conf.addDefault("maintenancemsg", "This server is currently under maintenance");
