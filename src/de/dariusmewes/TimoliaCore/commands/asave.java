@@ -81,11 +81,16 @@ public class asave extends TCommand {
 
 		long delay;
 		try {
-			delay = Long.valueOf(instance.getConfig().getString("autosavedelay")) * 20L * 60L;
+			delay = Long.valueOf(instance.getConfig().getString("autosavedelay"));
 		} catch (NumberFormatException e) {
-			delay = 5L * 20L * 60L;
+			delay = 5;
 			Message.console("Could not parse autosave-delay from config. Using 5 Minutes...");
 		}
+
+		if (delay < 1)
+			delay = 1;
+
+		delay = delay * 20 * 60;
 
 		running = true;
 		taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(instance, new Runnable() {
