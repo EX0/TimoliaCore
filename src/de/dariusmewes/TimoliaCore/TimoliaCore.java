@@ -26,7 +26,7 @@ public class TimoliaCore extends JavaPlugin {
 	public static boolean updateAvailable = false;
 	public static boolean check = false;
 	public static File dataFolder;
-	public static boolean coding = true;
+	public static boolean coding = false;
 
 	public void onEnable() {
 		CommandHandler.init(this);

@@ -6,97 +6,97 @@ main: de.dariusmewes.TimoliaCore.TimoliaCore
 commands:
     access:
         usage: /access <allow/deny> [msg] OR <add/remove> <name> OR <reload/list> OR setmsg <msg>
-        description: 
+        description: A better whitelist
     armor:
         usage: /armor [Player] <slot> <item-id>
-        description: 
+        description: Change your or someone elses armor
     asave:
         usage: /asave <start/stop/delay/status>
-        description: 
+        description: Settings for autosaving
     book:
         usage: /book <author/title> [args]
-        description: 
+        description: Change the author and title of a book
     ca:
         usage: /ca [Player]
-        description: 
+        description: Clear your or someone elses inventory and armor
     cblock:
-        usage: /cblock
-        description: 
+        usage: /cblock [Player]
+        description: Gives you or someone else a commandblock
     cc:
         usage: /cc [all/-a]
-        description: 
+        description: Clear your or everyones chat
     chat:
         usage: /chat <Player> <msg>
-        description: 
+        description: Type messages for someone else
     clock:
         usage: /clock
-        description: 
+        description: Shows date and time
     colors:
         usage: /colors [Player]
-        description: 
+        description: Shows a list of available chat colors
     console:
         usage: /console <cmd>
-        description: 
+        description: Executes console-commands
     ctp:
         usage: /ctp <x> <y> <z> [Player]
-        description: 
+        description: Teleport yourself or someone else to a certain position. commandblock support
     damage:
         usage: /damage <Player> <amount>
-        description: 
+        description: Damage someone else
     deaths:
         usage: /deaths <on/off/clear>
-        description: 
+        description: Hide deathmessages
     drop:
         usage: /drop [all/item-id]
-        description: 
+        description: Drop a certain Material or just everything
     dump:
         usage: /dump
-        description: 
+        description: Dump the item in your hand
     effect:
-        usage: /effect <add/remove> <effect> <power> <duration> [player]
-        description: 
+        usage: /effect <add/remove> <effect-name/id> <power> <duration> [player]
+        description: Give yourself or someone else a certain potion effect
     exe:
         usage: /exe <Spieler> <Befehl>
-        description: 
+        description: Execute a command with all permissions for someone else
     itemlore:
         usage: /itemlore <add/remove> <name>
-        description: 
+        description: Change the lore of an item
     itemname:
         usage: /itemname <name>
-        description: 
+        description: Change the name of an item
     listname:
         usage: /listname [Player] <Name>
-        description: 
+        description: Change your or someone elses playerlistname
     loc:
         usage: /loc <Location> [Player]
-        description: 
+        description: Teleport yourself or someone else to a location
     loclist:
         usage: /loclist
-        description: 
+        description: Shows a list of Locations
     mode:
         usage: /mode
-        description: 
+        description: Switch between Creative and Survival-Mode
     pingmsg:
         usage: /pingmsg <msg>
-        description: 
+        description: Change the Message in the Multiplayer-Menu
     raw:
         usage: /raw [-s] <msg>
-        description: 
+        description: Broadcast a raw text-message
     removeloc:
         usage: /removeloc <Location>
-        description: 
+        description: Remove a Location
     setloc:
         usage: /setloc <name>
-        description: 
+        description: Set a Location
     skick:
         usage: /skick <Spieler> <msg>
-        description: 
+        description: Kick someone silently
     st:
         usage: /st <msg>
-        description: 
+        description: Send Messages to other Staffs
     tcore:
         usage: /tcore reload
-        description: 
+        description: Plugin-Managing
     visible:
         usage: /visible [player/all]
-        description: 
+        description: Remove someones/everyones invisibility-effect
