@@ -16,6 +16,7 @@ public class damage extends TCommand {
 		setMinArgs(2);
 		setMaxArgs(2);
 		setUsage("/damage <Player> <amount>");
+		setDesc("Damage someone else");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

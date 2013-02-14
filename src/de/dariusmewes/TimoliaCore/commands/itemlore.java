@@ -23,6 +23,7 @@ public class itemlore extends TCommand {
 		setIngame();
 		setMinArgs(2);
 		setUsage("/itemlore <add/remove> <name>");
+		setDesc("Change the lore of an item");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

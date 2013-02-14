@@ -18,6 +18,7 @@ public class ctp extends TCommand {
 		setMinArgs(3);
 		setMaxArgs(4);
 		setUsage("/ctp <x> <y> <z> [Player]");
+		setDesc("Teleport yourself or someone else to a certain position. commandblock support");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

@@ -16,6 +16,7 @@ public class raw extends TCommand {
 		super(name);
 		setMinArgs(1);
 		setUsage("/raw [-s] <msg>");
+		setDesc("Broadcast a raw text-message");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

@@ -17,6 +17,7 @@ public class colors extends TCommand {
 		setMinArgs(0);
 		setMaxArgs(1);
 		setUsage("/colors [Player]");
+		setDesc("Shows a list of available chat colors");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

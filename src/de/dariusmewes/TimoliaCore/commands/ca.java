@@ -16,6 +16,7 @@ public class ca extends TCommand {
 		setMaxArgs(1);
 		setIngame();
 		setUsage("/ca [Player]");
+		setDesc("Clear your or someone elses inventory and armor");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

@@ -16,6 +16,7 @@ public class cc extends TCommand {
 		setIngame();
 		setMaxArgs(1);
 		setUsage("/cc [all/-a]");
+		setDesc("Clear your or everyones chat");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

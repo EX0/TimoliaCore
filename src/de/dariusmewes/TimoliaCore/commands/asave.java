@@ -22,6 +22,7 @@ public class asave extends TCommand {
 		setMinArgs(1);
 		setMaxArgs(2);
 		setUsage("/asave <start/stop/delay/status>");
+		setDesc("Settings for autosaving");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

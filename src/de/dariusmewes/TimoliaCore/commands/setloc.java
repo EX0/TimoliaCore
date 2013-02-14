@@ -24,6 +24,7 @@ public class setloc extends TCommand {
 		setMinArgs(1);
 		setMaxArgs(1);
 		setUsage("/setloc <name>");
+		setDesc("Set a Location");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

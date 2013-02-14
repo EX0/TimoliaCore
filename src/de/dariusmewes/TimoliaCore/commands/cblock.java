@@ -16,7 +16,8 @@ public class cblock extends TCommand {
 	public cblock(String name) {
 		super(name);
 		setMaxArgs(1);
-		setUsage("/cblock");
+		setUsage("/cblock [Player]");
+		setDesc("Gives you or someone else a commandblock");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

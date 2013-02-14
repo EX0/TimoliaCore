@@ -28,6 +28,7 @@ public class access extends TCommand {
 		super(name);
 		setMinArgs(1);
 		setUsage("/access <allow/deny> [msg] OR <add/remove> <name> OR <reload/list> OR setmsg <msg>");
+		setDesc("A better whitelist");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

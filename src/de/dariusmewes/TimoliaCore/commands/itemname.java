@@ -18,6 +18,7 @@ public class itemname extends TCommand {
 		setIngame();
 		setMinArgs(0);
 		setUsage("/itemname <name>");
+		setDesc("Change the name of an item");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

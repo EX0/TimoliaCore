@@ -18,6 +18,7 @@ public class book extends TCommand {
 		setIngame();
 		setMinArgs(2);
 		setUsage("/book <author/title> [args]");
+		setDesc("Change the author and title of a book");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

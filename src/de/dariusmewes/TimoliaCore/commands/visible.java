@@ -16,6 +16,7 @@ public class visible extends TCommand {
 		super(name);
 		setMaxArgs(1);
 		setUsage("/visible [player/all]");
+		setDesc("Remove someones/everyones invisibility-effect");
 	}
 
 	public void perform(CommandSender sender, String[] args) {
