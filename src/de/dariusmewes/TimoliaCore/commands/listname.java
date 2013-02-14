@@ -16,6 +16,7 @@ public class listname extends TCommand {
 		setMinArgs(1);
 		setMaxArgs(2);
 		setUsage("/listname [Player] <Name>");
+		setDesc("Change your or someone elses playerlistname");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

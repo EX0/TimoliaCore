@@ -18,6 +18,7 @@ public class armor extends TCommand {
 		setMinArgs(2);
 		setMaxArgs(3);
 		setUsage("/armor [Player] <slot> <item-id>");
+		setDesc("Change your or someone elses armor");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

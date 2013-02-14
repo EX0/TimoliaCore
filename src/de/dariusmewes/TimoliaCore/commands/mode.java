@@ -16,6 +16,7 @@ public class mode extends TCommand {
 		setIngame();
 		setMaxArgs(0);
 		setUsage("/mode");
+		setDesc("Switch between Creative and Survival-Mode");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

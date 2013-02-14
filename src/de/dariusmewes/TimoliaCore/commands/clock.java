@@ -16,6 +16,7 @@ public class clock extends TCommand {
 		super(name);
 		setMaxArgs(0);
 		setUsage("/clock");
+		setDesc("Shows date and time");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

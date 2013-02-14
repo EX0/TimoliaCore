@@ -16,6 +16,7 @@ public class tcore extends TCommand {
 		setMinArgs(1);
 		setMaxArgs(1);
 		setUsage("/tcore reload");
+		setDesc("Plugin-Managing");
 	}
 
 	public void perform(CommandSender sender, String[] args) {
@@ -25,7 +26,8 @@ public class tcore extends TCommand {
 			sender.sendMessage(_("configReloaded"));
 		} else if (args[0].equalsIgnoreCase("debug") && TimoliaCore.coding) {
 			CommandHandler.list();
-		} else if (args[0].equalsIgnoreCase("update")) {
+
+			// } else if (args[0].equalsIgnoreCase("update")) {
 			// try {
 			// sender.sendMessage(prefix + "Downloading update helper...");
 			// File upd = new File("plugins" + File.separator + "updater.jar");

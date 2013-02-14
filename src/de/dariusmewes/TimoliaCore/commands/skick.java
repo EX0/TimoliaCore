@@ -16,6 +16,7 @@ public class skick extends TCommand {
 		super(name);
 		setMinArgs(1);
 		setUsage("/skick <Spieler> <msg>");
+		setDesc("Kick someone silently");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

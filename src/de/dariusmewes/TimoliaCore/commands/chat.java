@@ -15,6 +15,7 @@ public class chat extends TCommand {
 		super(name);
 		setMinArgs(2);
 		setUsage("/chat <Player> <msg>");
+		setDesc("Type messages for someone else");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

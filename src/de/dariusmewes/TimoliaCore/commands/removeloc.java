@@ -18,6 +18,7 @@ public class removeloc extends TCommand {
 		setMinArgs(1);
 		setMaxArgs(1);
 		setUsage("/removeloc <Location>");
+		setDesc("Remove a Location");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

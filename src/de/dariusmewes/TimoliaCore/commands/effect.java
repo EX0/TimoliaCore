@@ -17,7 +17,8 @@ public class effect extends TCommand {
 		super(name);
 		setMinArgs(2);
 		setMaxArgs(5);
-		setUsage("/effect <add/remove> <effect> <power> <duration> [player]");
+		setUsage("/effect <add/remove> <effect-name/id> <power> <duration> [player]");
+		setDesc("Give yourself or someone else a certain potion effect");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

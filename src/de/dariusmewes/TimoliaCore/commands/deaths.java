@@ -21,6 +21,7 @@ public class deaths extends TCommand {
 		setIngame();
 		setMaxArgs(1);
 		setUsage("/deaths <on/off/clear>");
+		setDesc("Hide deathmessages");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

@@ -14,7 +14,7 @@ public abstract class TCommand {
 
 	private String name;
 	private String permission = "";
-	private String desc;
+	private String desc = "";
 	private boolean onlyIngame = false;
 	private int minArgs = 0;
 	private int maxArgs = -1;

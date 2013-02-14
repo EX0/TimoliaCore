@@ -19,6 +19,7 @@ public class drop extends TCommand {
 		setIngame();
 		setMaxArgs(1);
 		setUsage("/drop [all/item-id]");
+		setDesc("Drop a certain Material or just everything");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

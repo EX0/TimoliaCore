@@ -23,6 +23,7 @@ public class loc extends TCommand {
 		setMinArgs(1);
 		setMaxArgs(2);
 		setUsage("/loc <Location> [Player]");
+		setDesc("Teleport yourself or someone else to a location");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

@@ -16,6 +16,7 @@ public class console extends TCommand {
 		super(name);
 		setMinArgs(1);
 		setUsage("/console <cmd>");
+		setDesc("Executes console-commands");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

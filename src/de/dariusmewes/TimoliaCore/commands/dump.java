@@ -17,6 +17,7 @@ public class dump extends TCommand {
 		setIngame();
 		setMaxArgs(0);
 		setUsage("/dump");
+		setDesc("Dump the item in your hand");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

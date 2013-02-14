@@ -13,6 +13,7 @@ public class pingmsg extends TCommand {
 	public pingmsg(String name) {
 		super(name);
 		setUsage("/pingmsg <msg>");
+		setDesc("Change the Message in the Multiplayer-Menu");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

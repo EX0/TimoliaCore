@@ -17,6 +17,7 @@ public class loclist extends TCommand {
 		super(name);
 		setMaxArgs(0);
 		setUsage("/loclist");
+		setDesc("Shows a list of Locations");
 	}
 
 	public void perform(CommandSender sender, String[] args) {

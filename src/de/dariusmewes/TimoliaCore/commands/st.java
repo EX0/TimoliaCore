@@ -18,6 +18,7 @@ public class st extends TCommand {
 		setIngame();
 		setMinArgs(1);
 		setUsage("/st <msg>");
+		setDesc("Send Messages to other Staffs");
 	}
 
 	public void perform(CommandSender sender, String[] args) {
@@ -26,7 +27,7 @@ public class st extends TCommand {
 		for (int i = 0; i < args.length; i++)
 			msg += args[i] + " ";
 
-		Message.certain(ChatColor.GOLD + "St - " + ChatColor.GRAY + p.getDisplayName() + ": " + ChatColor.WHITE + ChatColor.translateAlternateColorCodes('&', msg), "timolia.st");
+		Message.certain(ChatColor.GOLD + "St - " + ChatColor.GRAY + p.getDisplayName() + ": " + ChatColor.WHITE + ChatColor.translateAlternateColorCodes('&', msg), "tcore.st");
 	}
 
 }
