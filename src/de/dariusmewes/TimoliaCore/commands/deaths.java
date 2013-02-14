@@ -20,7 +20,7 @@ public class deaths extends TCommand {
 		super(name);
 		setIngame();
 		setMaxArgs(1);
-		setUsage("/deaths <on/off/clear>");
+		setUsage("/deaths [clear]");
 		setDesc("Hide deathmessages");
 	}
 

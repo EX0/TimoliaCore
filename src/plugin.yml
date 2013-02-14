@@ -44,7 +44,7 @@ commands:
         usage: /damage <Player> <amount>
         description: Damage someone else
     deaths:
-        usage: /deaths <on/off/clear>
+        usage: /deaths [clear]
         description: Hide deathmessages
     drop:
         usage: /drop [all/item-id]
