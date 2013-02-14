@@ -14,13 +14,24 @@ public class listname extends TCommand {
 
 	public listname(String name) {
 		super(name);
-		setMinArgs(1);
 		setMaxArgs(2);
 		setUsage("/listname [Player] <Name>");
 		setDesc("Change your or someone elses playerlistname");
 	}
 
 	public void perform(CommandSender sender, String[] args) {
+		if (args.length == 0) {
+			if (!(sender instanceof Player)) {
+				sender.sendMessage(_("ingame"));
+				return;
+			}
+
+			Player p = (Player) sender;
+			p.setPlayerListName(p.getName());
+			sender.sendMessage(_("listNameSet"));
+			return;
+		}
+
 		if (args[0].equalsIgnoreCase("reset")) {
 			if (!sender.hasPermission("tcore.listname.reset")) {
 				sender.sendMessage(_("noperm"));
