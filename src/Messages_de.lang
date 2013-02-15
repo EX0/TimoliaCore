@@ -1,5 +1,5 @@
 noperm: Dafür hast du keine Berechtigung
-ingame: Dieser Befehl kannst du nur im Spiel verwenden
+ingame: Diesen Befehl kannst du nur im Spiel verwenden
 notonline: Der Spieler ist nicht online
 invalidFile: Diese Datei existiert nicht
 emptyHand: Deine Hand ist leer
@@ -52,7 +52,7 @@ cblock: Command-Block bekommen
 
 ccAll: Chat von %a1 Spielern gelöscht
 
-consoleExecute: Die Konsole führte %aaus
+consoleExecute: Die Konsole führte %a1 aus
 
 droppedHand: Das Item in deiner Hand wurde gedroppt
 droppedOne: 1 Item wurde gedroppt
@@ -82,7 +82,7 @@ magic: Magisch
 bold: Fett
 strikeThrough: Durchgestrichen
 underline: Unterstrichen
-italic: Kusiv
+italic: Kursiv
 
 addedNote: Die Anmerkung wurde hinzugefügt
 noNotes: Das Item hat keine Anmerkungen
