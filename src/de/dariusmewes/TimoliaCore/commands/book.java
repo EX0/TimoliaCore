@@ -127,7 +127,7 @@ public class book extends TCommand {
 			BookMeta meta = (BookMeta) p.getItemInHand().getItemMeta();
 			meta.setTitle(ChatColor.translateAlternateColorCodes('&', msg));
 			p.getItemInHand().setItemMeta(meta);
-			sender.sendMessage(_("bookTitleChangeds"));
+			sender.sendMessage(_("bookTitleChanged"));
 		}
 
 		else if (args[0].equalsIgnoreCase("author")) {
