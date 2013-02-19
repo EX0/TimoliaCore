@@ -12,7 +12,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerLoginEvent.Result;
@@ -32,32 +31,6 @@ public class PlayerListener implements Listener {
 		this.instance = instance;
 	}
 
-	@EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
-	public void onPlayerChat(AsyncPlayerChatEvent event) {
-		String[] parts = event.getMessage().split(" ");
-
-		for (int i = 0; i < parts.length; i++) {
-			// Usernamen hervorheben
-			if (event.getPlayer().hasPermission("timolia.chat.names")) {
-				for (Player p : Bukkit.getOnlinePlayers()) {
-					if (parts[i].contains(p.getName())) {
-						parts[i] = ChatColor.AQUA + parts[i] + ChatColor.WHITE;
-						break;
-					}
-				}
-			}
-
-			// Weiteres
-		}
-
-		String output = "";
-		for (String s : parts) {
-			output += s + " ";
-		}
-
-		event.setMessage(output);
-	}
-
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		if (!joinMsg.equalsIgnoreCase(""))
@@ -72,7 +45,7 @@ public class PlayerListener implements Listener {
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent event) {
 		if (!quitMsg.equalsIgnoreCase(""))
-			event.setQuitMessage(quitMsg.replaceAll("@p", event.getPlayer().getName()));
+			event.setQuitMessage(quitMsg.replaceAll("@p", event.getPlayer().getName()).replaceAll("@c", String.valueOf(Bukkit.getOnlinePlayers().length)));
 	}
 
 	// Wartung
