@@ -40,6 +40,20 @@ public class PlayerListener implements Listener {
 			event.getPlayer().sendMessage(TimoliaCore.PREFIX + "A new version is available!");
 			event.getPlayer().sendMessage(TimoliaCore.PREFIX + "Get it at http://dev.bukkit.org/server-mods/timolia-core");
 		}
+
+		if (event.getPlayer().hasPermission("tcore.listname.join")) {
+			if (event.getPlayer().hasPermission("tcore.listname.red"))
+				event.getPlayer().setPlayerListName(ChatColor.RED + event.getPlayer().getName());
+
+			else if (event.getPlayer().hasPermission("tcore.listname.blue"))
+				event.getPlayer().setPlayerListName(ChatColor.BLUE + event.getPlayer().getName());
+
+			else if (event.getPlayer().hasPermission("tcore.listname.green"))
+				event.getPlayer().setPlayerListName(ChatColor.GREEN + event.getPlayer().getName());
+
+			else if (event.getPlayer().hasPermission("tcore.listname.orange"))
+				event.getPlayer().setPlayerListName(ChatColor.GOLD + event.getPlayer().getName());
+		}
 	}
 
 	@EventHandler
