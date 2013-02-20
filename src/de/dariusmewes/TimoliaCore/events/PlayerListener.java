@@ -58,8 +58,9 @@ public class PlayerListener implements Listener {
 
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent event) {
-		if (!quitMsg.equalsIgnoreCase(""))
+		if (!quitMsg.equalsIgnoreCase("")) {
 			event.setQuitMessage(quitMsg.replaceAll("@p", event.getPlayer().getName()).replaceAll("@c", String.valueOf(Bukkit.getOnlinePlayers().length)));
+		}
 	}
 
 	// Wartung
