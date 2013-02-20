@@ -46,7 +46,7 @@ public class PlayerListener implements Listener {
 
 		if (event.getPlayer().hasPermission("tcore.listname.join")) {
 			if (event.getPlayer().hasPermission("tcore.listname.red"))
-				event.getPlayer().setPlayerListName(ChatColor.RED + event.getPlayer().getName());
+				event.getPlayer().setPlayerListName(ChatColor.DARK_RED + event.getPlayer().getName());
 
 			else if (event.getPlayer().hasPermission("tcore.listname.blue"))
 				event.getPlayer().setPlayerListName(ChatColor.BLUE + event.getPlayer().getName());
