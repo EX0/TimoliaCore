@@ -28,7 +28,7 @@ public class TimoliaCore extends JavaPlugin {
 	public static boolean updateAvailable = false;
 	public static boolean check = false;
 	public static File dataFolder;
-	public static boolean coding = false;
+	public static boolean coding = true;
 
 	public void onEnable() {
 		CommandHandler.init(this);
@@ -47,6 +47,8 @@ public class TimoliaCore extends JavaPlugin {
 		} catch (IOException e) {
 			Message.console("Could not load whitelist: " + e.getMessage());
 		}
+
+		loadMSGs();
 	}
 
 	public void onDisable() {
@@ -88,12 +90,6 @@ public class TimoliaCore extends JavaPlugin {
 
 		deaths.hidingEnabled = getConfig().getBoolean("deathHiding");
 
-		String language = getConfig().getString("language");
-		if (!(language.equalsIgnoreCase("de")))
-			language = "en";
-
-		Message.loadLanguageFile(language, coding);
-
 		if (asave.stopAutoSave())
 			Message.console("Autosave stopped!");
 
@@ -101,6 +97,14 @@ public class TimoliaCore extends JavaPlugin {
 			asave.startAutoSave();
 			Message.console("Autosave started!");
 		}
+	}
+
+	private void loadMSGs() {
+		String language = getConfig().getString("language");
+		if (!(language.equalsIgnoreCase("de")))
+			language = "en";
+
+		Message.loadLanguageFile(language, coding);
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
