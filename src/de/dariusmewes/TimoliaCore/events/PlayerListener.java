@@ -33,8 +33,11 @@ public class PlayerListener implements Listener {
 
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
-		if (!joinMsg.equalsIgnoreCase(""))
-			event.setJoinMessage(joinMsg.replaceAll("@p", event.getPlayer().getName()));
+		if (!quitMsg.equalsIgnoreCase("")) {
+			String tjoinMsg = joinMsg.replaceAll("@p", event.getPlayer().getName());
+			tjoinMsg = tjoinMsg.replaceAll("@a", String.valueOf(Bukkit.getOnlinePlayers().length));
+			event.setJoinMessage(tjoinMsg);
+		}
 
 		if (TimoliaCore.updateAvailable && (event.getPlayer().isOp() || event.getPlayer().hasPermission("headdrops.update"))) {
 			event.getPlayer().sendMessage(TimoliaCore.PREFIX + "A new version is available!");
@@ -59,7 +62,9 @@ public class PlayerListener implements Listener {
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent event) {
 		if (!quitMsg.equalsIgnoreCase("")) {
-			event.setQuitMessage(quitMsg.replaceAll("@p", event.getPlayer().getName()).replaceAll("@c", String.valueOf(Bukkit.getOnlinePlayers().length)));
+			String tquitMsg = quitMsg.replaceAll("@p", event.getPlayer().getName());
+			tquitMsg = tquitMsg.replaceAll("@a", String.valueOf(Bukkit.getOnlinePlayers().length - 1));
+			event.setQuitMessage(tquitMsg);
 		}
 	}
 
