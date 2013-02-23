@@ -52,7 +52,7 @@ public class PlayerListener implements Listener {
 			String listName;
 			String name = event.getPlayer().getName();
 			if (event.getPlayer().hasPermission("tcore.listname.red"))
-				listName = "¤c" + name;
+				listName = "¤4" + name;
 			else if (event.getPlayer().hasPermission("tcore.listname.blue"))
 				listName = "¤9" + name;
 			else if (event.getPlayer().hasPermission("tcore.listname.green"))
