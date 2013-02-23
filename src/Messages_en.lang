@@ -9,6 +9,8 @@ noInt: Error: Not a number
 noInt2: Error: Not a number "%a1"
 listEmpty: The list is empty
 
+illegalChar: Error: Illegal characters!
+
 autosavebcast: All data has been saved!
 saveTimeSet: The Delay has been set!
 enterTime: Please enter a valid Time!

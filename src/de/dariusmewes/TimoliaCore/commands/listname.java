@@ -12,6 +12,8 @@ import org.bukkit.entity.Player;
 
 public class listname extends TCommand {
 
+	public static String allowed = "abcdefghijklmnopqrstuvwxyz0123456789¤";
+
 	public listname(String name) {
 		super(name);
 		setMaxArgs(2);
@@ -68,8 +70,15 @@ public class listname extends TCommand {
 		}
 
 		String out = ((args.length == 1) ? args[0] : args[1]) + "¤r";
+		out = ChatColor.translateAlternateColorCodes('&', out);
+		for (int i = 0; i < out.length(); i++)
+			if (!allowed.contains(String.valueOf(out.toLowerCase().charAt(i)))) {
+				sender.sendMessage(_("illegalChar"));
+				return;
+			}
+
 		try {
-			target.setPlayerListName(ChatColor.translateAlternateColorCodes('&', out));
+			target.setPlayerListName(out);
 			sender.sendMessage(_("listNameSet"));
 		} catch (Exception e) {
 			sender.sendMessage(_("nameAlreadyAssigned"));

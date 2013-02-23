@@ -20,6 +20,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import de.dariusmewes.TimoliaCore.TimoliaCore;
 import de.dariusmewes.TimoliaCore.commands.access;
 import de.dariusmewes.TimoliaCore.commands.deaths;
+import de.dariusmewes.TimoliaCore.commands.listname;
 
 public class PlayerListener implements Listener {
 
@@ -33,33 +34,47 @@ public class PlayerListener implements Listener {
 
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
+		// custom quit-msg
 		if (!quitMsg.equalsIgnoreCase("")) {
 			String tjoinMsg = joinMsg.replaceAll("@p", event.getPlayer().getName());
 			tjoinMsg = tjoinMsg.replaceAll("@a", String.valueOf(Bukkit.getOnlinePlayers().length));
 			event.setJoinMessage(tjoinMsg);
 		}
 
+		// update-checking
 		if (TimoliaCore.updateAvailable && (event.getPlayer().isOp() || event.getPlayer().hasPermission("headdrops.update"))) {
 			event.getPlayer().sendMessage(TimoliaCore.PREFIX + "A new version is available!");
 			event.getPlayer().sendMessage(TimoliaCore.PREFIX + "Get it at http://dev.bukkit.org/server-mods/timolia-core");
 		}
 
-		try {
-			if (event.getPlayer().hasPermission("tcore.listname.join")) {
-				if (event.getPlayer().hasPermission("tcore.listname.red"))
-					event.getPlayer().setPlayerListName(ChatColor.DARK_RED + event.getPlayer().getName() + "¤r");
+		// colored listname
+		if (event.getPlayer().hasPermission("tcore.listname.join")) {
+			String listName;
+			String name = event.getPlayer().getName();
+			if (event.getPlayer().hasPermission("tcore.listname.red"))
+				listName = "¤c" + name;
+			else if (event.getPlayer().hasPermission("tcore.listname.blue"))
+				listName = "¤9" + name;
+			else if (event.getPlayer().hasPermission("tcore.listname.green"))
+				listName = "¤a" + name;
+			else if (event.getPlayer().hasPermission("tcore.listname.orange"))
+				listName = "¤6" + name;
+			else
+				return;
 
-				else if (event.getPlayer().hasPermission("tcore.listname.blue"))
-					event.getPlayer().setPlayerListName(ChatColor.BLUE + event.getPlayer().getName() + "¤r");
+			if (listName.length() > 12)
+				listName = listName.substring(0, 11);
 
-				else if (event.getPlayer().hasPermission("tcore.listname.green"))
-					event.getPlayer().setPlayerListName(ChatColor.GREEN + event.getPlayer().getName() + "¤r");
+			listName += "¤r";
+			for (int i = 0; i < listName.length(); i++)
+				if (!listname.allowed.contains(String.valueOf(listName.toLowerCase().charAt(i))))
+					return;
 
-				else if (event.getPlayer().hasPermission("tcore.listname.orange"))
-					event.getPlayer().setPlayerListName(ChatColor.GOLD + event.getPlayer().getName() + "¤r");
+			try {
+				event.getPlayer().setPlayerListName(listName);
+			} catch (Exception e) {
+
 			}
-		} catch (Exception e) {
-			event.getPlayer().sendMessage("Sag Pizza dass er mal arbeiten soll!!!");
 		}
 	}
 

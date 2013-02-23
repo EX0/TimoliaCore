@@ -9,6 +9,8 @@ noInt: Fehler: Keine Zahl
 noInt2: Fehler: Keine Zahl "%a2"
 listEmpty: Die Liste ist leer
 
+illegalChar: Fehler: Nicht erlaubte Zeichen!
+
 autosavebcast: Daten gespeichert!
 saveTimeSet: Die Zeit wurde eingestellt!
 enterTime: Bitte gib eine Zeit an!

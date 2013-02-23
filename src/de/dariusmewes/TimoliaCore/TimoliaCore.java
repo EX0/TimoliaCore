@@ -47,8 +47,6 @@ public class TimoliaCore extends JavaPlugin {
 		} catch (IOException e) {
 			Message.console("Could not load whitelist: " + e.getMessage());
 		}
-
-		loadMSGs();
 	}
 
 	public void onDisable() {
@@ -97,6 +95,8 @@ public class TimoliaCore extends JavaPlugin {
 			asave.startAutoSave();
 			Message.console("Autosave started!");
 		}
+		
+		loadMSGs();
 	}
 
 	private void loadMSGs() {
