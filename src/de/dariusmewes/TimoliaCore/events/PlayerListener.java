@@ -44,18 +44,22 @@ public class PlayerListener implements Listener {
 			event.getPlayer().sendMessage(TimoliaCore.PREFIX + "Get it at http://dev.bukkit.org/server-mods/timolia-core");
 		}
 
-		if (event.getPlayer().hasPermission("tcore.listname.join")) {
-			if (event.getPlayer().hasPermission("tcore.listname.red"))
-				event.getPlayer().setPlayerListName(ChatColor.DARK_RED + event.getPlayer().getName());
+		try {
+			if (event.getPlayer().hasPermission("tcore.listname.join")) {
+				if (event.getPlayer().hasPermission("tcore.listname.red"))
+					event.getPlayer().setPlayerListName(ChatColor.DARK_RED + event.getPlayer().getName() + "¤r");
 
-			else if (event.getPlayer().hasPermission("tcore.listname.blue"))
-				event.getPlayer().setPlayerListName(ChatColor.BLUE + event.getPlayer().getName());
+				else if (event.getPlayer().hasPermission("tcore.listname.blue"))
+					event.getPlayer().setPlayerListName(ChatColor.BLUE + event.getPlayer().getName() + "¤r");
 
-			else if (event.getPlayer().hasPermission("tcore.listname.green"))
-				event.getPlayer().setPlayerListName(ChatColor.GREEN + event.getPlayer().getName());
+				else if (event.getPlayer().hasPermission("tcore.listname.green"))
+					event.getPlayer().setPlayerListName(ChatColor.GREEN + event.getPlayer().getName() + "¤r");
 
-			else if (event.getPlayer().hasPermission("tcore.listname.orange"))
-				event.getPlayer().setPlayerListName(ChatColor.GOLD + event.getPlayer().getName());
+				else if (event.getPlayer().hasPermission("tcore.listname.orange"))
+					event.getPlayer().setPlayerListName(ChatColor.GOLD + event.getPlayer().getName() + "¤r");
+			}
+		} catch (Exception e) {
+			event.getPlayer().sendMessage("Sag Pizza dass er mal arbeiten soll!!!");
 		}
 	}
 
