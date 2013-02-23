@@ -19,10 +19,11 @@ import org.bukkit.entity.Player;
 
 public class Message {
 
+	private static final String NAME = "TCore";
 	private static Map<String, String> values = new HashMap<String, String>();
 
 	public static void console(String message) {
-		Logger.getLogger("Minecraft").info("[TCore] " + message);
+		Logger.getLogger("Minecraft").info("[" + NAME + "] " + message);
 	}
 
 	public static void online(String message) {

@@ -21,10 +21,11 @@ public abstract class TCommand {
 	protected String usage = "";
 	protected static String prefix = TimoliaCore.PREFIX;
 	protected static TimoliaCore instance;
+	private static final String PERMISSION_PREFIX = "stats.";
 
 	public TCommand(String name) {
 		this.name = name;
-		this.permission = "tcore." + name;
+		this.permission = PERMISSION_PREFIX + name;
 	}
 
 	public abstract void perform(CommandSender sender, String[] args);

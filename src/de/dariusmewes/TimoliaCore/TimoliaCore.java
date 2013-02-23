@@ -24,7 +24,7 @@ import de.dariusmewes.TimoliaCore.events.ServerListener;
 
 public class TimoliaCore extends JavaPlugin {
 
-	public static final String PREFIX = ChatColor.DARK_RED + "[TCore] " + ChatColor.WHITE;
+	public static final String PREFIX = ChatColor.DARK_RED + "[TCore] " + ChatColor.RESET;
 	public static boolean updateAvailable = false;
 	public static boolean check = false;
 	public static File dataFolder;
