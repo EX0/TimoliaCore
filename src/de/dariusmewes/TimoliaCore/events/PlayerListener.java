@@ -42,7 +42,7 @@ public class PlayerListener implements Listener {
 		}
 
 		// update-checking
-		if (TimoliaCore.updateAvailable && (event.getPlayer().isOp() || event.getPlayer().hasPermission("headdrops.update"))) {
+		if (TimoliaCore.updateAvailable && (event.getPlayer().isOp() || event.getPlayer().hasPermission("tcore.update"))) {
 			event.getPlayer().sendMessage(TimoliaCore.PREFIX + "A new version is available!");
 			event.getPlayer().sendMessage(TimoliaCore.PREFIX + "Get it at http://dev.bukkit.org/server-mods/timolia-core");
 		}

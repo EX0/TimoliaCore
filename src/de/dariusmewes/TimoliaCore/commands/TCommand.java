@@ -21,7 +21,7 @@ public abstract class TCommand {
 	protected String usage = "";
 	protected static String prefix = TimoliaCore.PREFIX;
 	protected static TimoliaCore instance;
-	private static final String PERMISSION_PREFIX = "stats.";
+	private static final String PERMISSION_PREFIX = "tcore.";
 
 	public TCommand(String name) {
 		this.name = name;
