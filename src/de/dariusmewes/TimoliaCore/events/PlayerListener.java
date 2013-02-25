@@ -62,8 +62,8 @@ public class PlayerListener implements Listener {
 			else
 				return;
 
-			if (listName.length() > 12)
-				listName = listName.substring(0, 11);
+			if (listName.length() > 14)
+				listName = listName.substring(0, 13);
 
 			listName += "¤r";
 			for (int i = 0; i < listName.length(); i++)
