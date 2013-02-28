@@ -36,6 +36,8 @@ public class exe extends TCommand {
 		for (int i = 1; i < args.length; i++)
 			targetcmd += args[i] + " ";
 
+		targetcmd = targetcmd.substring(0, targetcmd.length() - 1);
+
 		if (targetcmd.charAt(0) != '/')
 			targetcmd = "/" + targetcmd;
 
@@ -49,7 +51,7 @@ public class exe extends TCommand {
 		if (!wasOP)
 			target.setOp(false);
 
-		Message.console(sender.getName() + " made " + target.getName() + " execute\"" + targetcmd + "\"");
+		Message.console(sender.getName() + " made " + target.getName() + " execute \"" + targetcmd + "\"");
 	}
 
 }
