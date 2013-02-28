@@ -24,7 +24,7 @@ public class effect extends TCommand {
 	public void perform(CommandSender sender, String[] args) {
 		if (args[0].equalsIgnoreCase("add")) {
 			if (args.length < 4) {
-				sender.sendMessage(usage);
+				sender.sendMessage(getUsage());
 				return;
 			}
 
@@ -95,7 +95,7 @@ public class effect extends TCommand {
 			}
 
 		} else {
-			sender.sendMessage(usage);
+			sender.sendMessage(getUsage());
 
 		}
 	}

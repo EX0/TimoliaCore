@@ -18,7 +18,7 @@ public abstract class TCommand {
 	private boolean onlyIngame = false;
 	private int minArgs = 0;
 	private int maxArgs = -1;
-	protected String usage = "";
+	private String usage = "";
 	protected static String prefix = TimoliaCore.PREFIX;
 	protected static TimoliaCore instance;
 	private static final String PERMISSION_PREFIX = "tcore.";

@@ -24,7 +24,7 @@ public class raw extends TCommand {
 
 		if (args[0].equalsIgnoreCase("-s")) {
 			if (args.length < 2) {
-				sender.sendMessage(usage);
+				sender.sendMessage(getUsage());
 				return;
 			}
 

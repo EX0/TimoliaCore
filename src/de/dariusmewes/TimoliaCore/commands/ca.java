@@ -49,7 +49,7 @@ public class ca extends TCommand {
 
 			p.sendMessage(_("caDelOther", target.getName()));
 		} else {
-			p.sendMessage(usage);
+			p.sendMessage(getUsage());
 		}
 	}
 

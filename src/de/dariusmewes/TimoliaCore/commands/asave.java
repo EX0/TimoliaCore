@@ -72,7 +72,7 @@ public class asave extends TCommand {
 			sender.sendMessage(prefix + "Autosave " + (running ? __("running") : __("notRunning")));
 
 		} else
-			sender.sendMessage(usage);
+			sender.sendMessage(getUsage());
 	}
 
 	public static boolean startAutoSave() {

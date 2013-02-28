@@ -78,7 +78,7 @@ public class access extends TCommand {
 		}
 
 		if (args.length == 1) {
-			sender.sendMessage(prefix + usage);
+			sender.sendMessage(getUsage());
 			return;
 		}
 
@@ -122,7 +122,7 @@ public class access extends TCommand {
 			sender.sendMessage(_("msgSet"));
 
 		} else
-			sender.sendMessage(prefix + usage);
+			sender.sendMessage(getUsage());
 	}
 
 	public static void load() throws IOException {

@@ -67,7 +67,7 @@ public class itemlore extends TCommand {
 			sender.sendMessage(_("removedNote"));
 
 		} else {
-			sender.sendMessage(usage);
+			sender.sendMessage(getUsage());
 			return;
 		}
 
