@@ -17,6 +17,7 @@ import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerLoginEvent.Result;
 import org.bukkit.event.player.PlayerQuitEvent;
 
+import de.dariusmewes.TimoliaCore.Message;
 import de.dariusmewes.TimoliaCore.TimoliaCore;
 import de.dariusmewes.TimoliaCore.commands.access;
 import de.dariusmewes.TimoliaCore.commands.deaths;
@@ -73,7 +74,8 @@ public class PlayerListener implements Listener {
 			try {
 				event.getPlayer().setPlayerListName(listName);
 			} catch (Exception e) {
-
+				Message.console("FŠrben hat nicht geklappt mit folgendem Fehler:");
+				e.printStackTrace();
 			}
 		}
 	}
