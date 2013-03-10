@@ -39,7 +39,6 @@ public class CommandHandler {
 		add(new deaths("deaths"));
 		add(new drop("drop"));
 		add(new dump("dump"));
-		add(new effect("effect"));
 		add(new exe("exe"));
 		add(new itemlore("itemlore"));
 		add(new itemname("itemname"));
