@@ -66,7 +66,7 @@ public class Message {
 			InputStreamReader reader = null;
 			BufferedReader input;
 			if (debug) {
-				File file = new File(System.getProperty("user.home") + File.separator + "Desktop/code/ws/TimoliaCore/src/Messages_" + language + ".lang");
+				File file = new File(System.getProperty("user.home") + File.separator + "Desktop/code/ws/TimoliaCore/src/Messages_" + language + ".txt");
 				if (!file.exists()) {
 					loadLanguageFile(language, false);
 					return;
@@ -74,8 +74,8 @@ public class Message {
 
 				input = new BufferedReader(new FileReader(file));
 			} else {
-				stream = Message.class.getResourceAsStream(File.separator + "Messages_" + language + ".lang");
-				reader = new InputStreamReader(stream);
+				stream = Message.class.getResourceAsStream(File.separator + "Messages_" + language + ".txt");
+				reader = new InputStreamReader(stream, "UTF-8");
 				input = new BufferedReader(reader);
 			}
 

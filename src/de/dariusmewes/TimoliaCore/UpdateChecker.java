@@ -31,7 +31,7 @@ public final class UpdateChecker {
 
 	public static void start(final JavaPlugin instance) {
 		pdf = instance.getDescription();
-		Message.console("UpdateChecker started");
+		Message.console("Update-Checker started");
 		task = Bukkit.getScheduler().runTaskTimer(instance, new Runnable() {
 			public void run() {
 				if (TimoliaCore.updateAvailable)
