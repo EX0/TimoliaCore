@@ -29,7 +29,7 @@ public class TimoliaCore extends JavaPlugin {
 	public static boolean check = false;
 	public static File dataFolder;
 	public static boolean coding = false;
-
+	
 	public void onEnable() {
 		CommandHandler.init(this);
 		initEventHandlers();
