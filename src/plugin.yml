@@ -25,7 +25,7 @@ commands:
     cc:
         usage: /cc [all/-a]
         description: Clear your or everyones chat
-    chat:
+    chat:a
         usage: /chat <Player> <msg>
         description: Type messages for someone else
     clock:
@@ -52,9 +52,6 @@ commands:
     dump:
         usage: /dump
         description: Dump the item in your hand
-    effect:
-        usage: /effect <add/remove> <effect-name/id> <power> <duration> [player]
-        description: Give yourself or someone else a certain potion effect
     exe:
         usage: /exe <Spieler> <Befehl>
         description: Execute a command with all permissions for someone else
