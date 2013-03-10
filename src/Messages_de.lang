@@ -33,11 +33,6 @@ nameAlreadyAssigned: Der Name ist bereits vergeben
 invalidSlot: Ungültiger Slot! Wähle von 1-4
 armorSet: Die Rüstung wurde gesetzt
 
-gotEffect: %a1 wurde der Effekt %a2 gegeben
-removedEffect: %a1 wurde der Effekt genommen
-doesntHaveEffect: %a1 hat den Effekt %a2 nicht
-invalidPotionEffect: %a1 ist ein ungültiger Trank Effekt
-
 errorLoadBook: Fehler beim Laden des Buches
 errorSaveBook: Fehler beim Speichern des Buches
 itemNotBook: Das Item in deiner Hand ist kein Buch

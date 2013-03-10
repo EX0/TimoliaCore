@@ -33,11 +33,6 @@ nameAlreadyAssigned: The entered name is already assignes to someone else
 invalidSlot: Invalid Slot! Choose 1-4
 armorSet: The Armor has been set
 
-gotEffect: %a1 got the Effect %a2
-removedEffect: The Effect has been removed from %a
-doesntHaveEffect: %a1 doesnt has the %a2 effect
-invalidPotionEffect: %a1 isn't a valid potion effect
-
 errorLoadBook: Error while trying to load the book
 errorSaveBook: Error while trying to save the book
 itemNotBook: The item in your hand isn't a book
