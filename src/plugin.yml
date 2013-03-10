@@ -25,7 +25,7 @@ commands:
     cc:
         usage: /cc [all/-a]
         description: Clear your or everyones chat
-    chat:a
+    chat:
         usage: /chat <Player> <msg>
         description: Type messages for someone else
     clock:
