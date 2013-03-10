@@ -17,7 +17,6 @@ import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerLoginEvent.Result;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-import de.dariusmewes.TimoliaCore.Message;
 import de.dariusmewes.TimoliaCore.TimoliaCore;
 import de.dariusmewes.TimoliaCore.commands.access;
 import de.dariusmewes.TimoliaCore.commands.deaths;
@@ -49,33 +48,53 @@ public class PlayerListener implements Listener {
 		}
 
 		// colored listname
-		if (event.getPlayer().hasPermission("tcore.listname.join")) {
-			String listName;
+		if (event.getPlayer().hasPermission("tcore.listname.join") && !event.getPlayer().hasPermission("tcore.listname.forceoff")) {
 			String name = event.getPlayer().getName();
+			if (event.getPlayer().hasPermission("tcore.listname.black"))
+				name = "¤0" + name;
+			if (event.getPlayer().hasPermission("tcore.listname.darkblue"))
+				name = "¤1" + name;
+			if (event.getPlayer().hasPermission("tcore.listname.darkgreen"))
+				name = "¤2" + name;
+			if (event.getPlayer().hasPermission("tcore.listname.darkcyan"))
+				name = "¤3" + name;
+			if (event.getPlayer().hasPermission("tcore.listname.darkred"))
+				name = "¤4" + name;
+			if (event.getPlayer().hasPermission("tcore.listname.purple"))
+				name = "¤5" + name;
+			if (event.getPlayer().hasPermission("tcore.listname.orange"))
+				name = "¤6" + name;
+			if (event.getPlayer().hasPermission("tcore.listname.gray"))
+				name = "¤7" + name;
+			if (event.getPlayer().hasPermission("tcore.listname.darkgray"))
+				name = "¤8" + name;
+			if (event.getPlayer().hasPermission("tcore.listname.blue"))
+				name = "¤9" + name;
+			if (event.getPlayer().hasPermission("tcore.listname.green"))
+				name = "¤a" + name;
+			if (event.getPlayer().hasPermission("tcore.listname.cyan"))
+				name = "$b" + name;
 			if (event.getPlayer().hasPermission("tcore.listname.red"))
-				listName = "¤4" + name;
-			else if (event.getPlayer().hasPermission("tcore.listname.blue"))
-				listName = "¤9" + name;
-			else if (event.getPlayer().hasPermission("tcore.listname.green"))
-				listName = "¤a" + name;
-			else if (event.getPlayer().hasPermission("tcore.listname.orange"))
-				listName = "¤6" + name;
+				name = "¤c" + name;
+			if (event.getPlayer().hasPermission("tcore.listname.pink"))
+				name = "¤d" + name;
+			if (event.getPlayer().hasPermission("tcore.listname.yellow"))
+				name = "¤e" + name;
 			else
 				return;
 
-			if (listName.length() > 14)
-				listName = listName.substring(0, 13);
+			if (name.length() > 14)
+				name = name.substring(0, 13);
 
-			listName += "¤r";
-			for (int i = 0; i < listName.length(); i++)
-				if (!listname.allowed.contains(String.valueOf(listName.toLowerCase().charAt(i))))
+			name += "¤r";
+			for (int i = 0; i < name.length(); i++)
+				if (!listname.allowed.contains(String.valueOf(name.toLowerCase().charAt(i))))
 					return;
 
 			try {
-				event.getPlayer().setPlayerListName(listName);
+				event.getPlayer().setPlayerListName(name);
 			} catch (Exception e) {
-				Message.console("FŠrben hat nicht geklappt mit folgendem Fehler:");
-				e.printStackTrace();
+
 			}
 		}
 	}

@@ -1,9 +1,9 @@
-noperm: Dafür hast du keine Berechtigung
+noperm: Daf√ºr hast du keine Berechtigung
 ingame: Diesen Befehl kannst du nur im Spiel verwenden
 notonline: Der Spieler ist nicht online
 invalidFile: Diese Datei existiert nicht
 emptyHand: Deine Hand ist leer
-invalidItemID: Ungültige Item-ID
+invalidItemID: Ung√ºltige Item-ID
 usage: Benutzung: 
 noInt: Fehler: Keine Zahl
 noInt2: Fehler: Keine Zahl "%a2"
@@ -20,36 +20,36 @@ notRunning: ist nicht aktiv!
 saveStart: Autosave wurde gestartet
 saveStop: Autosave wurde gestoppt
 
-deathsForAll: Todesmeldungen für alle Spieler aktiviert
+deathsForAll: Todesmeldungen f√ºr alle Spieler aktiviert
 deathsActivated: Todesmeldungen sind nun sichtbar
 deathsDeactivated: Todesmeldungen sind nicht mehr sichtbar
 
 playerDamaged: Der Spieler bekam Schaden
 
-listNameSet: Der Listenname wurde geändert
-listReset: Alle Namen in der Liste wurden zurückgesetzt
+listNameSet: Der Listenname wurde ge√§ndert
+listReset: Alle Namen in der Liste wurden zur√ºckgesetzt
 nameAlreadyAssigned: Der Name ist bereits vergeben
 
-invalidSlot: Ungültiger Slot! Wähle von 1-4
-armorSet: Die Rüstung wurde gesetzt
+invalidSlot: Ung√ºltiger Slot! W√§hle von 1-4
+armorSet: Die R√ºstung wurde gesetzt
 
 errorLoadBook: Fehler beim Laden des Buches
 errorSaveBook: Fehler beim Speichern des Buches
 itemNotBook: Das Item in deiner Hand ist kein Buch
 gotBook: Du hast das Buch bekommen
 booksaved: Das Buch wurde gespeichert
-bookTitleChanged: Der Titel des Buches wurde geändert
-bookAuthorChanged: Der Autor des Buches wurde geändert
+bookTitleChanged: Der Titel des Buches wurde ge√§ndert
+bookAuthorChanged: Der Autor des Buches wurde ge√§ndert
 
-caDel: Inventar und Rüstung wurden gelöscht
-caDelOther: Dein Inventar und deine Rüstung wurden von %a1 gelöscht
-caDelOtherConfirm: Das Inventar und die Rüstung von %a1 wurden gelöscht
+caDel: Inventar und R√ºstung wurden gel√∂scht
+caDelOther: Dein Inventar und deine R√ºstung wurden von %a1 gel√∂scht
+caDelOtherConfirm: Das Inventar und die R√ºstung von %a1 wurden gel√∂scht
 
 cblock: Command-Block bekommen
 
-ccAll: Chat von %a1 Spielern gelöscht
+ccAll: Chat von %a1 Spielern gel√∂scht
 
-consoleExecute: Die Konsole führte %a1 aus
+consoleExecute: Die Konsole f√ºhrte %a1 aus
 
 droppedHand: Das Item in deiner Hand wurde gedroppt
 droppedOne: 1 Item wurde gedroppt
@@ -57,21 +57,21 @@ droppedMultiple: %a1 Items wurden gedroppt
 
 dumped: %a1 wurde weggeworfen
 
-exeOP: Du kannst für diesen Spieler keine Befehle ausführen
+exeOP: Du kannst f√ºr diesen Spieler keine Befehle ausfÔøΩhren
 
 colorList: Farbliste:
 colorsShown: Die Farbliste wurde angezeigt
 darkBlue: Dunkelblau
-darkGreen: Dunkelgrün
-darkAqua: Dunkeltürkis
+darkGreen: Dunkelgr√ºn
+darkAqua: Dunkelt√ºrkis
 darkRed: Dunkelrot
 purple: Purple
 orange: Orange
 gray: Hellgrau
 darkGray: Dunkelgrau
 blue: Blau
-green: Grün
-aqua: Türkis
+green: Gr√ºn
+aqua: T√ºrkis
 red: Rot
 pink: Pink
 yellow: Gelb
@@ -81,7 +81,7 @@ strikeThrough: Durchgestrichen
 underline: Unterstrichen
 italic: Kursiv
 
-addedNote: Die Anmerkung wurde hinzugefügt
+addedNote: Die Anmerkung wurde hinzugef√ºgt
 noNotes: Das Item hat keine Anmerkungen
 noNote: Das Item hat diese Anmerkung nicht
 removedNote: Die Anmerkung wurde entfernt
@@ -92,14 +92,14 @@ teleport: %a1 wurde teleportiert
 locNotFound: Der Ort wurde nicht gefunden
 errorLoadLoc: Fehler beim Laden des Ortes
 errorSaveLoc: Fehler beim Speichern des Ortes
-unloadedWorld: Die Welt ist nciht geladen
+unloadedWorld: Die Welt ist nicht geladen
 tpMsg: %a1 wurde zu %a2 teleportiert
 noLocsFound: Keine Orte wurden gefunden
 locs: Locations: %a1
 locRemoved: Der Ort wurde entfernt
 locSet: Der Ort wurde gesetzt
 
-gamemodeChanged: Dein Gamemode wurde geändert
+gamemodeChanged: Dein Gamemode wurde geÔøΩndert
 
 fakeMsgNotify: Fakenachricht:
 
@@ -109,7 +109,7 @@ madeVisible: Der Unsichtbarkeitseffekt von %a1 wurde entfernt
 madeVisibleList: Diese Spieler wurden sichtbar gemacht: %a1
 
 configReloaded: Die Konfiguration wurde neu geladen
-motdReset: Die MOTD wurde zurückgesetzt
+motdReset: Die MOTD wurde zur√ºckgesetzt
 motdSet: Die MOTD wurde gesetzt
 
 accessOn: Wartungsmodus aktiviert
@@ -120,7 +120,7 @@ alreadyOnTheList: %a1 ist schon auf der Liste
 notOnTheList: %a1 ist nicht auf der Liste
 errorSaveList: Fehler beim Speichern der Liste
 errorLoadList: Fehler beim Laden der Liste
-addedToList: %a1 wurde der Liste hinzugefügt!
+addedToList: %a1 wurde der Liste hinzugefÔøΩgt!
 removedFromList: %a1 wurde von der Liste entfernt!
 
 dateTime: Datum und Uhrzeit: %a1

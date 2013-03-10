@@ -5,106 +5,76 @@
 
 package de.dariusmewes.TimoliaCore;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.net.URL;
-import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitTask;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class UpdateChecker {
+public final class UpdateChecker {
 
-	private static String XMLURL = "https://dl.dropbox.com/u/56892130/TPL/TManager.xml";
+	private static final String name = "timoliacore";
+	private static final String infoMsg = "[TCore] A new version is available! Get it at: http://dev.bukkit.org/server-mods/" + name;
 	private static PluginDescriptionFile pdf;
+	public static BukkitTask task;
 
-	public static void start(JavaPlugin instance) {
+	private UpdateChecker() {
+
+	}
+
+	public static void start(final JavaPlugin instance) {
 		pdf = instance.getDescription();
-		Bukkit.getScheduler().runTaskTimer(instance, new Runnable() {
+		Message.console("UpdateChecker started");
+		task = Bukkit.getScheduler().runTaskTimer(instance, new Runnable() {
 			public void run() {
-				if (check()) {
-					Logger.getLogger("Minecraft").info("[Timolia] A new version is available! Get it at: http://dev.bukkit.org/server-mods/timolia-core");
-					TimoliaCore.updateAvailable = true;
+				if (TimoliaCore.updateAvailable)
+					Message.console(infoMsg);
+				else {
+					check();
+					if (TimoliaCore.updateAvailable)
+						Message.console(infoMsg);
 				}
 			}
 		}, 200L, 144000L);
 	}
 
-	public static boolean check() {
+	public static void check() {
 		try {
-			File xml = new File(TimoliaCore.dataFolder + File.separator + "temp.xml");
-			if (xml.exists())
-				xml.delete();
-
-			xml.createNewFile();
-
-			BufferedInputStream input = new BufferedInputStream(new URL(XMLURL).openStream());
-			BufferedOutputStream output = new BufferedOutputStream(new FileOutputStream(xml));
-			byte[] buffer = new byte[1024];
-			int i = 0;
-
-			while ((i = input.read(buffer, 0, 1024)) >= 0)
-				output.write(buffer, 0, i);
-
-			input.close();
-			output.close();
-
-			Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(xml);
+			Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new URL("http://dev.bukkit.org/server-mods/" + name + "/files.rss").openStream());
 			doc.getDocumentElement().normalize();
 
-			NodeList nList = doc.getElementsByTagName("plugin");
+			NodeList nList = doc.getElementsByTagName("item");
 
-			String name = "";
-			String version = "";
-			for (int temp = 0; temp < nList.getLength(); temp++) {
-				Node nNode = nList.item(temp);
+			for (int i = 0; i < nList.getLength(); i++) {
+				Node nNode = nList.item(i);
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-
 					Element eElement = (Element) nNode;
-
-					name = getTagValue("name", eElement);
+					String[] data = getTagValue("title", eElement).split(" ");
+					String name = data[0];
 
 					if (name.equalsIgnoreCase(pdf.getName())) {
-						version = getTagValue("version", eElement);
-						break;
+						double v = Double.valueOf(data[2]);
+						double installedV = Double.valueOf(pdf.getVersion());
+						if (v > installedV)
+							TimoliaCore.updateAvailable = true;
 					}
 				}
-			}
-
-			xml.delete();
-			double v;
-			double installedV;
-
-			try {
-				v = Double.valueOf(version);
-				installedV = Double.valueOf(pdf.getVersion());
-			} catch (Exception e) {
-				return false;
-			}
-
-			if (v > installedV) {
-				return true;
 			}
 		} catch (Exception e) {
 
 		}
-		return false;
 	}
 
 	private static String getTagValue(String sTag, Element eElement) {
 		NodeList nlList = eElement.getElementsByTagName(sTag).item(0).getChildNodes();
-
 		Node nValue = (Node) nlList.item(0);
-
 		return nValue.getNodeValue();
 	}
 
