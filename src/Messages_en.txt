@@ -58,6 +58,7 @@ droppedMultiple: %a1 Items have been dropped
 dumped: %a1 has been dumped
 
 exeOP: You can't execute commands for this Player
+executed: %a1 executed %a2
 
 colorList: Color-List:
 colorsShown: The Colorlist has been shown

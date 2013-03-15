@@ -57,7 +57,8 @@ droppedMultiple: %a1 Items wurden gedroppt
 
 dumped: %a1 wurde weggeworfen
 
-exeOP: Du kannst für diesen Spieler keine Befehle ausf�hren
+exeOP: Du kannst für diesen Spieler keine Befehle ausführen
+executed: %a1 führte %a2 aus
 
 colorList: Farbliste:
 colorsShown: Die Farbliste wurde angezeigt
@@ -99,7 +100,7 @@ locs: Locations: %a1
 locRemoved: Der Ort wurde entfernt
 locSet: Der Ort wurde gesetzt
 
-gamemodeChanged: Dein Gamemode wurde ge�ndert
+gamemodeChanged: Dein Gamemode wurde geändert
 
 fakeMsgNotify: Fakenachricht:
 
@@ -120,7 +121,7 @@ alreadyOnTheList: %a1 ist schon auf der Liste
 notOnTheList: %a1 ist nicht auf der Liste
 errorSaveList: Fehler beim Speichern der Liste
 errorLoadList: Fehler beim Laden der Liste
-addedToList: %a1 wurde der Liste hinzugef�gt!
+addedToList: %a1 wurde der Liste hinzugefügt!
 removedFromList: %a1 wurde von der Liste entfernt!
 
 dateTime: Datum und Uhrzeit: %a1
