@@ -2,7 +2,7 @@ name: TimoliaCore
 version: 1.0
 author: pizzafreak08
 website: http://www.timolia.de/
-main: de.dariusmewes.TimoliaCore.TimoliaCore
+main: de.timolia.core.TimoliaCore
 commands:
     access:
         usage: /access <allow/deny> [msg] OR <add/remove> <name> OR <reload/list> OR setmsg <msg>
