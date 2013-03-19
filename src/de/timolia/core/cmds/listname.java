@@ -69,7 +69,7 @@ public class listname extends TCommand {
 			}
 		}
 
-		String out = ((args.length == 1) ? args[0] : args[1]) + "$r";
+		String out = ((args.length == 1) ? args[0] : args[1]) + "&r";
 		out = ChatColor.translateAlternateColorCodes('&', out);
 
 		if (out.length() > 16) {
