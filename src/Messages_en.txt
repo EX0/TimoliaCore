@@ -29,6 +29,7 @@ playerDamaged: The Player has been damaged
 listNameSet: The Playerlist-Name has been changed
 listReset: All names have been reset
 nameAlreadyAssigned: The entered name is already assignes to someone else
+listnameTooLong: The entered name is too long.
 
 invalidSlot: Invalid Slot! Choose 1-4
 armorSet: The Armor has been set

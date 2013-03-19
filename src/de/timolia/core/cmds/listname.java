@@ -71,6 +71,12 @@ public class listname extends TCommand {
 
 		String out = ((args.length == 1) ? args[0] : args[1]) + "$r";
 		out = ChatColor.translateAlternateColorCodes('&', out);
+
+		if (out.length() > 16) {
+			sender.sendMessage(_("listnameTooLong"));
+			return;
+		}
+
 		for (int i = 0; i < out.length(); i++)
 			if (!allowed.contains(String.valueOf(out.toLowerCase().charAt(i)))) {
 				sender.sendMessage(_("illegalChar"));

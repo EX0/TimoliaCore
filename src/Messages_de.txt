@@ -29,6 +29,7 @@ playerDamaged: Der Spieler bekam Schaden
 listNameSet: Der Listenname wurde geändert
 listReset: Alle Namen in der Liste wurden zurückgesetzt
 nameAlreadyAssigned: Der Name ist bereits vergeben
+listnameTooLong: Der Name ist zu lang
 
 invalidSlot: Ungültiger Slot! Wähle von 1-4
 armorSet: Die Rüstung wurde gesetzt
