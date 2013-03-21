@@ -48,45 +48,45 @@ public class PlayerListener implements Listener {
 		}
 
 		// colored listname
-		if (event.getPlayer().hasPermission("tcore.listname.join") && !event.getPlayer().hasPermission("tcore.listname.forceoff")) {
+		if (event.getPlayer().hasPermission("tcore.listname.join")) {
 			String name = event.getPlayer().getName();
 			if (event.getPlayer().hasPermission("tcore.listname.black"))
-				name = "$0" + name;
+				name = "§0" + name;
 			if (event.getPlayer().hasPermission("tcore.listname.darkblue"))
-				name = "$1" + name;
+				name = "§1" + name;
 			if (event.getPlayer().hasPermission("tcore.listname.darkgreen"))
-				name = "$2" + name;
+				name = "§2" + name;
 			if (event.getPlayer().hasPermission("tcore.listname.darkcyan"))
-				name = "$3" + name;
+				name = "§3" + name;
 			if (event.getPlayer().hasPermission("tcore.listname.darkred"))
-				name = "$4" + name;
+				name = "§4" + name;
 			if (event.getPlayer().hasPermission("tcore.listname.purple"))
-				name = "$5" + name;
+				name = "§5" + name;
 			if (event.getPlayer().hasPermission("tcore.listname.orange"))
-				name = "$6" + name;
+				name = "§6" + name;
 			if (event.getPlayer().hasPermission("tcore.listname.gray"))
-				name = "$7" + name;
+				name = "§7" + name;
 			if (event.getPlayer().hasPermission("tcore.listname.darkgray"))
-				name = "$8" + name;
+				name = "§8" + name;
 			if (event.getPlayer().hasPermission("tcore.listname.blue"))
-				name = "$9" + name;
+				name = "§9" + name;
 			if (event.getPlayer().hasPermission("tcore.listname.green"))
-				name = "$a" + name;
+				name = "§a" + name;
 			if (event.getPlayer().hasPermission("tcore.listname.cyan"))
-				name = "$b" + name;
+				name = "§b" + name;
 			if (event.getPlayer().hasPermission("tcore.listname.red"))
-				name = "$c" + name;
+				name = "§c" + name;
 			if (event.getPlayer().hasPermission("tcore.listname.pink"))
-				name = "$d" + name;
+				name = "§d" + name;
 			if (event.getPlayer().hasPermission("tcore.listname.yellow"))
-				name = "$e" + name;
+				name = "§e" + name;
 			else
 				return;
 
 			if (name.length() > 14)
 				name = name.substring(0, 13);
 
-			name += "$r";
+			name += "§r";
 			for (int i = 0; i < name.length(); i++)
 				if (!listname.allowed.contains(String.valueOf(name.toLowerCase().charAt(i))))
 					return;

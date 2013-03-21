@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 
 public class listname extends TCommand {
 
-	public static String allowed = "abcdefghijklmnopqrstuvwxyz0123456789$_";
+	public static String allowed = "abcdefghijklmnopqrstuvwxyz0123456789§_";
 
 	public listname(String name) {
 		super(name);
