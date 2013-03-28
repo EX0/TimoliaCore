@@ -85,6 +85,9 @@ commands:
     setloc:
         usage: /setloc <name>
         description: Set a Location
+    setname:
+        usage: /setname <name>
+        description: Sets your name to a given string
     skick:
         usage: /skick <Spieler> <msg>
         description: Kick someone silently

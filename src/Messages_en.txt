@@ -11,6 +11,8 @@ listEmpty: The list is empty
 
 illegalChar: Error: Illegal characters!
 
+displayNameChanged: Your nickname has been changed
+
 autosavebcast: All data has been saved!
 saveTimeSet: The Delay has been set!
 enterTime: Please enter a valid Time!

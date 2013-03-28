@@ -52,33 +52,33 @@ public class PlayerListener implements Listener {
 			String name = event.getPlayer().getName();
 			if (event.getPlayer().hasPermission("tcore.listname.black"))
 				name = "§0" + name;
-			if (event.getPlayer().hasPermission("tcore.listname.darkblue"))
+			else if (event.getPlayer().hasPermission("tcore.listname.darkblue"))
 				name = "§1" + name;
-			if (event.getPlayer().hasPermission("tcore.listname.darkgreen"))
+			else if (event.getPlayer().hasPermission("tcore.listname.darkgreen"))
 				name = "§2" + name;
-			if (event.getPlayer().hasPermission("tcore.listname.darkcyan"))
+			else if (event.getPlayer().hasPermission("tcore.listname.darkcyan"))
 				name = "§3" + name;
-			if (event.getPlayer().hasPermission("tcore.listname.darkred"))
+			else if (event.getPlayer().hasPermission("tcore.listname.darkred"))
 				name = "§4" + name;
-			if (event.getPlayer().hasPermission("tcore.listname.purple"))
+			else if (event.getPlayer().hasPermission("tcore.listname.purple"))
 				name = "§5" + name;
-			if (event.getPlayer().hasPermission("tcore.listname.orange"))
+			else if (event.getPlayer().hasPermission("tcore.listname.orange"))
 				name = "§6" + name;
-			if (event.getPlayer().hasPermission("tcore.listname.gray"))
+			else if (event.getPlayer().hasPermission("tcore.listname.gray"))
 				name = "§7" + name;
-			if (event.getPlayer().hasPermission("tcore.listname.darkgray"))
+			else if (event.getPlayer().hasPermission("tcore.listname.darkgray"))
 				name = "§8" + name;
-			if (event.getPlayer().hasPermission("tcore.listname.blue"))
+			else if (event.getPlayer().hasPermission("tcore.listname.blue"))
 				name = "§9" + name;
-			if (event.getPlayer().hasPermission("tcore.listname.green"))
+			else if (event.getPlayer().hasPermission("tcore.listname.green"))
 				name = "§a" + name;
-			if (event.getPlayer().hasPermission("tcore.listname.cyan"))
+			else if (event.getPlayer().hasPermission("tcore.listname.cyan"))
 				name = "§b" + name;
-			if (event.getPlayer().hasPermission("tcore.listname.red"))
+			else if (event.getPlayer().hasPermission("tcore.listname.red"))
 				name = "§c" + name;
-			if (event.getPlayer().hasPermission("tcore.listname.pink"))
+			else if (event.getPlayer().hasPermission("tcore.listname.pink"))
 				name = "§d" + name;
-			if (event.getPlayer().hasPermission("tcore.listname.yellow"))
+			else if (event.getPlayer().hasPermission("tcore.listname.yellow"))
 				name = "§e" + name;
 			else
 				return;

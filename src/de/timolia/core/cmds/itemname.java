@@ -29,7 +29,7 @@ public class itemname extends TCommand {
 			return;
 		}
 
-		String msg = "$r";
+		String msg = "";
 		for (int i = 0; i < args.length; i++)
 			msg += args[i] + " ";
 

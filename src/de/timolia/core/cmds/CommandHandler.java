@@ -50,6 +50,7 @@ public class CommandHandler {
 		add(new raw("raw"));
 		add(new removeloc("removeloc"));
 		add(new setloc("setloc"));
+		add(new setname("setname"));
 		add(new skick("skick"));
 		add(new st("st"));
 		add(new tcore("tcore"));

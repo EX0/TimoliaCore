@@ -55,7 +55,7 @@ public class access extends TCommand {
 				sender.sendMessage(prefix + out);
 			}
 			return;
-			
+
 		} else if (args[0].equalsIgnoreCase("allow")) {
 			instance.getConfig().set("maintenance", false);
 			instance.saveConfig();

@@ -11,6 +11,8 @@ listEmpty: Die Liste ist leer
 
 illegalChar: Fehler: Nicht erlaubte Zeichen!
 
+displayNameChanged: Dein Nickname wurde geändert
+
 autosavebcast: Daten gespeichert!
 saveTimeSet: Die Zeit wurde eingestellt!
 enterTime: Bitte gib eine Zeit an!

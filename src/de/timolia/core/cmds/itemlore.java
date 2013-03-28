@@ -37,7 +37,7 @@ public class itemlore extends TCommand {
 		ItemMeta meta = p.getItemInHand().getItemMeta();
 		List<String> list = meta.getLore();
 
-		String msg = "$r";
+		String msg = "";
 		for (int i = 1; i < args.length; i++)
 			msg += args[i] + " ";
 

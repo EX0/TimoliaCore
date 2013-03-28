@@ -29,15 +29,15 @@ public class TimoliaCore extends JavaPlugin {
 	public static boolean check = false;
 	public static File dataFolder;
 	public static boolean coding = false;
-	
+
 	public void onEnable() {
 		CommandHandler.init(this);
 		initEventHandlers();
 		initConfig();
 		dataFolder = getDataFolder();
 		new File(dataFolder + File.separator + "locations").mkdir();
-		if (check)
-			UpdateChecker.start(this);
+		// if (check)
+		// UpdateChecker.start(this);
 
 		if (coding)
 			Message.console("PLUGIN RUNNING IN CODING-MODE!!! BE CAREFUL!!!");
@@ -95,7 +95,7 @@ public class TimoliaCore extends JavaPlugin {
 			asave.startAutoSave();
 			Message.console("Autosave started!");
 		}
-		
+
 		loadMSGs();
 	}
 
