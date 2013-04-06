@@ -22,13 +22,12 @@ public class mode extends TCommand {
 	public void perform(CommandSender sender, String[] args) {
 		Player p = (Player) sender;
 
-		if (p.getGameMode() == GameMode.CREATIVE) {
+		if (p.getGameMode() == GameMode.CREATIVE)
 			p.setGameMode(GameMode.SURVIVAL);
-			p.sendMessage(_("gamemodeChanged"));
-		} else {
+		else
 			p.setGameMode(GameMode.CREATIVE);
-			p.sendMessage(_("gamemodeChanged"));
-		}
+
+		p.sendMessage(_("gamemodeChanged"));
 	}
 
 }
