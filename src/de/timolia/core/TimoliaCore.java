@@ -29,6 +29,7 @@ public class TimoliaCore extends JavaPlugin {
 	public static boolean check = false;
 	public static File dataFolder;
 	public static boolean coding = false;
+	private Metrics m;
 
 	public void onEnable() {
 		CommandHandler.init(this);
@@ -41,6 +42,13 @@ public class TimoliaCore extends JavaPlugin {
 
 		if (coding)
 			Message.console("PLUGIN RUNNING IN CODING-MODE!!! BE CAREFUL!!!");
+
+		try {
+			m = new Metrics(this);
+			m.start();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 		try {
 			access.load();
