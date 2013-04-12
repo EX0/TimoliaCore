@@ -17,12 +17,10 @@ public class asave extends TCommand {
 	public static boolean running = false;
 	public static int taskID;
 
-	public asave(String name) {
-		super(name);
-		setMinArgs(1);
-		setMaxArgs(2);
-		setUsage("/asave <start/stop/delay/status>");
-		setDesc("Settings for autosaving");
+	protected void prepare() {
+		permission();
+		minArgs(1);
+		maxArgs(2);
 	}
 
 	public void perform(CommandSender sender, String[] args) {
@@ -72,7 +70,7 @@ public class asave extends TCommand {
 			sender.sendMessage(prefix + "Autosave " + (running ? __("running") : __("notRunning")));
 
 		} else
-			sender.sendMessage(getUsage());
+			sender.sendMessage(usage());
 	}
 
 	public static boolean startAutoSave() {

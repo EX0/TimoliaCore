@@ -13,11 +13,9 @@ import org.bukkit.inventory.ItemStack;
 
 public class cblock extends TCommand {
 
-	public cblock(String name) {
-		super(name);
-		setMaxArgs(1);
-		setUsage("/cblock [Player]");
-		setDesc("Gives you or someone else a commandblock");
+	protected void prepare() {
+		permission();
+		maxArgs(1);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

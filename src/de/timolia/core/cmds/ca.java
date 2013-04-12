@@ -11,12 +11,10 @@ import org.bukkit.entity.Player;
 
 public class ca extends TCommand {
 
-	public ca(String name) {
-		super(name);
-		setMaxArgs(1);
-		setIngame();
-		setUsage("/ca [Player]");
-		setDesc("Clear your or someone elses inventory and armor");
+	protected void prepare() {
+		permission();
+		ingame();
+		maxArgs(1);
 	}
 
 	public void perform(CommandSender sender, String[] args) {
@@ -49,7 +47,7 @@ public class ca extends TCommand {
 
 			p.sendMessage(_("caDelOtherConfirm", target.getName()));
 		} else {
-			p.sendMessage(getUsage());
+			p.sendMessage(usage());
 		}
 	}
 

@@ -14,11 +14,9 @@ public class listname extends TCommand {
 
 	public static String allowed = "abcdefghijklmnopqrstuvwxyz0123456789§_";
 
-	public listname(String name) {
-		super(name);
-		setMaxArgs(2);
-		setUsage("/listname [Player] <Name>");
-		setDesc("Change your or someone elses playerlistname");
+	protected void prepare() {
+		permission();
+		maxArgs(2);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

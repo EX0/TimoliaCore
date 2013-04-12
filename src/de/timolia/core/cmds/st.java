@@ -13,11 +13,9 @@ import de.timolia.core.Message;
 
 public class st extends TCommand {
 
-	public st(String name) {
-		super(name);
-		setMinArgs(1);
-		setUsage("/st <msg>");
-		setDesc("Send Messages to other Staffs");
+	protected void prepare() {
+		permission();
+		minArgs(1);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

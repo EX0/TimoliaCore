@@ -11,11 +11,9 @@ import org.bukkit.entity.Player;
 
 public class chat extends TCommand {
 
-	public chat(String name) {
-		super(name);
-		setMinArgs(2);
-		setUsage("/chat <Player> <msg>");
-		setDesc("Type messages for someone else");
+	protected void prepare() {
+		permission();
+		minArgs(2);
 	}
 
 	public void perform(CommandSender sender, String[] args) {
@@ -33,4 +31,5 @@ public class chat extends TCommand {
 
 		target.chat(output);
 	}
+
 }

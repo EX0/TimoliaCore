@@ -11,12 +11,10 @@ import org.bukkit.entity.Player;
 
 public class mode extends TCommand {
 
-	public mode(String name) {
-		super(name);
-		setIngame();
-		setMaxArgs(0);
-		setUsage("/mode");
-		setDesc("Switch between Creative and Survival-Mode");
+	protected void prepare() {
+		permission();
+		ingame();
+		maxArgs(0);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

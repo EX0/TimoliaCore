@@ -12,11 +12,9 @@ import org.bukkit.potion.PotionEffectType;
 
 public class visible extends TCommand {
 
-	public visible(String name) {
-		super(name);
-		setMaxArgs(1);
-		setUsage("/visible [player/all]");
-		setDesc("Remove someones/everyones invisibility-effect");
+	protected void prepare() {
+		permission();
+		maxArgs(1);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

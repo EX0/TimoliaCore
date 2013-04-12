@@ -12,11 +12,9 @@ import de.timolia.core.Message;
 
 public class console extends TCommand {
 
-	public console(String name) {
-		super(name);
-		setMinArgs(1);
-		setUsage("/console <cmd>");
-		setDesc("Executes console-commands");
+	protected void prepare() {
+		permission();
+		minArgs(1);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

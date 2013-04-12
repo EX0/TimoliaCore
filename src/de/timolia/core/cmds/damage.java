@@ -11,12 +11,10 @@ import org.bukkit.entity.Player;
 
 public class damage extends TCommand {
 
-	public damage(String name) {
-		super(name);
-		setMinArgs(2);
-		setMaxArgs(2);
-		setUsage("/damage <Player> <amount>");
-		setDesc("Damage someone else");
+	protected void prepare() {
+		permission();
+		minArgs(2);
+		maxArgs(2);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

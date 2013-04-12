@@ -13,11 +13,9 @@ import de.timolia.core.TimoliaCore;
 
 public class loclist extends TCommand {
 
-	public loclist(String name) {
-		super(name);
-		setMaxArgs(0);
-		setUsage("/loclist");
-		setDesc("Shows a list of Locations");
+	protected void prepare() {
+		permission();
+		maxArgs(0);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

@@ -12,12 +12,10 @@ import org.bukkit.entity.Player;
 
 public class colors extends TCommand {
 
-	public colors(String name) {
-		super(name);
-		setMinArgs(0);
-		setMaxArgs(1);
-		setUsage("/colors [Player]");
-		setDesc("Shows a list of available chat colors");
+	protected void prepare() {
+		permission();
+		minArgs(0);
+		maxArgs(1);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

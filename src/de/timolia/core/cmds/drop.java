@@ -14,12 +14,10 @@ import org.bukkit.util.Vector;
 
 public class drop extends TCommand {
 
-	public drop(String name) {
-		super(name);
-		setIngame();
-		setMaxArgs(1);
-		setUsage("/drop [all/item-id]");
-		setDesc("Drop a certain Material or just everything");
+	protected void prepare() {
+		permission();
+		ingame();
+		maxArgs(1);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

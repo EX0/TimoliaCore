@@ -13,12 +13,10 @@ import org.bukkit.inventory.ItemStack;
 
 public class armor extends TCommand {
 
-	public armor(String name) {
-		super(name);
-		setMinArgs(2);
-		setMaxArgs(3);
-		setUsage("/armor [Player] <slot> <item-id>");
-		setDesc("Change your or someone elses armor");
+	protected void prepare() {
+		permission();
+		minArgs(2);
+		maxArgs(3);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

@@ -24,11 +24,9 @@ public class access extends TCommand {
 
 	private static List<String> players = new ArrayList<String>();
 
-	public access(String name) {
-		super(name);
-		setMinArgs(1);
-		setUsage("/access <allow/deny> [msg] OR <add/remove> <name> OR <reload/list> OR setmsg <msg>");
-		setDesc("A better whitelist");
+	protected void prepare() {
+		permission();
+		minArgs(1);
 	}
 
 	public void perform(CommandSender sender, String[] args) {
@@ -78,7 +76,7 @@ public class access extends TCommand {
 		}
 
 		if (args.length == 1) {
-			sender.sendMessage(getUsage());
+			sender.sendMessage(usage());
 			return;
 		}
 
@@ -122,7 +120,7 @@ public class access extends TCommand {
 			sender.sendMessage(_("msgSet"));
 
 		} else
-			sender.sendMessage(getUsage());
+			sender.sendMessage(usage());
 	}
 
 	public static void load() throws IOException {

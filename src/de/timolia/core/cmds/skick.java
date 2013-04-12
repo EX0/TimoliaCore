@@ -12,11 +12,9 @@ import org.bukkit.entity.Player;
 
 public class skick extends TCommand {
 
-	public skick(String name) {
-		super(name);
-		setMinArgs(1);
-		setUsage("/skick <Spieler> <msg>");
-		setDesc("Kick someone silently");
+	protected void prepare() {
+		permission();
+		minArgs(1);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

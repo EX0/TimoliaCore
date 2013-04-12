@@ -12,12 +12,10 @@ import org.bukkit.inventory.ItemStack;
 
 public class dump extends TCommand {
 
-	public dump(String name) {
-		super(name);
-		setIngame();
-		setMaxArgs(0);
-		setUsage("/dump");
-		setDesc("Dump the item in your hand");
+	protected void prepare() {
+		permission();
+		ingame();
+		maxArgs(0);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

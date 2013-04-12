@@ -13,12 +13,10 @@ import de.timolia.core.TimoliaCore;
 
 public class removeloc extends TCommand {
 
-	public removeloc(String name) {
-		super(name);
-		setMinArgs(1);
-		setMaxArgs(1);
-		setUsage("/removeloc <Location>");
-		setDesc("Remove a Location");
+	protected void prepare() {
+		permission();
+		minArgs(1);
+		maxArgs(1);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

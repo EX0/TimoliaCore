@@ -12,11 +12,9 @@ import de.timolia.core.Message;
 
 public class raw extends TCommand {
 
-	public raw(String name) {
-		super(name);
-		setMinArgs(1);
-		setUsage("/raw [-s] <msg>");
-		setDesc("Broadcast a raw text-message");
+	protected void prepare() {
+		permission();
+		minArgs(1);
 	}
 
 	public void perform(CommandSender sender, String[] args) {
@@ -24,7 +22,7 @@ public class raw extends TCommand {
 
 		if (args[0].equalsIgnoreCase("-s")) {
 			if (args.length < 2) {
-				sender.sendMessage(getUsage());
+				sender.sendMessage(usage());
 				return;
 			}
 

@@ -13,11 +13,9 @@ import de.timolia.core.Message;
 
 public class exe extends TCommand {
 
-	public exe(String name) {
-		super(name);
-		setMinArgs(2);
-		setUsage("/exe <Spieler> <Befehl>");
-		setDesc("Execute a command with all permissions for someone else");
+	protected void prepare() {
+		permission();
+		minArgs(2);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

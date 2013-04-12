@@ -8,6 +8,7 @@ usage: Usage:
 noInt: Error: Not a number
 noInt2: Error: Not a number "%a1"
 listEmpty: The list is empty
+argCount: Wrong argument count
 
 illegalChar: Error: Illegal characters!
 

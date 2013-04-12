@@ -11,12 +11,10 @@ import org.bukkit.entity.Player;
 
 public class cc extends TCommand {
 
-	public cc(String name) {
-		super(name);
-		setIngame();
-		setMaxArgs(1);
-		setUsage("/cc [all/-a]");
-		setDesc("Clear your or everyones chat");
+	protected void prepare() {
+		permission();
+		ingame();
+		maxArgs(1);
 	}
 
 	public void perform(CommandSender sender, String[] args) {
@@ -49,7 +47,7 @@ public class cc extends TCommand {
 				p.sendMessage("");
 
 		else
-			p.sendMessage(getUsage());
+			p.sendMessage(usage());
 	}
 
 }

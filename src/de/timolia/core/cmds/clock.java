@@ -12,11 +12,9 @@ import org.bukkit.command.CommandSender;
 
 public class clock extends TCommand {
 
-	public clock(String name) {
-		super(name);
-		setMaxArgs(0);
-		setUsage("/clock");
-		setDesc("Shows date and time");
+	protected void prepare() {
+		permission();
+		maxArgs(0);
 	}
 
 	public void perform(CommandSender sender, String[] args) {
@@ -26,5 +24,5 @@ public class clock extends TCommand {
 		String date = uhr.format(datum);
 		sender.sendMessage(_("dateTime", date));
 	}
-	
+
 }

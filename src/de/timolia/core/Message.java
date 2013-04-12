@@ -41,17 +41,6 @@ public class Message {
 		if (key.length == 0)
 			return null;
 
-		String msg = TimoliaCore.PREFIX + values.get(key[0]);
-		for (int i = 1; i < key.length; i++)
-			msg = msg.replaceAll("%a" + i, key[i]);
-
-		return msg;
-	}
-
-	public static String __(String... key) {
-		if (key.length == 0)
-			return null;
-
 		String msg = values.get(key[0]);
 		for (int i = 1; i < key.length; i++)
 			msg = msg.replaceAll("%a" + i, key[i]);

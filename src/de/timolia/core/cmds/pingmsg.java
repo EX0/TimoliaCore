@@ -10,10 +10,8 @@ import org.bukkit.command.CommandSender;
 
 public class pingmsg extends TCommand {
 
-	public pingmsg(String name) {
-		super(name);
-		setUsage("/pingmsg <msg>");
-		setDesc("Change the Message in the Multiplayer-Menu");
+	protected void prepare() {
+		permission();
 	}
 
 	public void perform(CommandSender sender, String[] args) {

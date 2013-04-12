@@ -16,12 +16,10 @@ public class deaths extends TCommand {
 	public static List<String> shuttedOff = new ArrayList<String>();
 	public static boolean hidingEnabled = false;
 
-	public deaths(String name) {
-		super(name);
-		setIngame();
-		setMaxArgs(1);
-		setUsage("/deaths [clear]");
-		setDesc("Hide deathmessages");
+	protected void prepare() {
+		permission();
+		ingame();
+		maxArgs(1);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

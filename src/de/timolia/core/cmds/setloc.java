@@ -18,13 +18,11 @@ import de.timolia.core.TimoliaCore;
 
 public class setloc extends TCommand {
 
-	public setloc(String name) {
-		super(name);
-		setIngame();
-		setMinArgs(1);
-		setMaxArgs(1);
-		setUsage("/setloc <name>");
-		setDesc("Set a Location");
+	protected void prepare() {
+		permission();
+		ingame();
+		minArgs(1);
+		maxArgs(1);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

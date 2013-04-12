@@ -13,12 +13,10 @@ import org.bukkit.inventory.meta.BookMeta;
 
 public class book extends TCommand {
 
-	public book(String name) {
-		super(name);
-		setIngame();
-		setMinArgs(2);
-		setUsage("/book <author/title> [args]");
-		setDesc("Change the author and title of a book");
+	protected void prepare() {
+		permission();
+		ingame();
+		minArgs(2);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

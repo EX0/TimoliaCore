@@ -10,13 +10,11 @@ import org.bukkit.entity.Player;
 
 public class setname extends TCommand {
 
-	public setname(String name) {
-		super(name);
-		setIngame();
-		setMinArgs(1);
-		setMaxArgs(1);
-		setUsage("/setname <name>");
-		setDesc("Sets your name to a given string");
+	protected void prepare() {
+		permission();
+		ingame();
+		minArgs(1);
+		maxArgs(1);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

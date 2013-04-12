@@ -18,12 +18,10 @@ import de.timolia.core.TimoliaCore;
 
 public class itemlore extends TCommand {
 
-	public itemlore(String name) {
-		super(name);
-		setIngame();
-		setMinArgs(2);
-		setUsage("/itemlore <add/remove> <name>");
-		setDesc("Change the lore of an item");
+	protected void prepare() {
+		permission();
+		ingame();
+		minArgs(2);
 	}
 
 	public void perform(CommandSender sender, String[] args) {
@@ -67,7 +65,7 @@ public class itemlore extends TCommand {
 			sender.sendMessage(_("removedNote"));
 
 		} else {
-			sender.sendMessage(getUsage());
+			sender.sendMessage(usage());
 			return;
 		}
 

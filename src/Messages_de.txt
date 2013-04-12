@@ -8,6 +8,7 @@ usage: Benutzung:
 noInt: Fehler: Keine Zahl
 noInt2: Fehler: Keine Zahl "%a2"
 listEmpty: Die Liste ist leer
+argCount: Falsche Argumenten-Anzahl
 
 illegalChar: Fehler: Nicht erlaubte Zeichen!
 

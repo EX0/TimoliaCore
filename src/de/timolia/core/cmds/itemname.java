@@ -13,12 +13,10 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class itemname extends TCommand {
 
-	public itemname(String name) {
-		super(name);
-		setIngame();
-		setMinArgs(0);
-		setUsage("/itemname <name>");
-		setDesc("Change the name of an item");
+	protected void prepare() {
+		permission();
+		ingame();
+		minArgs(1);
 	}
 
 	public void perform(CommandSender sender, String[] args) {

@@ -18,12 +18,10 @@ import de.timolia.core.TimoliaCore;
 
 public class loc extends TCommand {
 
-	public loc(String name) {
-		super(name);
-		setMinArgs(1);
-		setMaxArgs(2);
-		setUsage("/loc <Location> [Player]");
-		setDesc("Teleport yourself or someone else to a location");
+	protected void prepare() {
+		permission();
+		minArgs(1);
+		maxArgs(2);
 	}
 
 	public void perform(CommandSender sender, String[] args) {
