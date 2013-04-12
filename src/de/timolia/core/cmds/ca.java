@@ -45,9 +45,9 @@ public class ca extends TCommand {
 
 			target.getInventory().clear();
 			target.getInventory().setArmorContents(null);
-			target.sendMessage(_("caDelOtherConfirm", p.getName()));
+			target.sendMessage(_("caDelOther", p.getName()));
 
-			p.sendMessage(_("caDelOther", target.getName()));
+			p.sendMessage(_("caDelOtherConfirm", target.getName()));
 		} else {
 			p.sendMessage(getUsage());
 		}
