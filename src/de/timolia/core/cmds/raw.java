@@ -12,35 +12,35 @@ import de.timolia.core.Message;
 
 public class raw extends TCommand {
 
-	protected void prepare() {
-		permission();
-		minArgs(1);
-	}
+    protected void prepare() {
+        permission();
+        minArgs(1);
+    }
 
-	public void perform(CommandSender sender, String[] args) {
-		int start;
+    public void perform(CommandSender sender, String[] args) {
+        int start;
 
-		if (args[0].equalsIgnoreCase("-s")) {
-			if (args.length < 2) {
-				sender.sendMessage(usage());
-				return;
-			}
+        if (args[0].equalsIgnoreCase("-s")) {
+            if (args.length < 2) {
+                sender.sendMessage(usage());
+                return;
+            }
 
-			start = 1;
+            start = 1;
 
-		} else {
-			Message.certain(_("fakeMsgNotify"), "tcore.raw.notify");
-			start = 0;
-		}
+        } else {
+            Message.certain(_("fakeMsgNotify"), "tcore.raw.notify");
+            start = 0;
+        }
 
-		String msg = "";
-		for (int i = start; i < args.length; i++)
-			msg += args[i] + " ";
+        String msg = "";
+        for (int i = start; i < args.length; i++)
+            msg += args[i] + " ";
 
-		msg = ChatColor.translateAlternateColorCodes('&', msg);
+        msg = ChatColor.translateAlternateColorCodes('&', msg);
 
-		Message.online(msg);
-		Message.console("[FAKEMESSAGE] " + msg);
-	}
+        Message.online(msg);
+        Message.console("[FAKEMESSAGE] " + msg);
+    }
 
 }

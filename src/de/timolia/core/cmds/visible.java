@@ -12,57 +12,57 @@ import org.bukkit.potion.PotionEffectType;
 
 public class visible extends TCommand {
 
-	protected void prepare() {
-		permission();
-		maxArgs(1);
-	}
+    protected void prepare() {
+        permission();
+        maxArgs(1);
+    }
 
-	public void perform(CommandSender sender, String[] args) {
-		if (args.length == 0) {
-			String names = "";
-			for (Player p : Bukkit.getOnlinePlayers()) {
-				if (!p.hasPotionEffect(PotionEffectType.INVISIBILITY))
-					continue;
+    public void perform(CommandSender sender, String[] args) {
+        if (args.length == 0) {
+            String names = "";
+            for (Player p : Bukkit.getOnlinePlayers()) {
+                if (!p.hasPotionEffect(PotionEffectType.INVISIBILITY))
+                    continue;
 
-				names += p.getName() + " ";
-			}
+                names += p.getName() + " ";
+            }
 
-			sender.sendMessage(_("invisibleList", names));
-			return;
-		}
+            sender.sendMessage(_("invisibleList", names));
+            return;
+        }
 
-		if (!args[0].equalsIgnoreCase("all")) {
-			Player p = Bukkit.getPlayer(args[0]);
-			if (p == null) {
-				sender.sendMessage(_("notonline"));
-				return;
-			}
+        if (!args[0].equalsIgnoreCase("all")) {
+            Player p = Bukkit.getPlayer(args[0]);
+            if (p == null) {
+                sender.sendMessage(_("notonline"));
+                return;
+            }
 
-			if (!p.hasPotionEffect(PotionEffectType.INVISIBILITY)) {
-				sender.sendMessage(_("notInvisible"));
-				return;
-			}
+            if (!p.hasPotionEffect(PotionEffectType.INVISIBILITY)) {
+                sender.sendMessage(_("notInvisible"));
+                return;
+            }
 
-			p.removePotionEffect(PotionEffectType.INVISIBILITY);
-			sender.sendMessage(_("madevisible", p.getName()));
+            p.removePotionEffect(PotionEffectType.INVISIBILITY);
+            sender.sendMessage(_("madevisible", p.getName()));
 
-		} else if (args[0].equalsIgnoreCase("all")) {
-			if (!sender.hasPermission("tcore.sichtbar.all")) {
-				sender.sendMessage(_("noperm"));
-				return;
-			}
+        } else if (args[0].equalsIgnoreCase("all")) {
+            if (!sender.hasPermission("tcore.sichtbar.all")) {
+                sender.sendMessage(_("noperm"));
+                return;
+            }
 
-			String names = "";
-			for (Player p : Bukkit.getOnlinePlayers()) {
-				if (!p.hasPotionEffect(PotionEffectType.INVISIBILITY))
-					continue;
+            String names = "";
+            for (Player p : Bukkit.getOnlinePlayers()) {
+                if (!p.hasPotionEffect(PotionEffectType.INVISIBILITY))
+                    continue;
 
-				p.removePotionEffect(PotionEffectType.INVISIBILITY);
-				names += p.getName() + " ";
-			}
+                p.removePotionEffect(PotionEffectType.INVISIBILITY);
+                names += p.getName() + " ";
+            }
 
-			sender.sendMessage(_("madeVisibleList", names));
-		}
-	}
+            sender.sendMessage(_("madeVisibleList", names));
+        }
+    }
 
 }

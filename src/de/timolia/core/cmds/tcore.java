@@ -9,19 +9,19 @@ import org.bukkit.command.CommandSender;
 
 public class tcore extends TCommand {
 
-	protected void prepare() {
-		permission();
-		minArgs(1);
-		maxArgs(1);
-	}
+    protected void prepare() {
+        permission();
+        minArgs(1);
+        maxArgs(1);
+    }
 
-	public void perform(CommandSender sender, String[] args) {
-		if (args[0].equalsIgnoreCase("reload")) {
-			instance.reloadConfig();
-			instance.loadConfig();
-			sender.sendMessage(_("configReloaded"));
-		} else
-			sender.sendMessage(usage());
-	}
+    public void perform(CommandSender sender, String[] args) {
+        if (args[0].equalsIgnoreCase("reload")) {
+            instance.reloadConfig();
+            instance.loadConfig();
+            sender.sendMessage(_("configReloaded"));
+        } else
+            sender.sendMessage(usage());
+    }
 
 }

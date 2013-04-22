@@ -13,28 +13,28 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class itemname extends TCommand {
 
-	protected void prepare() {
-		permission();
-		ingame();
-		minArgs(1);
-	}
+    protected void prepare() {
+        permission();
+        ingame();
+        minArgs(1);
+    }
 
-	public void perform(CommandSender sender, String[] args) {
-		Player p = (Player) sender;
+    public void perform(CommandSender sender, String[] args) {
+        Player p = (Player) sender;
 
-		if (p.getItemInHand().getType() == Material.AIR) {
-			p.sendMessage(_("emptyHand"));
-			return;
-		}
+        if (p.getItemInHand().getType() == Material.AIR) {
+            p.sendMessage(_("emptyHand"));
+            return;
+        }
 
-		String msg = "";
-		for (int i = 0; i < args.length; i++)
-			msg += args[i] + " ";
+        String msg = "";
+        for (int i = 0; i < args.length; i++)
+            msg += args[i] + " ";
 
-		ItemMeta meta = p.getItemInHand().getItemMeta();
-		meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', msg));
-		p.getItemInHand().setItemMeta(meta);
-		p.sendMessage(_("renamedItem"));
-	}
+        ItemMeta meta = p.getItemInHand().getItemMeta();
+        meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', msg));
+        p.getItemInHand().setItemMeta(meta);
+        p.sendMessage(_("renamedItem"));
+    }
 
 }

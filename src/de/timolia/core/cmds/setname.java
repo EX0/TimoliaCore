@@ -10,17 +10,17 @@ import org.bukkit.entity.Player;
 
 public class setname extends TCommand {
 
-	protected void prepare() {
-		permission();
-		ingame();
-		minArgs(1);
-		maxArgs(1);
-	}
+    protected void prepare() {
+        permission();
+        ingame();
+        minArgs(1);
+        maxArgs(1);
+    }
 
-	public void perform(CommandSender sender, String[] args) {
-		Player p = (Player) sender;
-		p.setDisplayName(args[0]);
-		sender.sendMessage(_("displayNameChanged"));
-	}
+    public void perform(CommandSender sender, String[] args) {
+        Player p = (Player) sender;
+        p.setDisplayName(args[0]);
+        sender.sendMessage(_("displayNameChanged"));
+    }
 
 }

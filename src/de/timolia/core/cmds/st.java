@@ -13,18 +13,18 @@ import de.timolia.core.Message;
 
 public class st extends TCommand {
 
-	protected void prepare() {
-		permission();
-		minArgs(1);
-	}
+    protected void prepare() {
+        permission();
+        minArgs(1);
+    }
 
-	public void perform(CommandSender sender, String[] args) {
-		String name = (sender instanceof Player) ? ((Player) sender).getDisplayName() : sender.getName();
-		String msg = "";
-		for (int i = 0; i < args.length; i++)
-			msg += args[i] + " ";
+    public void perform(CommandSender sender, String[] args) {
+        String name = (sender instanceof Player) ? ((Player) sender).getDisplayName() : sender.getName();
+        String msg = "";
+        for (int i = 0; i < args.length; i++)
+            msg += args[i] + " ";
 
-		Message.certain(ChatColor.GOLD + "St - " + ChatColor.GRAY + name + ": " + ChatColor.WHITE + ChatColor.translateAlternateColorCodes('&', msg), "tcore.st");
-	}
+        Message.certain(ChatColor.GOLD + "St - " + ChatColor.GRAY + name + ": " + ChatColor.WHITE + ChatColor.translateAlternateColorCodes('&', msg), "tcore.st");
+    }
 
 }

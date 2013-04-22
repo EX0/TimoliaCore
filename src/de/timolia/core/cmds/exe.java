@@ -13,44 +13,44 @@ import de.timolia.core.Message;
 
 public class exe extends TCommand {
 
-	protected void prepare() {
-		permission();
-		minArgs(2);
-	}
+    protected void prepare() {
+        permission();
+        minArgs(2);
+    }
 
-	public void perform(CommandSender sender, String[] args) {
-		Player target = Bukkit.getPlayer(args[0]);
-		if (target == null) {
-			sender.sendMessage(_("notonline"));
-			return;
-		}
+    public void perform(CommandSender sender, String[] args) {
+        Player target = Bukkit.getPlayer(args[0]);
+        if (target == null) {
+            sender.sendMessage(_("notonline"));
+            return;
+        }
 
-		if (target.hasPermission("tcore.admin") || target.isOp()) {
-			sender.sendMessage(_("exeOP"));
-			return;
-		}
+        if (target.hasPermission("tcore.admin") || target.isOp()) {
+            sender.sendMessage(_("exeOP"));
+            return;
+        }
 
-		String targetcmd = "";
-		for (int i = 1; i < args.length; i++)
-			targetcmd += args[i] + " ";
+        String targetcmd = "";
+        for (int i = 1; i < args.length; i++)
+            targetcmd += args[i] + " ";
 
-		targetcmd = targetcmd.substring(0, targetcmd.length() - 1);
+        targetcmd = targetcmd.substring(0, targetcmd.length() - 1);
 
-		if (targetcmd.charAt(0) != '/')
-			targetcmd = "/" + targetcmd;
+        if (targetcmd.charAt(0) != '/')
+            targetcmd = "/" + targetcmd;
 
-		boolean wasOP = target.isOp();
+        boolean wasOP = target.isOp();
 
-		if (!wasOP)
-			target.setOp(true);
+        if (!wasOP)
+            target.setOp(true);
 
-		target.chat(targetcmd);
+        target.chat(targetcmd);
 
-		if (!wasOP)
-			target.setOp(false);
+        if (!wasOP)
+            target.setOp(false);
 
-		Message.console(sender.getName() + " made " + target.getName() + " execute \"" + targetcmd + "\"");
-		sender.sendMessage(_("executed", target.getName(), targetcmd));
-	}
+        Message.console(sender.getName() + " made " + target.getName() + " execute \"" + targetcmd + "\"");
+        sender.sendMessage(_("executed", target.getName(), targetcmd));
+    }
 
 }

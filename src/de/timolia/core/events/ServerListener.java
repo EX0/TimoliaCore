@@ -14,17 +14,17 @@ import de.timolia.core.TimoliaCore;
 
 public class ServerListener implements Listener {
 
-	private TimoliaCore instance;
+    private TimoliaCore instance;
 
-	public ServerListener(TimoliaCore instance) {
-		this.instance = instance;
-	}
+    public ServerListener(TimoliaCore instance) {
+        this.instance = instance;
+    }
 
-	@EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
-	public void onServerListPing(ServerListPingEvent event) {
-		String motd = instance.getConfig().getString("motd");
-		if (!motd.equalsIgnoreCase(""))
-			event.setMotd(motd);
-	}
+    @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
+    public void onServerListPing(ServerListPingEvent event) {
+        String motd = instance.getConfig().getString("motd");
+        if (!motd.equalsIgnoreCase(""))
+            event.setMotd(motd);
+    }
 
 }

@@ -14,61 +14,61 @@ import org.bukkit.util.Vector;
 
 public class drop extends TCommand {
 
-	protected void prepare() {
-		permission();
-		ingame();
-		maxArgs(1);
-	}
+    protected void prepare() {
+        permission();
+        ingame();
+        maxArgs(1);
+    }
 
-	public void perform(CommandSender sender, String[] args) {
-		Player p = (Player) sender;
+    public void perform(CommandSender sender, String[] args) {
+        Player p = (Player) sender;
 
-		boolean all = false;
-		int count = 0;
+        boolean all = false;
+        int count = 0;
 
-		if (args.length == 0) {
-			if (p.getItemInHand().getType() == Material.AIR) {
-				p.sendMessage(_("emptyHand"));
-				return;
-			}
+        if (args.length == 0) {
+            if (p.getItemInHand().getType() == Material.AIR) {
+                p.sendMessage(_("emptyHand"));
+                return;
+            }
 
-			Item drop = p.getWorld().dropItem(p.getEyeLocation(), p.getItemInHand());
-			Vector vec = new Vector(p.getLocation().getDirection().getX() * 0.3, p.getLocation().getDirection().getY() * 0.3, p.getLocation().getDirection().getZ() * 0.3);
-			drop.setVelocity(drop.getVelocity().add(vec));
-			p.getInventory().remove(p.getItemInHand());
-			p.sendMessage(_("droppedHand"));
+            Item drop = p.getWorld().dropItem(p.getEyeLocation(), p.getItemInHand());
+            Vector vec = new Vector(p.getLocation().getDirection().getX() * 0.3, p.getLocation().getDirection().getY() * 0.3, p.getLocation().getDirection().getZ() * 0.3);
+            drop.setVelocity(drop.getVelocity().add(vec));
+            p.getInventory().remove(p.getItemInHand());
+            p.sendMessage(_("droppedHand"));
 
-		} else if (args.length == 1) {
-			if (args[0].equalsIgnoreCase("all")) {
-				all = true;
-			} else if (!isNumber(args[0])) {
-				p.sendMessage(_("invalidItemID"));
-				return;
-			}
+        } else if (args.length == 1) {
+            if (args[0].equalsIgnoreCase("all")) {
+                all = true;
+            } else if (!isNumber(args[0])) {
+                p.sendMessage(_("invalidItemID"));
+                return;
+            }
 
-			for (ItemStack item : p.getInventory().getContents()) {
-				if (item != null) {
-					if (all || item.getTypeId() == Integer.valueOf(args[0])) {
-						Item drop = p.getWorld().dropItem(p.getEyeLocation(), item);
-						Vector vec = new Vector(p.getLocation().getDirection().getX() * 0.3, p.getLocation().getDirection().getY() * 0.3, p.getLocation().getDirection().getZ() * 0.3);
-						drop.setVelocity(drop.getVelocity().add(vec));
-						count += item.getAmount();
-						p.getInventory().remove(item);
-					}
-				}
-			}
+            for (ItemStack item : p.getInventory().getContents()) {
+                if (item != null) {
+                    if (all || item.getTypeId() == Integer.valueOf(args[0])) {
+                        Item drop = p.getWorld().dropItem(p.getEyeLocation(), item);
+                        Vector vec = new Vector(p.getLocation().getDirection().getX() * 0.3, p.getLocation().getDirection().getY() * 0.3, p.getLocation().getDirection().getZ() * 0.3);
+                        drop.setVelocity(drop.getVelocity().add(vec));
+                        count += item.getAmount();
+                        p.getInventory().remove(item);
+                    }
+                }
+            }
 
-			p.sendMessage(count == 1 ? _("droppedOne") : _("droppedMultiple", String.valueOf(count)));
-		}
-	}
+            p.sendMessage(count == 1 ? _("droppedOne") : _("droppedMultiple", String.valueOf(count)));
+        }
+    }
 
-	private boolean isNumber(String number) {
-		try {
-			Integer.valueOf(number);
-			return true;
-		} catch (NumberFormatException e) {
-			return false;
-		}
-	}
+    private boolean isNumber(String number) {
+        try {
+            Integer.valueOf(number);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 
 }

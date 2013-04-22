@@ -11,25 +11,25 @@ import org.bukkit.entity.Player;
 
 public class chat extends TCommand {
 
-	protected void prepare() {
-		permission();
-		minArgs(2);
-	}
+    protected void prepare() {
+        permission();
+        minArgs(2);
+    }
 
-	public void perform(CommandSender sender, String[] args) {
-		Player target = Bukkit.getPlayer(args[0]);
+    public void perform(CommandSender sender, String[] args) {
+        Player target = Bukkit.getPlayer(args[0]);
 
-		if (target == null) {
-			sender.sendMessage(_("notonline"));
-			return;
-		}
+        if (target == null) {
+            sender.sendMessage(_("notonline"));
+            return;
+        }
 
-		String output = "";
+        String output = "";
 
-		for (int i = 1; i < args.length; i++)
-			output += args[i] + " ";
+        for (int i = 1; i < args.length; i++)
+            output += args[i] + " ";
 
-		target.chat(output);
-	}
+        target.chat(output);
+    }
 
 }

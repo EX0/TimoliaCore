@@ -13,23 +13,23 @@ import de.timolia.core.TimoliaCore;
 
 public class removeloc extends TCommand {
 
-	protected void prepare() {
-		permission();
-		minArgs(1);
-		maxArgs(1);
-	}
+    protected void prepare() {
+        permission();
+        minArgs(1);
+        maxArgs(1);
+    }
 
-	public void perform(CommandSender sender, String[] args) {
-		String name = args[0];
-		File file = new File(TimoliaCore.dataFolder + File.separator + "locations" + File.separator + name + ".location");
+    public void perform(CommandSender sender, String[] args) {
+        String name = args[0];
+        File file = new File(TimoliaCore.dataFolder + File.separator + "locations" + File.separator + name + ".location");
 
-		if (!file.exists()) {
-			sender.sendMessage(_("locNotFound"));
-			return;
-		}
+        if (!file.exists()) {
+            sender.sendMessage(_("locNotFound"));
+            return;
+        }
 
-		file.delete();
-		sender.sendMessage(_("locRemoved"));
-	}
+        file.delete();
+        sender.sendMessage(_("locRemoved"));
+    }
 
 }

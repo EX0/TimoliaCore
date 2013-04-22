@@ -12,22 +12,22 @@ import org.bukkit.inventory.ItemStack;
 
 public class dump extends TCommand {
 
-	protected void prepare() {
-		permission();
-		ingame();
-		maxArgs(0);
-	}
+    protected void prepare() {
+        permission();
+        ingame();
+        maxArgs(0);
+    }
 
-	public void perform(CommandSender sender, String[] args) {
-		Player p = (Player) sender;
+    public void perform(CommandSender sender, String[] args) {
+        Player p = (Player) sender;
 
-		if (p.getItemInHand().getType() == Material.AIR) {
-			p.sendMessage(_("emptyHand"));
-			return;
-		}
+        if (p.getItemInHand().getType() == Material.AIR) {
+            p.sendMessage(_("emptyHand"));
+            return;
+        }
 
-		p.sendMessage(_("dumped", p.getItemInHand().getType().toString()));
-		p.setItemInHand(new ItemStack(Material.AIR));
-	}
+        p.sendMessage(_("dumped", p.getItemInHand().getType().toString()));
+        p.setItemInHand(new ItemStack(Material.AIR));
+    }
 
 }

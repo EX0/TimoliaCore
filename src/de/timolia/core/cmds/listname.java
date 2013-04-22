@@ -12,81 +12,81 @@ import org.bukkit.entity.Player;
 
 public class listname extends TCommand {
 
-	public static String allowed = "abcdefghijklmnopqrstuvwxyz0123456789§_";
+    public static String allowed = "abcdefghijklmnopqrstuvwxyz0123456789§_";
 
-	protected void prepare() {
-		permission();
-		maxArgs(2);
-	}
+    protected void prepare() {
+        permission();
+        maxArgs(2);
+    }
 
-	public void perform(CommandSender sender, String[] args) {
-		if (args.length == 0) {
-			if (!(sender instanceof Player)) {
-				sender.sendMessage(_("ingame"));
-				return;
-			}
+    public void perform(CommandSender sender, String[] args) {
+        if (args.length == 0) {
+            if (!(sender instanceof Player)) {
+                sender.sendMessage(_("ingame"));
+                return;
+            }
 
-			Player p = (Player) sender;
-			p.setPlayerListName(p.getName());
-			sender.sendMessage(_("listNameSet"));
-			return;
-		}
+            Player p = (Player) sender;
+            p.setPlayerListName(p.getName());
+            sender.sendMessage(_("listNameSet"));
+            return;
+        }
 
-		if (args[0].equalsIgnoreCase("reset")) {
-			if (!sender.hasPermission("tcore.listname.reset")) {
-				sender.sendMessage(_("noperm"));
-				return;
-			}
+        if (args[0].equalsIgnoreCase("reset")) {
+            if (!sender.hasPermission("tcore.listname.reset")) {
+                sender.sendMessage(_("noperm"));
+                return;
+            }
 
-			for (Player p : Bukkit.getOnlinePlayers())
-				p.setPlayerListName(p.getName());
+            for (Player p : Bukkit.getOnlinePlayers())
+                p.setPlayerListName(p.getName());
 
-			sender.sendMessage(_("listReset"));
-			return;
-		}
+            sender.sendMessage(_("listReset"));
+            return;
+        }
 
-		Player target;
-		if (args.length == 1) {
-			if (!(sender instanceof Player)) {
-				sender.sendMessage(_("ingame"));
-				return;
-			}
+        Player target;
+        if (args.length == 1) {
+            if (!(sender instanceof Player)) {
+                sender.sendMessage(_("ingame"));
+                return;
+            }
 
-			target = (Player) sender;
+            target = (Player) sender;
 
-		} else {
-			if (!sender.hasPermission("tcore.listname.other")) {
-				sender.sendMessage(_("noperm"));
-				return;
-			}
+        } else {
+            if (!sender.hasPermission("tcore.listname.other")) {
+                sender.sendMessage(_("noperm"));
+                return;
+            }
 
-			target = Bukkit.getPlayer(args[0]);
-			if (target == null) {
-				sender.sendMessage(_("notonline"));
-				return;
-			}
-		}
+            target = Bukkit.getPlayer(args[0]);
+            if (target == null) {
+                sender.sendMessage(_("notonline"));
+                return;
+            }
+        }
 
-		String out = ((args.length == 1) ? args[0] : args[1]) + "&r";
-		out = ChatColor.translateAlternateColorCodes('&', out);
+        String out = ((args.length == 1) ? args[0] : args[1]) + "&r";
+        out = ChatColor.translateAlternateColorCodes('&', out);
 
-		if (out.length() > 16) {
-			sender.sendMessage(_("listnameTooLong"));
-			return;
-		}
+        if (out.length() > 16) {
+            sender.sendMessage(_("listnameTooLong"));
+            return;
+        }
 
-		for (int i = 0; i < out.length(); i++)
-			if (!allowed.contains(String.valueOf(out.toLowerCase().charAt(i)))) {
-				sender.sendMessage(_("illegalChar"));
-				return;
-			}
+        for (int i = 0; i < out.length(); i++)
+            if (!allowed.contains(String.valueOf(out.toLowerCase().charAt(i)))) {
+                sender.sendMessage(_("illegalChar"));
+                return;
+            }
 
-		try {
-			target.setPlayerListName(out);
-			sender.sendMessage(_("listNameSet"));
-		} catch (Exception e) {
-			sender.sendMessage(_("nameAlreadyAssigned"));
-		}
-	}
+        try {
+            target.setPlayerListName(out);
+            sender.sendMessage(_("listNameSet"));
+        } catch (Exception e) {
+            sender.sendMessage(_("nameAlreadyAssigned"));
+        }
+    }
 
 }

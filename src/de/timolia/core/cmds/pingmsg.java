@@ -10,26 +10,26 @@ import org.bukkit.command.CommandSender;
 
 public class pingmsg extends TCommand {
 
-	protected void prepare() {
-		permission();
-	}
+    protected void prepare() {
+        permission();
+    }
 
-	public void perform(CommandSender sender, String[] args) {
-		if (args.length == 0) {
-			instance.getConfig().set("motd", "");
-			instance.saveConfig();
-			sender.sendMessage(_("motdReset"));
-			return;
-		}
+    public void perform(CommandSender sender, String[] args) {
+        if (args.length == 0) {
+            instance.getConfig().set("motd", "");
+            instance.saveConfig();
+            sender.sendMessage(_("motdReset"));
+            return;
+        }
 
-		String msg = "";
-		for (int i = 0; i < args.length; i++)
-			msg += args[i] + " ";
+        String msg = "";
+        for (int i = 0; i < args.length; i++)
+            msg += args[i] + " ";
 
-		instance.getConfig().set("motd", ChatColor.translateAlternateColorCodes('&', msg));
-		instance.saveConfig();
+        instance.getConfig().set("motd", ChatColor.translateAlternateColorCodes('&', msg));
+        instance.saveConfig();
 
-		sender.sendMessage(_("motdSet"));
-	}
+        sender.sendMessage(_("motdSet"));
+    }
 
 }

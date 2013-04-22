@@ -13,46 +13,46 @@ import org.bukkit.inventory.meta.BookMeta;
 
 public class book extends TCommand {
 
-	protected void prepare() {
-		permission();
-		ingame();
-		minArgs(2);
-	}
+    protected void prepare() {
+        permission();
+        ingame();
+        minArgs(2);
+    }
 
-	public void perform(CommandSender sender, String[] args) {
-		Player p = (Player) sender;
+    public void perform(CommandSender sender, String[] args) {
+        Player p = (Player) sender;
 
-		if (args[0].equalsIgnoreCase("title")) {
-			if (p.getItemInHand().getType() != Material.WRITTEN_BOOK) {
-				sender.sendMessage(_("itemnotbook"));
-				return;
-			}
+        if (args[0].equalsIgnoreCase("title")) {
+            if (p.getItemInHand().getType() != Material.WRITTEN_BOOK) {
+                sender.sendMessage(_("itemnotbook"));
+                return;
+            }
 
-			String msg = "";
-			for (int i = 1; i < args.length; i++)
-				msg += args[i] + " ";
+            String msg = "";
+            for (int i = 1; i < args.length; i++)
+                msg += args[i] + " ";
 
-			BookMeta meta = (BookMeta) p.getItemInHand().getItemMeta();
-			meta.setTitle(ChatColor.translateAlternateColorCodes('&', msg));
-			p.getItemInHand().setItemMeta(meta);
-			sender.sendMessage(_("bookTitleChanged"));
-		}
+            BookMeta meta = (BookMeta) p.getItemInHand().getItemMeta();
+            meta.setTitle(ChatColor.translateAlternateColorCodes('&', msg));
+            p.getItemInHand().setItemMeta(meta);
+            sender.sendMessage(_("bookTitleChanged"));
+        }
 
-		else if (args[0].equalsIgnoreCase("author")) {
-			if (p.getItemInHand().getType() != Material.WRITTEN_BOOK) {
-				sender.sendMessage(_("itemnotbook"));
-				return;
-			}
+        else if (args[0].equalsIgnoreCase("author")) {
+            if (p.getItemInHand().getType() != Material.WRITTEN_BOOK) {
+                sender.sendMessage(_("itemnotbook"));
+                return;
+            }
 
-			String msg = "";
-			for (int i = 1; i < args.length; i++)
-				msg += args[i] + " ";
+            String msg = "";
+            for (int i = 1; i < args.length; i++)
+                msg += args[i] + " ";
 
-			BookMeta meta = (BookMeta) p.getItemInHand().getItemMeta();
-			meta.setAuthor(msg);
-			p.getItemInHand().setItemMeta(meta);
-			sender.sendMessage(_("bookAuthorChanged"));
-		}
-	}
+            BookMeta meta = (BookMeta) p.getItemInHand().getItemMeta();
+            meta.setAuthor(msg);
+            p.getItemInHand().setItemMeta(meta);
+            sender.sendMessage(_("bookAuthorChanged"));
+        }
+    }
 
 }
