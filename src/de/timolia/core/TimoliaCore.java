@@ -52,10 +52,11 @@ import de.timolia.core.events.ServerListener;
 public class TimoliaCore extends JavaPlugin {
 
     public static final String PREFIX = ChatColor.DARK_RED + "[TCore] " + ChatColor.RESET;
+
     public static boolean updateAvailable = false;
-    public static boolean check = false;
-    public static File dataFolder;
     public static boolean coding = false;
+    public static File dataFolder;
+
     private Metrics m;
 
     public void onEnable() {
@@ -67,6 +68,11 @@ public class TimoliaCore extends JavaPlugin {
 
         if (coding)
             Message.console("PLUGIN RUNNING IN CODING-MODE!!! BE CAREFUL!!!");
+
+        if (getConfig().getBoolean("checkForUpdates"))
+            UpdateChecker.start(this);
+        else
+            Message.console("Update-Checking disabled! Change the config.yml to activate it.");
 
         try {
             m = new Metrics(this);
@@ -153,7 +159,6 @@ public class TimoliaCore extends JavaPlugin {
     public void loadConfig() {
         PlayerListener.joinMsg = ChatColor.translateAlternateColorCodes('&', getConfig().getString("joinmsg"));
         PlayerListener.quitMsg = ChatColor.translateAlternateColorCodes('&', getConfig().getString("quitmsg"));
-        check = getConfig().getBoolean("checkForUpdates");
 
         deaths.hidingEnabled = getConfig().getBoolean("deathHiding");
 
@@ -176,12 +181,14 @@ public class TimoliaCore extends JavaPlugin {
         Message.loadLanguageFile(language, coding);
     }
 
-    public static String getCorrectName(String name) {
-        String[] replacer = { "a", "b", "c", "d", "e", "f", "k", "l", "m", "n", "o", "r", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-        for (int i = 0; i < replacer.length; i++)
-            name = name.replaceAll("&" + replacer[i], "");
-
-        return name;
+    public void reload() {
+        this.reloadConfig();
+        if (!getConfig().getBoolean("checkForUpdates") && UpdateChecker.task != null) {
+            UpdateChecker.task.cancel();
+            UpdateChecker.task = null;
+            Message.console("UpdateChecker stopped");
+        } else if (getConfig().getBoolean("checkForUpdates") && UpdateChecker.task == null)
+            UpdateChecker.start(this);
     }
 
 }

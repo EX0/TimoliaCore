@@ -18,6 +18,7 @@ import org.bukkit.event.player.PlayerLoginEvent.Result;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import de.timolia.core.TimoliaCore;
+import de.timolia.core.UpdateChecker;
 import de.timolia.core.cmds.access;
 import de.timolia.core.cmds.deaths;
 import de.timolia.core.cmds.listname;
@@ -32,7 +33,7 @@ public class PlayerListener implements Listener {
         this.instance = instance;
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
     public void onPlayerJoin(PlayerJoinEvent event) {
         // custom quit-msg
         if (!quitMsg.equalsIgnoreCase("")) {
@@ -44,7 +45,7 @@ public class PlayerListener implements Listener {
         // update-checking
         if (TimoliaCore.updateAvailable && (event.getPlayer().isOp() || event.getPlayer().hasPermission("tcore.update"))) {
             event.getPlayer().sendMessage(TimoliaCore.PREFIX + "A new version is available!");
-            event.getPlayer().sendMessage(TimoliaCore.PREFIX + "Get it at http://dev.bukkit.org/server-mods/timolia-core");
+            event.getPlayer().sendMessage(TimoliaCore.PREFIX + "Get it at http://dev.bukkit.org/server-mods/" + UpdateChecker.name);
         }
 
         // colored listname

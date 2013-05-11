@@ -14,8 +14,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import de.timolia.core.TimoliaCore;
-
 public class itemlore extends TCommand {
 
     protected void prepare() {
@@ -49,7 +47,7 @@ public class itemlore extends TCommand {
             sender.sendMessage(_("addedNote"));
 
         } else if (args[0].equalsIgnoreCase("remove")) {
-            msg = TimoliaCore.getCorrectName(msg);
+            msg = getCorrectName(msg);
 
             if (list == null) {
                 sender.sendMessage(_("noNotes"));
@@ -71,6 +69,14 @@ public class itemlore extends TCommand {
 
         meta.setLore(list);
         p.getItemInHand().setItemMeta(meta);
+    }
+
+    public static String getCorrectName(String name) {
+        String[] replacer = { "a", "b", "c", "d", "e", "f", "k", "l", "m", "n", "o", "r", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+        for (int i = 0; i < replacer.length; i++)
+            name = name.replaceAll("&" + replacer[i], "");
+
+        return name;
     }
 
 }

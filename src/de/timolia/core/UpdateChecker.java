@@ -20,8 +20,8 @@ import org.w3c.dom.NodeList;
 
 public final class UpdateChecker {
 
-    private static final String name = "timoliacore";
-    private static final String infoMsg = "[TCore] A new version is available! Get it at: http://dev.bukkit.org/server-mods/" + name;
+    public static final String name = "timolia-core";
+    private static final String infoMsg = "(HeadDrops) A new version is available! Get it at: http://dev.bukkit.org/server-mods/" + name;
     private static PluginDescriptionFile pdf;
     public static BukkitTask task;
 
@@ -31,7 +31,7 @@ public final class UpdateChecker {
 
     public static void start(final JavaPlugin instance) {
         pdf = instance.getDescription();
-        Message.console("Update-Checker started");
+        Message.console("UpdateChecker started");
         task = Bukkit.getScheduler().runTaskTimer(instance, new Runnable() {
             public void run() {
                 if (TimoliaCore.updateAvailable)
