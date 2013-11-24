@@ -48,6 +48,7 @@ bookAuthorChanged: The author of the book has been changed
 caDel: Inventory and Armor have been cleared
 caDelOther: Your Inventory and Armor has been cleared by %a1
 caDelOtherConfirm: Inventory and Armor of %a1 has been cleared
+caDelAll: All carried items have been deleted
 
 cblock: Command-Block given
 

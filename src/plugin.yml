@@ -8,7 +8,7 @@ commands:
         usage: /access <allow/deny> [msg] OR <add/remove> <name> OR <reload/list> OR setmsg <msg>
         description: A better whitelist
     armor:
-        usage: /armor [Player] <slot> <item-id>
+        usage: /armor [Player] <slot> <material>
         description: Change your or someone elses armor
     asave:
         usage: /asave <start/stop/delay/status>
@@ -17,7 +17,7 @@ commands:
         usage: /book <author/title> [args]
         description: Change the author and title of a book
     ca:
-        usage: /ca [Player]
+        usage: /ca [Player/<all>]
         description: Clear your or someone elses inventory and armor
     cblock:
         usage: /cblock [Player]

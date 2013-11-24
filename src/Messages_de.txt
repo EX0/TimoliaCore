@@ -48,6 +48,7 @@ bookAuthorChanged: Der Autor des Buches wurde geändert
 caDel: Inventar und Rüstung wurden gelöscht
 caDelOther: Dein Inventar und deine Rüstung wurden von %a1 gelöscht
 caDelOtherConfirm: Das Inventar und die Rüstung von %a1 wurden gelöscht
+caDelAll: Alle getragenen Items wurden gelöscht
 
 cblock: Command-Block bekommen
 
